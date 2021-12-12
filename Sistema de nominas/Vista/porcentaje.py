@@ -1,5 +1,5 @@
 from Vista.UI.porcentaje import *
-from Vista.conexion_db_gestion import RegistroDatos
+from Modelo.conexion_db_gestion import RegistroDatos
 
 
 class Porcentaje(QtWidgets.QWidget):

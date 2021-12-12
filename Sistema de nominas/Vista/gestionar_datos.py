@@ -1,5 +1,5 @@
 import datetime
-from Vista.conexion_db_gestion import *
+from Modelo.conexion_db_gestion import *
 from Vista.UI.gestionar import *
 
 
