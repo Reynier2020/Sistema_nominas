@@ -19,7 +19,7 @@ class Porcentaje(QtWidgets.QWidget):
             return QtWidgets.QMessageBox.critical(self, "Error", "No hay datos")
         parte = 0
         for row in datos:
-            if row[8] > por_dado:
+            if row[9] > por_dado:
                 parte += 1
         por_total = int((parte / total) * 100)
         msg = QtWidgets.QMessageBox.information(self, "Porciento", "El porciento de"
