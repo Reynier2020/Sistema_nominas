@@ -165,13 +165,19 @@ class GestionarDatos(QtWidgets.QWidget):
         try:
             nombre = self.ui.lineEdit_nombre_vin.text()
             edad = self.ui.spinBox_edad.value()
+            if int(edad) <= 12:
+                return QtWidgets.QMessageBox.critical(self, "Error", "La edad de ser mayor")
             sexo = self.comprobar_sex()
             fecha_naci = self.ui.dateEdit_fecha_naci.text()
             nivel_pro = self.ui.comboBox_niv_pro.currentText()
             pro_vin = self.devolver_id_proy()
             rol_pro = self.ui.comboBox_rol.currentText()
             plan_cump = self.ui.spinBox_plan_cump.value()
+            if int(plan_cump) <= 0:
+                return QtWidgets.QMessageBox.critical(self, "Error", "debe asignarle un plan de cumplimiento")
             plan_real = self.ui.spinBox_plan_real.value()
+            if int(plan_real) <= 0:
+                return QtWidgets.QMessageBox.critical(self, "Error", "debe asignarle un plan real")
             if self.comp_trab_vin() == 1:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
             else:
@@ -191,18 +197,24 @@ class GestionarDatos(QtWidgets.QWidget):
         try:
             ind = self.ui.tableWidget_vin.currentRow()
             if ind == -1:
-                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de actualizar'))
             ide = self.ui.tableWidget_vin.item(ind, 0).text()
             ide_n = int(ide)
             nombre = self.ui.lineEdit_nombre_vin.text()
             edad = self.ui.spinBox_edad.value()
+            if int(edad) <= 12:
+                return QtWidgets.QMessageBox.critical(self, "Error", "La edad de ser mayor")
             sexo = self.comprobar_sex()
             fecha_naci = self.ui.dateEdit_fecha_naci.text()
             nivel_pro = self.ui.comboBox_niv_pro.currentText()
             pro_vin = self.devolver_id_proy()
             rol_pro = self.ui.comboBox_rol.currentText()
             plan_cump = self.ui.spinBox_plan_cump.value()
+            if int(plan_cump) <= 0:
+                return QtWidgets.QMessageBox.critical(self, "Error", "debe asignarle un plan de cumplimiento")
             plan_real = self.ui.spinBox_plan_real.value()
+            if int(plan_real) <= 0:
+                return QtWidgets.QMessageBox.critical(self, "Error", "debe asignarle un plan real")
             act = self.datos_total.act_trab_vin(nombre, edad, sexo, fecha_naci, nivel_pro, pro_vin, rol_pro,
                                                 plan_cump, plan_real, ide_n)
             if act == 1:
@@ -213,6 +225,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.spinBox_plan_cump.setValue(0)
                 self.ui.spinBox_plan_real.setValue(0)
                 self.mostrar_trab_vin()
+                self.ui.tableWidget_vin.setCurrentCell(-1, -1)
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
