@@ -336,6 +336,8 @@ class GestionarDatos(QtWidgets.QWidget):
         try:
             nombre = self.ui.lineEdit_nombre_n_vin.text()
             edad = self.ui.spinBox_edad_no_vin.value()
+            if int(edad) <= 12:
+                return QtWidgets.QMessageBox.critical(self, "Error", "La edad de ser superior")
             sexo = self.comprobar_sexo_no_vin()
             fecha_naci = self.ui.dateEdit_fecha_naci_no_vin.text()
             nivel_pro = self.ui.comboBox_niv_pro_no_vin.currentText()
@@ -366,6 +368,8 @@ class GestionarDatos(QtWidgets.QWidget):
             ide_n = int(ide)
             nombre = self.ui.lineEdit_nombre_n_vin.text()
             edad = self.ui.spinBox_edad_no_vin.value()
+            if int(edad) <= 12:
+                return QtWidgets.QMessageBox.critical(self, "Error", "La edad de ser superior")
             sexo = self.comprobar_sexo_no_vin()
             fecha_naci = self.ui.dateEdit_fecha_naci_no_vin.text()
             nivel_pro = self.ui.comboBox_niv_pro_no_vin.currentText()
@@ -382,7 +386,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.spinBox_tarde.setValue(0)
                 self.ui.spinBox_horas_tra.setValue(0)
                 self.mostrar_trab_no_vin()
-
+                self.ui.tableWidget_no_vin.setCurrentCell(-1, -1)
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
@@ -513,6 +517,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.dateEdit_fecha_culm.setDate(datetime.date(2000, 1, 1))
                 self.ui.doubleSpinBox_porci_culm.setValue(0)
                 self.mostrar_proyecto()
+                self.ui.tableWidget_proy.setCurrentCell(-1, -1)
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
