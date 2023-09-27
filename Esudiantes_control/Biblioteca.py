@@ -47,5 +47,11 @@ class Biblioteca:
         self.__lista_libros_digitales = valor
 
     def autor_mas_libros(self):
-        autor = self.__autor
+        libros_generales = self.__lista_libros_digitales.append(self.__lista_libros_fisicos)
+        for libro in libros_generales:
+            return max(libros_generales.autor, key = libros_generales.count)
+
+
+
+
 
