@@ -1,5 +1,5 @@
 class Proyecto:
-    def __int__(self, nom_proy, cliente, costo, fecha_ini, fecha_culm, pciento_culm):
+    def __init__(self, nom_proy, cliente, costo, fecha_ini, fecha_culm, pciento_culm):
         self.__nom_proy = nom_proy
         self.__cliente = cliente
         self.__costo = costo
