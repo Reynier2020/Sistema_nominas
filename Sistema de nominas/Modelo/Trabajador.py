@@ -1,7 +1,7 @@
 
 class Trabajador:
 
-    def __int__(self, nombre, edad, sexo, fecha_naci, nivel_pro):
+    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro):
         self.__nombre = nombre
         self.__edad = edad
         self.__sexo = sexo
