@@ -6,6 +6,7 @@ class Empresa:
     def __init__(self):
         self.__lista_trabajadores_vin = []
         self.__lista_trabajadores_no_vin = []
+        self.__lista_proyectos = []
 
     def insertar_trabajador(self, trabajador):
         list_vin = self.__lista_trabajadores_vin
