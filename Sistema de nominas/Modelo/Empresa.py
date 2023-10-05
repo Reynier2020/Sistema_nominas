@@ -22,4 +22,5 @@ class Empresa:
         for e in range(len(lista_trabajadores)):
             lista_trabajadores.remove(trabajador)
 
-
+    def actualizar_trabjador(self, trabajador):
+        pass
