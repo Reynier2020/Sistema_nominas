@@ -1,12 +1,13 @@
 
 class Trabajador:
 
-    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro):
+    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin):
         self.__nombre = nombre
         self.__edad = edad
         self.__sexo = sexo
         self.__fecha_naci = fecha_naci
         self.__nivel_pro = nivel_pro
+        self.__es_vin = es_vin
 
     @property
     def nombre(self):
@@ -47,3 +48,11 @@ class Trabajador:
     @nivel_pro.setter
     def set_nivel_pro(self, value):
         return self.__nivel_pro == value
+
+    @property
+    def es_vin(self):
+        return self.__es_vin
+
+    @es_vin.setter
+    def set_es_vin(self, value):
+        return self.__es_vin == value

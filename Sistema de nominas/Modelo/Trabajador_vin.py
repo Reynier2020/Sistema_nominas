@@ -4,8 +4,8 @@ from Proyecto import *
 
 class Trabajadorvin(Trabajador):
 
-    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, rol_proy, plan_cump_men, plan_real_cump):
-        super().__init__(nombre, edad, sexo, fecha_naci, nivel_pro)
+    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro,es_vin, rol_proy, plan_cump_men, plan_real_cump):
+        super().__init__(nombre, edad, sexo, fecha_naci, nivel_pro,es_vin)
         self.__proy = Proyecto.nom_proy
         self.__rol_proy = rol_proy
         self.__plan_cump_men = plan_cump_men

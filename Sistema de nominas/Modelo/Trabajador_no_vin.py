@@ -2,9 +2,9 @@ from Trabajador import *
 
 
 class TrabajadorNoVin(Trabajador):
-    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, horas_trabjadas, respons, llegadas_tarde, dept):
-        super().__init__(nombre, edad, sexo, fecha_naci, nivel_pro)
-        self.__horas_tabajadas = horas_trabjadas
+    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin, horas_trab, respons, llegadas_tarde, dept):
+        super().__init__(nombre, edad, sexo, fecha_naci, nivel_pro, es_vin)
+        self.__horas_tabajadas = horas_trab
         self.__responsabilidad = respons
         self.__llegadas_tarde = llegadas_tarde
         self.__dept = dept
