@@ -1,6 +1,3 @@
-class Empresa:
-    pass
-
 
 class Trabajador:
 
