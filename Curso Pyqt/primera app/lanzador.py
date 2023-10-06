@@ -1,5 +1,5 @@
 import sys
-from vent_limp import *
+from vent_limp import Ui_Dialog, QtWidgets
 
 
 class Lanzador(QtWidgets.QDialog):
