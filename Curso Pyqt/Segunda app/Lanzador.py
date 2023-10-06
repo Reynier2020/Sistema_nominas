@@ -7,13 +7,15 @@ class Lanzador(QtWidgets.QDialog):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
-        self.ui.pushButton_Aceptar.clicked(self.mostrar_mensaje())
+        self.ui.pushButton_Aceptar.clicked(self.mostrar_mensaje)
+
 
     def mostrar_mensaje(self):
         self.ui.label_Mensaje.setText("Hola " + self.ui.lineEdit_escribaUnNombre.text())
 
+
 if __name__ == "__main__":
-    app = QtGui.QGuiApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     miapp = Lanzador()
     miapp.show()
     sys.exit(app.exec())
