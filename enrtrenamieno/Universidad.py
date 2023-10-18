@@ -1,4 +1,3 @@
-from Estudiante import Estudiante
 class Universidad:
     def __init__(self):
         self.__lista_est = []
