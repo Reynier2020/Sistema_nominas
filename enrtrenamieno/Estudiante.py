@@ -13,3 +13,4 @@ class Estudiante(Persona):
     @becado.setter
     def becado(self, valor):
         self.__becado = valor
+

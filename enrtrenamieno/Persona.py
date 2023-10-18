@@ -1,6 +1,6 @@
 """una clase persona, una estudiante y otra profesores. persona tiene nombre,
 edad, sexo, CI.Estudiante tiene vecados o no.Prof tiene asignatura """
-
+""""""
 
 class Persona:
     def __init__(self, nombre, edad, sexo, ci):
