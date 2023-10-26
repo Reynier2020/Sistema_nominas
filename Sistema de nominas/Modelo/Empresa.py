@@ -87,6 +87,20 @@ class Empresa:
             if self.lista_trabajadores_no_vin[i].es_nombre(nombre):
                 return i
 
+    def eliminar_no_vin(self, nombre):
+        if self.chequear_tra_no_vin(nombre) is None:
+            raise Exception("El trabajador no existe")
+        self.lista_trabajadores_no_vin.remove(self.chequear_tra_no_vin(nombre))
+
+    def actualizar_trabjador_no_vin(self, nom_ant, trabajador):
+        cheq_trab = self.chequear_tra_no_vin(nom_ant)
+        if cheq_trab is None:
+            raise Exception("El trabajador no existe")
+        cheq_nue = self.chequear_tra_no_vin(trabajador.nombre)
+        if (cheq_nue is not None) and (cheq_nue != cheq_trab):
+            raise Exception("El trabajador ya existe")
+        self.lista_trabajadores_no_vin[cheq_trab] = trabajador
+
     def chequear_proyecto(self, nombre):
         for i in range(len(self.__lista_proyectos)):
             if self.__lista_proyectos[i].es_nom_pro(nombre):
