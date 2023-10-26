@@ -15,7 +15,7 @@ class Trabajador:
 
     @nombre.setter
     def set_nombre(self, value):
-        return self.__nombre == value
+        self.__nombre = value
 
     @property
     def edad(self):
@@ -23,7 +23,7 @@ class Trabajador:
 
     @edad.setter
     def set_edad(self, value):
-        return self.__edad == value
+        self.__edad = value
 
     @property
     def sexo(self):
@@ -31,7 +31,7 @@ class Trabajador:
 
     @sexo.setter
     def set_sexo(self, value):
-        return self.__sexo == value
+        self.__sexo = value
 
     @property
     def fecha_naci(self):
@@ -39,7 +39,7 @@ class Trabajador:
 
     @fecha_naci.setter
     def set_fecha_naci(self, value):
-        return self.__fecha_naci == value
+        self.__fecha_naci = value
 
     @property
     def nivel_pro(self):
@@ -47,7 +47,7 @@ class Trabajador:
 
     @nivel_pro.setter
     def set_nivel_pro(self, value):
-        return self.__nivel_pro == value
+        self.__nivel_pro = value
 
     @property
     def es_vin(self):
@@ -55,4 +55,4 @@ class Trabajador:
 
     @es_vin.setter
     def set_es_vin(self, value):
-        return self.__es_vin == value
+        self.__es_vin = value
