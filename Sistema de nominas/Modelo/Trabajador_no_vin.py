@@ -14,29 +14,29 @@ class TrabajadorNoVin(Trabajador):
         return self.__horas_tabajadas
 
     @horas_tabajadas.setter
-    def set_horas_trabajadas(self, value):
-        return self.__horas_tabajadas == value
+    def horas_trabajadas(self, value):
+        self.__horas_tabajadas = value
 
     @property
     def responsabilidad(self):
         return self.__responsabilidad
 
     @responsabilidad.setter
-    def set_responsabilidad(self, value):
-        return self.__responsabilidad == value
+    def responsabilidad(self, value):
+        self.__responsabilidad = value
 
     @property
     def llegadas_tardes(self):
         return self.__llegadas_tarde
 
     @llegadas_tardes.setter
-    def set_llegadas_tardes(self, value):
-        return self.__llegadas_tarde == value
+    def llegadas_tardes(self, value):
+        self.__llegadas_tarde = value
 
     @property
     def dept(self):
         return self.__dept
 
     @dept.setter
-    def set_dept(self, value):
-        return self.__dept == value
+    def dept(self, value):
+        self.__dept = value

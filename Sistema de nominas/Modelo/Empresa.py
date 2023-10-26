@@ -2,6 +2,7 @@ from Trabajador_vin import Trabajadorvin
 from Proyecto import Proyecto
 from Trabajador_no_vin import TrabajadorNoVin
 
+
 class Empresa:
     def __init__(self):
         self.__lista_proyectos = []
@@ -16,26 +17,26 @@ class Empresa:
         return self.__lista_proyectos
 
     def insertar_trabajador(self, trabajador):
-        if self.chequear_trabajador_x_nom(trabajador.nombre) != None:
+        if self.chequear_trabajador_x_nom(trabajador.nombre) is not None:
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores.append(trabajador)
 
-    def chequear_trabajador_x_nom(self,nombre):
+    def chequear_trabajador_x_nom(self, nombre):
         for i in range(len(self.lista_trabajadores)):
             if self.lista_trabajadores[i].es_nombre(nombre):
                 return i
 
     def eliminar_trabajador(self, nombre):
-        if self.chequear_trabajador_x_nom(nombre) == None:
+        if self.chequear_trabajador_x_nom(nombre) is None:
             raise Exception("El trabajador no existe")
         self.lista_trabajadores.remove(self.chequear_trabajador_x_nom(nombre))
 
-    def actualizar_trabjador(self,nom_ant, trabajador):
+    def actualizar_trabjador(self, nom_ant, trabajador):
         cheq_trab = self.chequear_trabajador_x_nom(nom_ant)
-        if cheq_trab == None:
+        if cheq_trab is None:
             raise Exception("El trabajador no existe")
         cheq_nue = self.chequear_trabajador_x_nom(trabajador.nombre)
-        if (cheq_nue != None) and (cheq_nue != cheq_trab):
+        if (cheq_nue is not None) and (cheq_nue != cheq_trab):
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores[cheq_trab] = trabajador
 
