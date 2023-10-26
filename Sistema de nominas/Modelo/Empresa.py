@@ -64,3 +64,5 @@ class Empresa:
         if cheq_pro is not None:
             raise Exception("El pryecto ya existe")
         self.lista_proyectos.append(pro)
+
+
