@@ -56,3 +56,6 @@ class Trabajador:
     @es_vin.setter
     def set_es_vin(self, value):
         self.__es_vin = value
+
+    def es_nombre(self, nombre):
+        return self.__nombre == nombre
