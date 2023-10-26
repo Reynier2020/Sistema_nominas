@@ -53,43 +53,29 @@ class Empresa:
     def lista_proyectos(self):
         return self.__lista_proyectos
 
-    def insertar_trabajador(self, trabajador):
-        if self.chequear_trabajador_x_nom(trabajador.nombre) is not None:
+    def insertar_trabajador_vin(self, trabajador):
+        if self.chequear_trabajador_vin_x_nom(trabajador.nombre) is not None:
             raise Exception("El trabajador ya existe")
-        self.lista_trabajadores.append(trabajador)
+        self.lista_trabajadores_vin.append(trabajador)
 
-    def chequear_trabajador_x_nom(self, nombre):
-        for i in range(len(self.lista_trabajadores)):
-            if self.lista_trabajadores[i].es_nombre(nombre):
+    def chequear_trabajador_vin_x_nom(self, nombre):
+        for i in range(len(self.lista_trabajadores_vin)):
+            if self.lista_trabajadores_vin[i].es_nombre(nombre):
                 return i
 
-    def eliminar_trabajador(self, nombre):
-        if self.chequear_trabajador_x_nom(nombre) is None:
+    def eliminar_trabajador_vin(self, nombre):
+        if self.chequear_trabajador_vin_x_nom(nombre) is None:
             raise Exception("El trabajador no existe")
-        self.lista_trabajadores.remove(self.chequear_trabajador_x_nom(nombre))
+        self.lista_trabajadores_vin.remove(self.chequear_trabajador_vin_x_nom(nombre))
 
-    def actualizar_trabjador(self, nom_ant, trabajador):
-        cheq_trab = self.chequear_trabajador_x_nom(nom_ant)
+    def actualizar_trabjador_vin(self, nom_ant, trabajador):
+        cheq_trab = self.chequear_trabajador_vin_x_nom(nom_ant)
         if cheq_trab is None:
             raise Exception("El trabajador no existe")
-        cheq_nue = self.chequear_trabajador_x_nom(trabajador.nombre)
+        cheq_nue = self.chequear_trabajador_vin_x_nom(trabajador.nombre)
         if (cheq_nue is not None) and (cheq_nue != cheq_trab):
             raise Exception("El trabajador ya existe")
-        self.lista_trabajadores[cheq_trab] = trabajador
-
-    def listar_vinculados(self):
-        lista_vin = []
-        for tra in self.lista_trabajadores:
-            if isinstance(tra, Trabajadorvin):
-                lista_vin.append(tra)
-        return lista_vin
-
-    def listar_no_vin(self):
-        lista_no_vin = []
-        for tra in self.lista_trabajadores:
-            if isinstance(tra, TrabajadorNoVin):
-                lista_no_vin.append(tra)
-        return lista_no_vin
+        self.lista_trabajadores_vin[cheq_trab] = trabajador
 
     def chequear_proyecto(self, nombre):
         for i in range(len(self.__lista_proyectos)):
@@ -102,4 +88,11 @@ class Empresa:
             raise Exception("El pryecto ya existe")
         self.lista_proyectos.append(pro)
 
+    def eliminar_proyecto(self, nombre):
+        if self.chequear_proyecto(nombre) is None:
+            raise Exception("El proyecto no existe")
+        self.lista_proyectos.remove(self.chequear_proyecto(nombre))
 
+    def listar_proyecto(self):
+        for i in self.lista_proyectos:
+            return i

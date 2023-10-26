@@ -1,7 +1,4 @@
-from abc import ABC
-
-
-class Trabajador(ABC):
+class Trabajador:
 
     def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin):
         self.__nombre = nombre
@@ -61,3 +58,10 @@ class Trabajador(ABC):
 
     def es_nombre(self, nombre):
         return self.__nombre == nombre
+
+    def __str__(self):
+        return self.nombre
+
+    def string_variado(self):
+        return "nombre: {}\nedad: \nsexo:{}\nnivel profesional: {}\nes vinculado: {}".format(
+            self.nombre, self.edad, self.sexo, self.nivel_pro, self.es_vin)
