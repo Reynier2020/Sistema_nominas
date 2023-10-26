@@ -4,10 +4,8 @@ from Proyecto import Proyecto
 
 class Empresa:
     def __init__(self):
-        self.__lista_trabajadores_vin = []
-        self.__lista_trabajadores_no_vin = []
         self.__lista_proyectos = []
-        self.__lita_trabajadores = self.__lista_trabajadores_vin.extend(self.__lista_trabajadores_no_vin)
+        self.__lita_trabajadores = []
 
     def insertar_trabajador(self, trabajador):
         list_vin = self.__lista_trabajadores_vin
