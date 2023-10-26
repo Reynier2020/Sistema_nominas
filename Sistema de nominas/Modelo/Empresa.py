@@ -42,14 +42,14 @@ class Empresa:
     def listar_vinculados(self):
         lista_vin = []
         for tra in self.lista_trabajadores:
-            if tra.es_vin:
+            if isinstance(tra, Trabajadorvin):
                 lista_vin.append(tra)
         return lista_vin
 
     def listar_no_vin(self):
         lista_no_vin = []
         for tra in self.lista_trabajadores:
-            if tra.es_vin:
+            if isinstance(tra, TrabajadorNoVin):
                 lista_no_vin.append(tra)
         return lista_no_vin
 
