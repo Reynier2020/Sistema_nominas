@@ -1,5 +1,7 @@
+from abc import ABC
 
-class Trabajador:
+
+class Trabajador(ABC):
 
     def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin):
         self.__nombre = nombre

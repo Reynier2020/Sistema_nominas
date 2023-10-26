@@ -7,6 +7,9 @@ class Proyecto:
         self.__fecha_culm = fecha_culm
         self.__pciento_culm = pciento_culm
 
+    def __str__(self):
+        return self.nom_proy
+
     @property
     def nom_proy(self):
         return self.__nom_proy
