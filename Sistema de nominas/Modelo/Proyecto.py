@@ -57,3 +57,6 @@ class Proyecto:
     @pciento_culm.setter
     def pciento_culm(self, value):
         self.__pciento_culm = value
+
+    def es_nom_pro(self, nombre):
+        return self.nom_proy == nombre

@@ -54,3 +54,8 @@ class Empresa:
                 lista_no_vin.append(tra)
         return lista_no_vin
 
+    def chequear_proyecto(self, nombre):
+        for i in self.__lista_proyectos:
+            if self.__lista_proyectos[i].es_
+    def inertar_proyrcto(self, pro):
+        if
