@@ -77,12 +77,22 @@ class Empresa:
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_vin[cheq_trab] = trabajador
 
+    def insertar_trab_no_vin(self, tra):
+        if self.chequear_tra_no_vin(tra.nombre) is not None:
+            raise Exception("El trabajador ya existe")
+        self.lista_trabajadores_no_vin.append(tra)
+
+    def chequear_tra_no_vin(self, nombre):
+        for i in self.lista_trabajadores_no_vin:
+            if self.lista_trabajadores_no_vin[i].es_nombre(nombre):
+                return i
+
     def chequear_proyecto(self, nombre):
         for i in range(len(self.__lista_proyectos)):
             if self.__lista_proyectos[i].es_nom_pro(nombre):
                 return i
 
-    def inertar_proyrcto(self, pro):
+    def inertar_proyecto(self, pro):
         cheq_pro = self.chequear_proyecto(pro.nombre)
         if cheq_pro is not None:
             raise Exception("El pryecto ya existe")
