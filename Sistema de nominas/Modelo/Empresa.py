@@ -55,7 +55,12 @@ class Empresa:
         return lista_no_vin
 
     def chequear_proyecto(self, nombre):
-        for i in self.__lista_proyectos:
-            if self.__lista_proyectos[i].es_
+        for i in range(len(self.__lista_proyectos)):
+            if self.__lista_proyectos[i].es_nom_pro(nombre):
+                return i
+
     def inertar_proyrcto(self, pro):
-        if
+        cheq_pro = self.chequear_proyecto(pro.nombre)
+        if cheq_pro is not None:
+            raise Exception("El pryecto ya existe")
+        self.lista_proyectos.append(pro)
