@@ -40,3 +40,19 @@ class TrabajadorNoVin(Trabajador):
     @dept.setter
     def dept(self, value):
         self.__dept = value
+
+    def calcular_salario(self):
+        if self.nivel_pro == "profesional":
+            a = 80
+        elif self.nivel_pro == "tecnico medio":
+            a = 60
+        else:
+            a = 40
+
+        if self.responsabilidad == "jefe de departamento":
+            b = 120
+        else:
+            b = 200
+
+        salario = int((self.horas_tabajadas * 12.5 + b - (5 * self.llegadas_tardes)) + a)
+        return salario
