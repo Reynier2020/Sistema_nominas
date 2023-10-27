@@ -32,6 +32,8 @@ g)	Pruebe que las operaciones implementadas en el modelo funcionan correctamente
 """
 from Trabajador import Trabajador
 from operator import attrgetter
+from Trabajador_vin import Trabajadorvin
+
 
 class Empresa:
     def __init__(self):
@@ -65,7 +67,7 @@ class Empresa:
 
     def chequear_trabajador_vin_x_nom(self, nombre):
         for i in range(len(self.lista_trabajadores_vin)):
-            if self.lista_trabajadores_vin[i].es_nombre(nombre):
+            if self.lista_trabajadores_vin[i].Trabajador.es_nombre(nombre):
                 return i
 
     def eliminar_trabajador_vin(self, nombre):
@@ -91,7 +93,7 @@ class Empresa:
 
     def chequear_tra_no_vin(self, nombre):
         for i in self.lista_trabajadores_no_vin:
-            if self.lista_trabajadores_no_vin[i].es_nombre(nombre):
+            if self.lista_trabajadores_no_vin[i].Trabajador.es_nombre(nombre):
                 return i
 
     def eliminar_no_vin(self, nombre):
@@ -110,7 +112,7 @@ class Empresa:
 
     def chequear_proyecto(self, nombre):
         for i in range(len(self.__lista_proyectos)):
-            if self.__lista_proyectos[i].es_nom_pro(nombre):
+            if self.__lista_proyectos[i].Proyecto.es_nom_pro(nombre):
                 return i
 
     def inertar_proyecto(self, pro):
@@ -130,7 +132,7 @@ class Empresa:
 
     def chequear_trabajador(self, nombre):
         for i in self.lista_trabajadores:
-            if self.lista_trabajadores[i].es_nombre(nombre):
+            if self.lista_trabajadores[i].Trabajador.es_nombre(nombre):
                 return i
 
     def listar_trabajadores(self):
