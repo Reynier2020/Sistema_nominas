@@ -39,10 +39,15 @@ class Trabajadorvin(Trabajador):
     def plan_real_cump(self):
         return self.__plan_real_cump
 
-    def actualizar_pla_real(self, plan_ant, plan_nue):
-
     @plan_real_cump.setter
     def plan_real_cump(self, value):
         self.__plan_real_cump = value
+
+    def est_plan_real(self, plan):
+        return self.plan_real_cump == plan
+
+    def actualizar_pla_real(self, plan_ant, plan_nue):
+        if self.est_plan_real(plan_nue) >= self.est_plan_real(plan_ant):
+            self.plan_real_cump = plan_nue
 
 
