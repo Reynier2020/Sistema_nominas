@@ -155,3 +155,15 @@ class Empresa:
             raise Exception("El trabajador no existe")
         self.lista_trabajadores.remove(self.chequear_trabajador(nombre))
 
+    def porciento_trab_vin_cumplido(self, porciento):
+        a = len(self.lista_trabajadores_vin)
+        b = []
+        c = len(b)
+        for i in self.lista_trabajadores_vin:
+            if Trabajadorvin.plan_real_cump > porciento:
+                b.append(i)
+        resultado = (c * 100)/a
+        return resultado
+
+
+
