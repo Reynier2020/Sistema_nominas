@@ -33,7 +33,7 @@ g)	Pruebe que las operaciones implementadas en el modelo funcionan correctamente
 from Trabajador_vin import Trabajadorvin
 from Proyecto import Proyecto
 from Trabajador_no_vin import TrabajadorNoVin
-
+from operator import attrgetter
 
 class Empresa:
     def __init__(self):
@@ -128,3 +128,7 @@ class Empresa:
     def listar_trabajadores(self):
         lista_gen = list[self.lista_trabajadores_no_vin.extend(self.lista_trabajadores_vin)]
         return lista_gen
+
+    def ordenar_proyectos(self):
+        sorted(self.lista_proyectos, key=attrgetter('costo', 'pciento_culm'), reverse=True)
+
