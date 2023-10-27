@@ -30,9 +30,7 @@ e)	Implemente la funcionalidad necesaria para determinar qué porciento de los t
 f)	Implemente la funcionalidad necesaria para listar a final de mes la nómina de la empresa con los datos de cada trabajador y el salario a cobrar, además de la sumatoria total de todos los salarios.
 g)	Pruebe que las operaciones implementadas en el modelo funcionan correctamente según los datos de prueba que usted le entró al programa.
 """
-from Trabajador_vin import Trabajadorvin
-from Proyecto import Proyecto
-from Trabajador_no_vin import TrabajadorNoVin
+from Trabajador import Trabajador
 from operator import attrgetter
 
 class Empresa:
@@ -40,6 +38,11 @@ class Empresa:
         self.__lista_proyectos = []
         self.__lista_trabajadores_vin = []
         self.__lista_trabajadores_no_vin = []
+        self.__lista_trabajadores = []
+
+    @property
+    def lista_trabajadores(self):
+        return self.__lista_trabajadores
 
     @property
     def lista_trabajadores_no_vin(self):
@@ -125,10 +128,24 @@ class Empresa:
         for i in self.lista_proyectos:
             return i
 
+    def chequear_trabajador(self, nombre):
+        for i in self.lista_trabajadores:
+            if self.lista_trabajadores[i].es_nombre(nombre):
+                return i
+
     def listar_trabajadores(self):
-        lista_gen = list[self.lista_trabajadores_no_vin.extend(self.lista_trabajadores_vin)]
-        return lista_gen
+        self.lista_trabajadores.append(list[self.lista_trabajadores_no_vin.extend(self.lista_trabajadores_vin)])
+        return self.lista_trabajadores
 
     def ordenar_proyectos(self):
         sorted(self.lista_proyectos, key=attrgetter('costo', 'pciento_culm'), reverse=True)
+
+    def despedir_trabajador(self, nombre):
+        a = self.chequear_trabajador(nombre)
+        if a is None:
+            raise Exception("El trabajador no existe")
+        self.lista_trabajadores.remove(a)
+        return Trabajador.string_variado(a) and Trabajador.calcular_salario(a)
+
+
 
