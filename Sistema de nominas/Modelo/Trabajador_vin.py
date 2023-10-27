@@ -46,8 +46,29 @@ class Trabajadorvin(Trabajador):
     def est_plan_real(self, plan):
         return self.plan_real_cump == plan
 
-    def actualizar_pla_real(self, plan_ant, plan_nue):
-        if self.est_plan_real(plan_nue) >= self.est_plan_real(plan_ant):
+    def actualizar_pla_real(self, plan_nue):
+        if self.plan_real_cump <= plan_nue:
             self.plan_real_cump = plan_nue
+        else:
+            return
 
+    def calcular_salario(self):
+        if self.nivel_pro == "profesional":
+            a = 80
+        elif self.nivel_pro == "tecnico medio":
+            a = 60
+        else:
+            a = 40
+
+        if self.plan_real_cump > 100:
+            b = 25.0
+        elif (self.plan_real_cump <= 100) and (self.plan_real_cump >= 95):
+            b = 21.5
+        elif (self.plan_real_cump <= 94) and (self.plan_real_cump >= 80):
+            b = 18.5
+        else:
+            b = 15.0
+
+        salario = int(self.plan_real_cump * b + a)
+        return salario
 
