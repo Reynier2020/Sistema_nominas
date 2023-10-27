@@ -144,7 +144,9 @@ class Empresa:
         a = self.chequear_trabajador(nombre)
         if a is None:
             raise Exception("El trabajador no existe")
-        return Trabajador.string_variado(a) and Trabajador.calcular_salario(a)
+        return "El trabajador {} con un salario de {} ha sido despedido".format(
+            Trabajador.string_variado(a), Trabajador.calcular_salario(a)
+        )
 
     def eliminar_trabajador(self, nombre):
         if self.chequear_trabajador(nombre) is None:
