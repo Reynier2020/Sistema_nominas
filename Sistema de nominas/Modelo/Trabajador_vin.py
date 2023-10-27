@@ -5,7 +5,7 @@ from Proyecto import *
 class Trabajadorvin(Trabajador):
 
     def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin, rol_proy, plan_cump_men, plan_real_cump):
-        super().__init__(nombre, edad, sexo, fecha_naci, nivel_pro,es_vin)
+        super().__init__(nombre, edad, sexo, fecha_naci, nivel_pro, es_vin)
         self.__proy = list[Proyecto.nom_proy]
         self.__rol_proy = rol_proy
         self.__plan_cump_men = plan_cump_men
@@ -42,3 +42,5 @@ class Trabajadorvin(Trabajador):
     @plan_real_cump.setter
     def plan_real_cump(self, value):
         self.__plan_real_cump = value
+
+
