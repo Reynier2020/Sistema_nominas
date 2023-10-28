@@ -165,5 +165,8 @@ class Empresa:
         resultado = (c * 100)/a
         return resultado
 
-
-
+    def sumatoria_salarios(self):
+        total_salarios = 0
+        for i in self.lista_trabajadores:
+            total_salarios += Trabajador.calcular_salario(i)
+        return total_salarios

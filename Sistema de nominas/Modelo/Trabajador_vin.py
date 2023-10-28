@@ -71,4 +71,3 @@ class Trabajadorvin(Trabajador):
 
         salario = int(self.plan_real_cump * b + a)
         return salario
-
