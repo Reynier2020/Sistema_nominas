@@ -8,6 +8,7 @@ class Lanzador(QtWidgets.QMainWindow):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ui.pushButton_calcular.clicked.connect(self.calcular)
 
     def calcular(self):
         if len(self.ui.lineEdit_cantidad.text()) != 0:
@@ -25,10 +26,8 @@ class Lanzador(QtWidgets.QMainWindow):
         cantidad_pre = q * r
         descuento = cantidad_pre*s/100
         cantidad_net = cantidad_pre - descuento
-        self.ui.label_resultado.setText("cantidad total: "+str(cantidad_pre),
-                                        ", descuento: "+str(descuento), ", cantidad neta: " + str(cantidad_net))
-
-        self.ui.pushButton_calcular.clicked.connect(self.calcular)
+        self.ui.label_resultado.setText("cantidad total: "+str(cantidad_pre) +
+                                        ", descuento: "+str(descuento) + ", cantidad neta: " + str(cantidad_net))
 
 
 if __name__ == "__main__":
