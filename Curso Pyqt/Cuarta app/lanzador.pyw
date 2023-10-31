@@ -26,17 +26,13 @@ class Lanzador(QtWidgets.QMainWindow):
         descuento = cantidad_pre*s/100
         cantidad_net = cantidad_pre - descuento
         self.ui.label_resultado.setText("cantidad total: "+str(cantidad_pre),
-                                        ", descuento: "+str(descuento), ", cantidad neta: "+ str(cantidad_net))
+                                        ", descuento: "+str(descuento), ", cantidad neta: " + str(cantidad_net))
 
         self.ui.pushButton_calcular.clicked.connect(self.calcular)
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-
-
-
-
-
-
-
+    lanzador = Lanzador()
+    lanzador.show()
+    sys.exit(app.exec())
