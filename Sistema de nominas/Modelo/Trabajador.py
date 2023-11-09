@@ -1,3 +1,6 @@
+from datetime import date
+
+
 class Trabajador:
 
     def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin):
@@ -34,6 +37,7 @@ class Trabajador:
 
     @property
     def fecha_naci(self):
+        self.__fecha_naci = date(day=int(), month=int(), year=int())
         return self.__fecha_naci
 
     @fecha_naci.setter
