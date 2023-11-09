@@ -1,3 +1,6 @@
+import datetime
+
+
 class Proyecto:
     def __init__(self, nom_proy, cliente, costo, fecha_ini, fecha_culm, pciento_culm):
         self.__nom_proy = nom_proy
@@ -36,6 +39,7 @@ class Proyecto:
 
     @property
     def fecha_ini(self):
+        self.__fecha_ini = datetime.date(day=int(), month=int(), year=int())
         return self.__fecha_ini
 
     @fecha_ini.setter
@@ -44,6 +48,7 @@ class Proyecto:
 
     @property
     def fecha_culm(self):
+        self.__fecha_culm = datetime.date(day=int(), month=int(), year=int())
         return self.__fecha_culm
 
     @fecha_culm.setter
