@@ -20,7 +20,7 @@ class Lanzador(QtWidgets.QMainWindow):
         if self.ui.checkBox_pollo.isChecked():
             precio += 15
 
-        self.ui.lineEdit_resultado.setText(precio)
+        self.ui.lineEdit_resultado.setText(str(precio))
 
 
 if __name__ == "__main__":
