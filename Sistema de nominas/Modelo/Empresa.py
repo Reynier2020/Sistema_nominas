@@ -12,7 +12,8 @@ class Empresa:
 
     @property
     def lista_trabajadores(self):
-        return self.__lista_trabajadores
+       return self.__lista_trabajadores_vin + self.__lista_trabajadores_no_vin
+
 
     @property
     def lista_trabajadores_no_vin(self):
@@ -102,10 +103,6 @@ class Empresa:
         for i in self.lista_trabajadores:
             if self.lista_trabajadores[i].Trabajador.es_nombre(nombre):
                 return i
-
-    def listar_trabajadores(self):
-        self.lista_trabajadores.append(list[self.lista_trabajadores_no_vin.extend(self.lista_trabajadores_vin)])
-        return self.lista_trabajadores
 
     def ordenar_proyectos(self):
         sorted(self.lista_proyectos, key=attrgetter('costo', 'pciento_culm'), reverse=True)
