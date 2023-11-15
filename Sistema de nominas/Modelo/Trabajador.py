@@ -2,9 +2,10 @@ from datetime import date
 
 
 class Trabajador:
-    ident = 0
+    atri_identif = 0
 
     def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin):
+        self.atri_identif = self.identificador()
         self.__nombre = nombre
         self.__edad = edad
         self.__sexo = sexo
@@ -12,9 +13,9 @@ class Trabajador:
         self.__nivel_pro = nivel_pro
         self.__es_vin = es_vin
 
-    @property
     def identificador(self):
-        return self.ident
+        self.atri_identif += 1
+        return self.atri_identif
 
     @property
     def nombre(self):
