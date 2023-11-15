@@ -12,8 +12,7 @@ class Empresa:
 
     @property
     def lista_trabajadores(self):
-       return self.__lista_trabajadores_vin + self.__lista_trabajadores_no_vin
-
+        return self.__lista_trabajadores_vin + self.__lista_trabajadores_no_vin
 
     @property
     def lista_trabajadores_no_vin(self):
@@ -27,7 +26,7 @@ class Empresa:
     def lista_proyectos(self):
         return self.__lista_proyectos
 
-# TRABAJADOR_VINCULADO
+    # TRABAJADOR_VINCULADO
 
     def insertar_trabajador_vin(self, trabajador):
         if self.chequear_trabajador_vin_x_nom(trabajador.nombre) is not None:
@@ -53,7 +52,7 @@ class Empresa:
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_vin[cheq_trab] = trabajador
 
-# TRABAJADOR NO VINCULADO
+    # TRABAJADOR NO VINCULADO
 
     def insertar_trab_no_vin(self, tra):
         if self.chequear_tra_no_vin(tra.nombre) is not None:
@@ -127,7 +126,7 @@ class Empresa:
         for i in self.lista_trabajadores_vin:
             if Trabajadorvin.plan_real_cump > porciento:
                 b.append(i)
-        resultado = (c * 100)/a
+        resultado = (c * 100) / a
         return resultado
 
     def sumatoria_salarios(self):
