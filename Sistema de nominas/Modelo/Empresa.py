@@ -9,6 +9,7 @@ class Empresa:
         self.__lista_trabajadores_vin = []
         self.__lista_trabajadores_no_vin = []
         self.__lista_trabajadores = []
+        self.__id = 0
 
     @property
     def lista_trabajadores(self):
