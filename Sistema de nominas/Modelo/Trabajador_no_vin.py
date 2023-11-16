@@ -56,3 +56,7 @@ class TrabajadorNoVin(Trabajador):
 
         salario = int((self.horas_tabajadas * 12.5 + b - (5 * self.llegadas_tardes)) + a)
         return salario
+
+    def string_variado(self):
+        return "nombre: {}\nedad: \nsexo: {}\nnivel profesional: {}\nresponsabilidad: {}\ndepartamento: {}".format(
+            self.nombre, self.edad, self.sexo, self.nivel_pro, self.responsabilidad, self.dept)
