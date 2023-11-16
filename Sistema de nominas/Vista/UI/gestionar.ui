@@ -32,7 +32,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <attribute name="title">
@@ -398,6 +398,9 @@ border-radius:5px;</string>
                     <property name="styleSheet">
                      <string notr="true">background-color: rgb(255, 255, 255);</string>
                     </property>
+                    <property name="maximum">
+                     <number>100</number>
+                    </property>
                    </widget>
                   </item>
                  </layout>
@@ -421,6 +424,9 @@ border-radius:5px;</string>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                    </property>
+                    <property name="maximum">
+                     <number>100</number>
                     </property>
                    </widget>
                   </item>
