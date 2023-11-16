@@ -8,14 +8,13 @@ class Trabajador:
         cls._atri_identif += 1
         return super().__new__(cls)
 
-    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro, es_vin):
+    def __init__(self, nombre, edad, sexo, fecha_naci, nivel_pro):
         self.identificador = self._atri_identif
         self.__nombre = nombre
         self.__edad = edad
         self.__sexo = sexo
         self.__fecha_naci = fecha_naci
         self.__nivel_pro = nivel_pro
-        self.__es_vin = es_vin
 
     @property
     def nombre(self):
@@ -58,14 +57,6 @@ class Trabajador:
     def nivel_pro(self, value):
         self.__nivel_pro = value
 
-    @property
-    def es_vin(self):
-        return self.__es_vin
-
-    @es_vin.setter
-    def es_vin(self, value):
-        self.__es_vin = value
-
     def es_nombre(self, nombre):
         return self.__nombre == nombre
 
@@ -73,8 +64,8 @@ class Trabajador:
         return self.nombre
 
     def string_variado(self):
-        return "nombre: {}\nedad: \nsexo:{}\nnivel profesional: {}\nes vinculado: {}".format(
-            self.nombre, self.edad, self.sexo, self.nivel_pro, self.es_vin)
+        return "nombre: {}\nedad: \nsexo:{}\nnivel profesional: {}".format(
+            self.nombre, self.edad, self.sexo, self.nivel_pro)
 
     def calcular_salario(self):
         pass
