@@ -64,8 +64,7 @@ class Trabajador:
         return self.nombre
 
     def string_variado(self):
-        return "nombre: {}\nedad: \nsexo:{}\nnivel profesional: {}".format(
-            self.nombre, self.edad, self.sexo, self.nivel_pro)
+        pass
 
     def calcular_salario(self):
         pass
