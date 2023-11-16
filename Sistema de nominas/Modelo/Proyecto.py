@@ -70,5 +70,5 @@ class Proyecto:
     def pciento_culm(self, value):
         self.__pciento_culm = value
 
-    def es_nom_pro(self, nombre):
-        return self.nom_proy == nombre
+    def es_id_pro(self, ident):
+        return self._atrib_identific == ident
