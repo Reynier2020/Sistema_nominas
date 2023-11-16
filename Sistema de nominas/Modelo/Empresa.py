@@ -38,16 +38,16 @@ class Empresa:
             if self.lista_trabajadores_vin[i].Trabajador.obtener_id(ident):
                 return i
 
-    def eliminar_trabajador_vin(self, nombre):
-        if self.chequear_trabajador_vin_x_nom(nombre) is None:
+    def eliminar_trabajador_vin(self, ident):
+        if self.chequear_trabajador_vin_x_id(ident) is None:
             raise Exception("El trabajador no existe")
-        self.lista_trabajadores_vin.remove(self.chequear_trabajador_vin_x_nom(nombre))
+        self.lista_trabajadores_vin.remove(self.chequear_trabajador_vin_x_id(ident))
 
-    def actualizar_trabjador_vin(self, nom_ant, trabajador):
-        cheq_trab = self.chequear_trabajador_vin_x_nom(nom_ant)
+    def actualizar_trabjador_vin(self, id_ant, trabajador):
+        cheq_trab = self.chequear_trabajador_vin_x_id(id_ant)
         if cheq_trab is None:
             raise Exception("El trabajador no existe")
-        cheq_nue = self.chequear_trabajador_vin_x_nom(trabajador.nombre)
+        cheq_nue = self.chequear_trabajador_vin_x_id(trabajador.identificador)
         if (cheq_nue is not None) and (cheq_nue != cheq_trab):
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_vin[cheq_trab] = trabajador
@@ -59,21 +59,21 @@ class Empresa:
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_no_vin.append(tra)
 
-    def chequear_tra_no_vin(self, nombre):
+    def chequear_tra_no_vin(self, ident):
         for i in self.lista_trabajadores_no_vin:
-            if self.lista_trabajadores_no_vin[i].Trabajador.es_nombre(nombre):
+            if self.lista_trabajadores_no_vin[i].Trabajador.obtener_id(ident):
                 return i
 
-    def eliminar_no_vin(self, nombre):
-        if self.chequear_tra_no_vin(nombre) is None:
+    def eliminar_no_vin(self, ident):
+        if self.chequear_tra_no_vin(ident) is None:
             raise Exception("El trabajador no existe")
-        self.lista_trabajadores_no_vin.remove(self.chequear_tra_no_vin(nombre))
+        self.lista_trabajadores_no_vin.remove(self.chequear_tra_no_vin(ident))
 
-    def actualizar_trabjador_no_vin(self, nom_ant, trabajador):
-        cheq_trab = self.chequear_tra_no_vin(nom_ant)
+    def actualizar_trabjador_no_vin(self, id_ant, trabajador):
+        cheq_trab = self.chequear_tra_no_vin(id_ant)
         if cheq_trab is None:
             raise Exception("El trabajador no existe")
-        cheq_nue = self.chequear_tra_no_vin(trabajador.nombre)
+        cheq_nue = self.chequear_tra_no_vin(trabajador.identificador)
         if (cheq_nue is not None) and (cheq_nue != cheq_trab):
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_no_vin[cheq_trab] = trabajador
