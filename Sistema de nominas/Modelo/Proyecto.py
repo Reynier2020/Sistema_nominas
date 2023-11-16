@@ -2,7 +2,14 @@ import datetime
 
 
 class Proyecto:
+    _atrib_identific = 0
+
+    def __new__(cls, *args, **kwargs):
+        cls._atrib_identific += 1
+        return super().__new__(cls)
+
     def __init__(self, nom_proy, cliente, costo, fecha_ini, fecha_culm, pciento_culm):
+        self.identificador_pro = self._atrib_identific
         self.__nom_proy = nom_proy
         self.__cliente = cliente
         self.__costo = costo
