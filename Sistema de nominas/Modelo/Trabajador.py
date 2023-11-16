@@ -78,3 +78,6 @@ class Trabajador:
 
     def calcular_salario(self):
         pass
+
+    def obtener_id(self, ident):
+        return self.identificador == ident

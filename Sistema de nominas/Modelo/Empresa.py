@@ -29,13 +29,13 @@ class Empresa:
     # TRABAJADOR_VINCULADO
 
     def insertar_trabajador_vin(self, trabajador):
-        if self.chequear_trabajador_vin_x_nom(trabajador.nombre) is not None:
+        if self.chequear_trabajador_vin_x_id(trabajador.identificador) is not None:
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_vin.append(trabajador)
 
-    def chequear_trabajador_vin_x_nom(self, nombre):
+    def chequear_trabajador_vin_x_id(self, ident):
         for i in range(len(self.lista_trabajadores_vin)):
-            if self.lista_trabajadores_vin[i].Trabajador.es_nombre(nombre):
+            if self.lista_trabajadores_vin[i].Trabajador.obtener_id(ident):
                 return i
 
     def eliminar_trabajador_vin(self, nombre):
