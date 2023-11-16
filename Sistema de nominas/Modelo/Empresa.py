@@ -54,10 +54,10 @@ class Empresa:
 
     # TRABAJADOR NO VINCULADO
 
-    def insertar_trab_no_vin(self, tra):
-        if self.chequear_tra_no_vin(tra.nombre) is not None:
+    def insertar_trab_no_vin(self, trabajador):
+        if self.chequear_tra_no_vin(trabajador.identificador) is not None:
             raise Exception("El trabajador ya existe")
-        self.lista_trabajadores_no_vin.append(tra)
+        self.lista_trabajadores_no_vin.append(trabajador)
 
     def chequear_tra_no_vin(self, ident):
         for i in self.lista_trabajadores_no_vin:
@@ -78,21 +78,21 @@ class Empresa:
             raise Exception("El trabajador ya existe")
         self.lista_trabajadores_no_vin[cheq_trab] = trabajador
 
-    def chequear_proyecto(self, nombre):
+    def chequear_proyecto(self, ident):
         for i in range(len(self.__lista_proyectos)):
-            if self.__lista_proyectos[i].Proyecto.es_nom_pro(nombre):
+            if self.__lista_proyectos[i].Proyecto.es_id_pro(ident):
                 return i
 
-    def inertar_proyecto(self, pro):
-        cheq_pro = self.chequear_proyecto(pro.nombre)
+    def inertar_proyecto(self, proyecto):
+        cheq_pro = self.chequear_proyecto(proyecto.es_id_pro)
         if cheq_pro is not None:
             raise Exception("El pryecto ya existe")
-        self.lista_proyectos.append(pro)
+        self.lista_proyectos.append(proyecto)
 
-    def eliminar_proyecto(self, nombre):
-        if self.chequear_proyecto(nombre) is None:
+    def eliminar_proyecto(self, ident):
+        if self.chequear_proyecto(ident) is None:
             raise Exception("El proyecto no existe")
-        self.lista_proyectos.remove(self.chequear_proyecto(nombre))
+        self.lista_proyectos.remove(self.chequear_proyecto(ident))
 
     def listar_proyecto(self):
         for i in self.lista_proyectos:
@@ -106,13 +106,14 @@ class Empresa:
     def ordenar_proyectos(self):
         sorted(self.lista_proyectos, key=attrgetter('costo', 'pciento_culm'), reverse=True)
 
-    def despedir_trabajador(self, nombre):
-        a = self.chequear_trabajador(nombre)
+    def despedir_trabajador(self, ident):
+        a = self.chequear_trabajador(ident)
         if a is None:
             raise Exception("El trabajador no existe")
-        return "El trabajador {} con un salario de {} ha sido despedido".format(
-            Trabajador.string_variado(a), Trabajador.calcular_salario(a)
-        )
+        else:
+            return "El trabajador {} con un salario de {} ha sido despedido".format(
+                Trabajador.string_variado(a), Trabajador.calcular_salario(a)
+            )
 
     def eliminar_trabajador(self, nombre):
         if self.chequear_trabajador(nombre) is None:
