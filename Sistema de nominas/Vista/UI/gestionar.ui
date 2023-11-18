@@ -31,6 +31,9 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -39,6 +42,18 @@
        <string>Gestion de vinculados</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QFrame" name="frame">
          <property name="styleSheet">
@@ -89,7 +104,7 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -142,60 +157,23 @@ border-radius:5px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_sexo">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+              <widget class="QGroupBox" name="groupBox_sexo">
+               <property name="title">
+                <string>Sexo:</string>
                </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_2">
-                <property name="spacing">
-                 <number>9</number>
-                </property>
-                <property name="leftMargin">
-                 <number>9</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
                 <item>
-                 <widget class="QLabel" name="label_sexo">
+                 <widget class="QRadioButton" name="radioButton_Femenino">
                   <property name="text">
-                   <string>Sexo:</string>
+                   <string>Femenino</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_9">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                 <widget class="QRadioButton" name="radioButton_masculino">
+                  <property name="text">
+                   <string>Masculino</string>
                   </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_6">
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_Femenino">
-                     <property name="text">
-                      <string>Femenino</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_masculino">
-                     <property name="text">
-                      <string>Masculino</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
                  </widget>
                 </item>
                </layout>
@@ -477,7 +455,7 @@ border-radius:5px;
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>3</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -617,6 +595,21 @@ border-radius:5px;</string>
        <string>Gestion de no vincuados</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_11">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QFrame" name="frame_4">
          <property name="styleSheet">
@@ -667,7 +660,7 @@ border-radius:5px;</string>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_7">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -719,60 +712,23 @@ border-radius:5px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_sexo_2">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+              <widget class="QGroupBox" name="groupBox_sexo_no">
+               <property name="title">
+                <string>Sexo:</string>
                </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_8">
-                <property name="spacing">
-                 <number>9</number>
-                </property>
-                <property name="leftMargin">
-                 <number>9</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
                 <item>
-                 <widget class="QLabel" name="label_sexo_2">
+                 <widget class="QRadioButton" name="radioButton_Femenino_2">
                   <property name="text">
-                   <string>Sexo:</string>
+                   <string>Femenino</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_10">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                 <widget class="QRadioButton" name="radioButton_masculino_2">
+                  <property name="text">
+                   <string>Masculino</string>
                   </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_14">
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_Femenino_2">
-                     <property name="text">
-                      <string>Femenino</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_masculino_2">
-                     <property name="text">
-                      <string>Masculino</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
                  </widget>
                 </item>
                </layout>
@@ -1059,7 +1015,7 @@ border-radius:5px;
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>3</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -1189,6 +1145,18 @@ border-radius:5px;</string>
        <string>Gestion de Proyectos</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_16">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QFrame" name="frame_12">
          <property name="styleSheet">
@@ -1527,7 +1495,7 @@ border-radius:5px;</string>
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>3</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -1720,6 +1688,46 @@ border-radius:5px;</string>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_nombre_vin</tabstop>
+  <tabstop>radioButton_Femenino</tabstop>
+  <tabstop>radioButton_masculino</tabstop>
+  <tabstop>spinBox_edad</tabstop>
+  <tabstop>dateEdit_fecha_naci</tabstop>
+  <tabstop>comboBox_niv_pro</tabstop>
+  <tabstop>comboBox_rol</tabstop>
+  <tabstop>spinBox_plan_cump</tabstop>
+  <tabstop>spinBox_plan_real</tabstop>
+  <tabstop>pushButton_insertar_vin</tabstop>
+  <tabstop>pushButton_actualizar_vin</tabstop>
+  <tabstop>pushButton_eliminar_vin</tabstop>
+  <tabstop>tableWidget_vin</tabstop>
+  <tabstop>lineEdit_nombre_n_vin</tabstop>
+  <tabstop>radioButton_Femenino_2</tabstop>
+  <tabstop>radioButton_masculino_2</tabstop>
+  <tabstop>spinBox_edad_2</tabstop>
+  <tabstop>dateEdit_fecha_naci_2</tabstop>
+  <tabstop>comboBox_niv_pro_2</tabstop>
+  <tabstop>comboBox_rol_2</tabstop>
+  <tabstop>spinBox_plan_cump_2</tabstop>
+  <tabstop>spinBox_plan_real_2</tabstop>
+  <tabstop>pushButton_insertar_n_vin</tabstop>
+  <tabstop>pushButton_actualizar_n_vin</tabstop>
+  <tabstop>pushButton_eliminar_n_vin</tabstop>
+  <tabstop>tableWidget_no_vin</tabstop>
+  <tabstop>lineEdit_nombre_pory</tabstop>
+  <tabstop>lineEdit_cliente</tabstop>
+  <tabstop>doubleSpinBox_costo</tabstop>
+  <tabstop>dateEdit_fecha_ini</tabstop>
+  <tabstop>dateEdit_fecha_naci_4</tabstop>
+  <tabstop>doubleSpinBox_porci_culm</tabstop>
+  <tabstop>pushButton_insertar_proy</tabstop>
+  <tabstop>pushButton_actualizar_proy</tabstop>
+  <tabstop>pushButton_eliminar_proy</tabstop>
+  <tabstop>tableWidget_proy</tabstop>
+  <tabstop>pushButton_aceptar</tabstop>
+  <tabstop>pushButton_cancelar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
