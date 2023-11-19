@@ -1,7 +1,7 @@
 import sys
 import MySQLdb
 
-conn = MySQLdb.connect(host="localhost", user="root", password="r3yni3r2020@gmail.com", base_datos="sistema_nominas")
+conn = MySQLdb.connect(host="localhost", user="root", password="r3yni3r2020@gmail.com", db="sistema_nominas")
 cursor = conn.cursor()
 
 try:
