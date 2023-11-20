@@ -16,7 +16,7 @@ while k.upper() == "SI":
         """ % (pid, pnombre, pcantid, precio))
         conn.commit()
         k = input("quieres insertar mas producto? si/no : ")
-    except:
+    except MySQLdb.Error:
         conn.rollback()
         sys.exit(1)
 cursor.close()
