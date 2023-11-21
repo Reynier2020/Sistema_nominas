@@ -13,7 +13,7 @@ while k.upper() == "SI":
     else:
         print("los datos del id %d son los siguientes" % p)
         print("nombre: %s, cantidad: %d, precio: %f" % (row[1], row[2], row[3]))
-        a = str(input("desea elimnar el producto con id %d ?" % p))
+        a = str(input("desea elimnar el producto con id %d ? : " % p))
         if a.upper() == "SI":
             cursor.execute("""
             delete from productos where id = %d
