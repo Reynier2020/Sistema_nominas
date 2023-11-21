@@ -8,7 +8,6 @@ while k.upper() == "SI":
     select * from productos where id = %d
     """ % p)
     row = cursor.fetchone()
-
     if row is None:
         print("no se han encontrado datos asignados al id %d" % p)
     else:
