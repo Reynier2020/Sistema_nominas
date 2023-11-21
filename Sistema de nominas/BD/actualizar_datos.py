@@ -2,12 +2,13 @@ import MySQLdb
 conn = MySQLdb.connect(host="localhost", user="root", password="r3yni3r2020@gmail.com", db="sistema_nominas")
 cursor = conn.cursor()
 k = "SI"
-p = int(input("escriba una ID: "))
-cursor.execute("""
-select * from productos where id = %d
-""" % p)
-row = cursor.fetchone()
 while k.upper() == "SI":
+    p = int(input("escriba una ID: "))
+    cursor.execute("""
+    select * from productos where id = %d
+    """ % p)
+    row = cursor.fetchone()
+
     if row is None:
         print("no se han encontrado datos asignados al id %d" % p)
     else:
