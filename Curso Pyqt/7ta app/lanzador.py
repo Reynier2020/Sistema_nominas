@@ -20,4 +20,15 @@ class Lanzador(QtWidgets.QDialog):
         self.ui.setupUi(self)
         self.model = QtSql.QSqlTableModel(self)
         self.model.setTable("productos")
-        self.model.setEditStrategy(QtSql.QSqlTableModel)
+        self.model.setEditStrategy(QtSql.QSqlTableModel.EditStrategy.OnManualSubmit)
+        self.model.select()
+        self.ui.tableView.setModel(self.model)
+
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    if not crear_coneccion():
+        sys.exit(1)
+    lan = Lanzador()
+    lan.show()
+    sys.exit(app.exec())
