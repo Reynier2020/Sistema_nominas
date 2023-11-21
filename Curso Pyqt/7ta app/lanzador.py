@@ -4,11 +4,11 @@ from PyQt5 import QtSql
 
 
 def crear_coneccion():
-    db = QtSql.QSqlDatabase.addDatabase('QMYSQL')
-    db.setHostName('localhost')
-    db.setUserName('root')
-    db.setPassword('r3yni3r2020@gmail.com')
-    db.setDatabaseName('sistema_nominas')
+    db = QtSql.QSqlDatabase.addDatabase("QMySqlDriver")
+    db.setHostName("localhost")
+    db.setUserName("root")
+    db.setPassword("r3yni3r2020@gmail.com")
+    db.setDatabaseName("sistema_nominas")
     db.open()
     print(db.lastError().text())
 
