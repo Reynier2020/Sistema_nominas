@@ -4,13 +4,19 @@ from PyQt5 import QtSql
 
 
 def crear_coneccion():
-    db = QtSql.QSqlDatabase.addDatabase("QMySqlDriver")
-    db.setHostName("localhost")
-    db.setUserName("root")
-    db.setPassword("r3yni3r2020@gmail.com")
-    db.setDatabaseName("sistema_nominas")
+    db = QtSql.QSqlDatabase.addDatabase("Mysql")
+    db.setHostName('localhost')
+    db.setDatabaseName('sistema_nominas')
+    db.setUserName('root')
+    db.setPassword('r3yni3r2020@gmail.com')
     db.open()
     print(db.lastError().text())
+    if db.open():
+        print("conexion correcta")
+        return True
+    else:
+        print("conexion incorrecta")
+        return False
 
 
 class Lanzador(QtWidgets.QDialog):
