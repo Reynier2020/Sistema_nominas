@@ -4,12 +4,14 @@ from PyQt5 import QtSql
 
 
 def crear_coneccion():
-    db = QtSql.QSqlDatabase.addDatabase("Mysql")
+    db = QtSql.QSqlDatabase.addDatabase('QMYSQL3')
     db.setHostName('localhost')
     db.setDatabaseName('sistema_nominas')
     db.setUserName('root')
     db.setPassword('r3yni3r2020@gmail.com')
+    print(db.drivers())
     db.open()
+
     print(db.lastError().text())
     if db.open():
         print("conexion correcta")
