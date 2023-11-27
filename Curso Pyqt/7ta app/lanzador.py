@@ -4,11 +4,12 @@ from PyQt5 import QtSql
 
 
 def crear_coneccion():
-    db = QtSql.QSqlDatabase.addDatabase('QPSQL')
+    db = QtSql.QSqlDatabase.addDatabase('QPSQL7')
     db.setHostName('localhost')
     db.setDatabaseName('sistema_nominas')
-    db.setUserName('postgres')
+    db.setUserName('root')
     db.setPassword('r3yni3r2020@gmail.com')
+    db.setPort(5432)
     print(db.drivers())
     db.open()
 
