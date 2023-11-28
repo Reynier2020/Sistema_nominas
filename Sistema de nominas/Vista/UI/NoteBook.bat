@@ -1,0 +1,1 @@
+pyuic5 gestionar.ui -o gestionar.py

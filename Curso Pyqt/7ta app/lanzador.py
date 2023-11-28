@@ -9,7 +9,6 @@ def crear_coneccion():
     db.setDatabaseName('sistema_nominas')
     db.setUserName('root')
     db.setPassword('r3yni3r2020@gmail.com')
-    db.setPort(5432)
     print(db.drivers())
     db.open()
 
@@ -28,7 +27,7 @@ class Lanzador(QtWidgets.QDialog):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
         self.model = QtSql.QSqlTableModel(self)
-        self.model.setTable("productos")
+        self.model.setTable('productos')
         self.model.setEditStrategy(QtSql.QSqlTableModel.EditStrategy.OnManualSubmit)
         self.model.select()
         self.ui.tableView.setModel(self.model)
