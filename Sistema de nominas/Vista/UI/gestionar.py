@@ -17,11 +17,25 @@ class Ui_gestionar_ui(object):
         gestionar_ui.resize(600, 600)
         gestionar_ui.setMinimumSize(QtCore.QSize(600, 600))
         gestionar_ui.setMaximumSize(QtCore.QSize(600, 600))
-        gestionar_ui.setStyleSheet("background-color: rgb(100, 171, 164);")
+        gestionar_ui.setStyleSheet("background-color: rgb(100, 171, 164);\n"
+"\n"
+"")
         self.verticalLayout = QtWidgets.QVBoxLayout(gestionar_ui)
         self.verticalLayout.setObjectName("verticalLayout")
         self.tabWidget = QtWidgets.QTabWidget(gestionar_ui)
         self.tabWidget.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.tabWidget.setStyleSheet("QLineEdit{\n"
+"border:1px solid #167;}\n"
+"QPushButton{\n"
+"border:1px solid #167;}\n"
+"QComboBox{\n"
+"border:1px solid #167;}\n"
+"QSpinBox{\n"
+"border:1px solid #167;}\n"
+"QDoubleSpinBox{\n"
+"border:1px solid #167;}\n"
+"QDateEdit{\n"
+"border:1px solid #167;}")
         self.tabWidget.setObjectName("tabWidget")
         self.tab_vinculados = QtWidgets.QWidget()
         self.tab_vinculados.setStyleSheet("")
@@ -534,7 +548,8 @@ class Ui_gestionar_ui(object):
         self.lineEdit_nombre_pory = QtWidgets.QLineEdit(self.frame_nombre_3)
         self.lineEdit_nombre_pory.setEnabled(True)
         self.lineEdit_nombre_pory.setMinimumSize(QtCore.QSize(213, 20))
-        self.lineEdit_nombre_pory.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.lineEdit_nombre_pory.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"")
         self.lineEdit_nombre_pory.setObjectName("lineEdit_nombre_pory")
         self.horizontalLayout_23.addWidget(self.lineEdit_nombre_pory)
         self.verticalLayout_12.addWidget(self.frame_nombre_3)
@@ -689,6 +704,9 @@ class Ui_gestionar_ui(object):
         self.frame_5 = QtWidgets.QFrame(gestionar_ui)
         self.frame_5.setMinimumSize(QtCore.QSize(0, 50))
         self.frame_5.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.frame_5.setStyleSheet("QPushButton{\n"
+"border:1px solid #167;}\n"
+"")
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
@@ -711,7 +729,7 @@ class Ui_gestionar_ui(object):
         self.verticalLayout.addWidget(self.frame_5)
 
         self.retranslateUi(gestionar_ui)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(gestionar_ui)
         gestionar_ui.setTabOrder(self.lineEdit_nombre_vin, self.radioButton_Femenino)
         gestionar_ui.setTabOrder(self.radioButton_Femenino, self.radioButton_masculino)
