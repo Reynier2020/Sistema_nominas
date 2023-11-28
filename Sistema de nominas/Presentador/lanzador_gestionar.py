@@ -15,5 +15,3 @@ if __name__ == "__main__":
     lanzador_gest.show()
     sys.exit(app.exec())
 
-
-
