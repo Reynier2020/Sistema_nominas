@@ -4,7 +4,7 @@ from PyQt5 import QtSql
 
 
 def crear_coneccion():
-    db = QtSql.QSqlDatabase.addDatabase('QPSQL7')
+    db = QtSql.QSqlDatabase.addDatabase('QPSQL')
     db.setHostName('localhost')
     db.setDatabaseName('sistema_nominas')
     db.setUserName('root')
