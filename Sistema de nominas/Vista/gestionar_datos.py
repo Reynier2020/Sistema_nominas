@@ -3,7 +3,6 @@ from PyQt5 import QtWidgets
 import MySQLdb
 
 
-
 class GestionarDatos(QtWidgets.QWidget):
     def __init__(self, presentador):
         self.__presentador = presentador
