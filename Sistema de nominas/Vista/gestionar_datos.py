@@ -82,3 +82,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.comboBox_rol.setCurrentIndex(0)
         self.ui.spinBox_plan_cump.clear()
         self.ui.spinBox_plan_real.clear()
+
+    def extraer_id(self):
+        row = self.ui.tableWidget_vin.currentRow()
+        return row[0]
