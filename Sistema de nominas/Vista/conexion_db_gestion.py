@@ -34,3 +34,11 @@ class RegistroDatos:
         cursor.close()
         return a
 
+    def act_trab_vin(self,  nombre, sexo, edad, fech_naci, nivel_pro, proy_vin, rol_en_pro, plan_cump, plan_real, ide):
+        curs = self.conn.cursor()
+        sql = """update trabajadores_vin set nombre = '{}', sexo = '{}', edad = '{}',
+         fech_naci = '{}', nivel_pro = '{}', proy_vin = '{}', rol_en_pro '{}', plan_cump = '{}', plan_real = '{}'
+          where id = '{}' """.format(nombre, sexo, edad, fech_naci, nivel_pro, proy_vin,
+                                     rol_en_pro, plan_cump, plan_real, ide)
+
+
