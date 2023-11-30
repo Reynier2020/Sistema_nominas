@@ -47,3 +47,11 @@ class RegistroDatos:
         self.conn.commit()
         curs.close()
         return a
+
+    def buscar_pro(self):
+        cursor = self.conn.cursor()
+        sql = """select nombre from proyectos"""
+        cursor.execute(sql)
+        list_pro = cursor.fetchall()
+        cursor.close()
+        return list_pro
