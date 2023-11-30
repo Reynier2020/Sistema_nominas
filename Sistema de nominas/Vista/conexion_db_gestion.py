@@ -40,5 +40,8 @@ class RegistroDatos:
          fech_naci = '{}', nivel_pro = '{}', proy_vin = '{}', rol_en_pro '{}', plan_cump = '{}', plan_real = '{}'
           where id = '{}' """.format(nombre, sexo, edad, fech_naci, nivel_pro, proy_vin,
                                      rol_en_pro, plan_cump, plan_real, ide)
-
-
+        curs.execute(sql)
+        a = curs.rowcount
+        self.conn.commit()
+        curs.close()
+        return a
