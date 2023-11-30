@@ -338,6 +338,12 @@ border-radius:5px;</string>
              </item>
              <item>
               <widget class="QFrame" name="frame_rol">
+               <property name="minimumSize">
+                <size>
+                 <width>284</width>
+                 <height>86</height>
+                </size>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -355,7 +361,30 @@ border-radius:5px;</string>
                    </widget>
                   </item>
                   <item>
+                   <widget class="QPushButton" name="pushButton_act_proy_list">
+                    <property name="minimumSize">
+                     <size>
+                      <width>25</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../iconos/refresh.ico</normaloff>../iconos/refresh.ico</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QComboBox" name="comboBox_pro_vin">
+                    <property name="minimumSize">
+                     <size>
+                      <width>129</width>
+                      <height>18</height>
+                     </size>
+                    </property>
                     <property name="styleSheet">
                      <string notr="true">background-color: rgb(255, 255, 255);</string>
                     </property>
