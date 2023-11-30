@@ -51,7 +51,7 @@ QDateEdit{
 border:1px solid #167;}</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
@@ -313,17 +313,17 @@ border-radius:5px;</string>
                   </property>
                   <item>
                    <property name="text">
-                    <string>Profesional</string>
+                    <string>profesional</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>tecnico Medio</string>
+                    <string>tecnico medio</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Obrero Calificado</string>
+                    <string>obrero calificado</string>
                    </property>
                   </item>
                  </widget>
@@ -378,6 +378,31 @@ border-radius:5px;</string>
                     <property name="styleSheet">
                      <string notr="true">background-color: rgb(255, 255, 255);</string>
                     </property>
+                    <item>
+                     <property name="text">
+                      <string>director</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>sub-director</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>gerente</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>colaboradores</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>marketing</string>
+                     </property>
+                    </item>
                    </widget>
                   </item>
                  </layout>
@@ -589,6 +614,11 @@ border-radius:5px;</string>
          </property>
          <column>
           <property name="text">
+           <string>ID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
            <string>Nombre</string>
           </property>
          </column>
@@ -630,6 +660,11 @@ border-radius:5px;</string>
          <column>
           <property name="text">
            <string>Plan real</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Salario</string>
           </property>
          </column>
         </widget>
@@ -1144,6 +1179,16 @@ border-radius:5px;</string>
          </property>
          <column>
           <property name="text">
+           <string>ID</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
            <string>Nombre</string>
           </property>
          </column>
@@ -1180,6 +1225,11 @@ border-radius:5px;</string>
          <column>
           <property name="text">
            <string>Horas trabajadas</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Salario</string>
           </property>
          </column>
         </widget>
@@ -1623,6 +1673,11 @@ border-radius:5px;</string>
           <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:5px;</string>
          </property>
+         <column>
+          <property name="text">
+           <string>ID</string>
+          </property>
+         </column>
          <column>
           <property name="text">
            <string>Nombre</string>

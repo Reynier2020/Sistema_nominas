@@ -20,7 +20,9 @@ class RegistroDatos:
 
     def buscar_trab_vin(self):
         cur = self.conn.cursor()
-        sql = """select * from trabajadores_vin"""
+        sql = """select t.id, t.nombre,t.sexo, t.edad, t.fecha_naci,
+                 t.nivel_pro,p.nombre, t.rol_proyecto, t.plan_cump,
+                 t.plan_real from trabajadores_vin t left join proyectos p on p.id = t.proy_vin"""
         cur.execute(sql)
         registro = cur.fetchall()
         return registro
