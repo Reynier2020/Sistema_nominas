@@ -63,6 +63,14 @@ class GestionarDatos(QtWidgets.QWidget):
         for row in datos:
             self.ui.comboBox_pro_vin.addItem(row[0])
 
+    def comp_trab_vin(self):
+        datos = self.datos_total.buscar_trab_vin()
+        for row in datos:
+            if row[1] == self.ui.lineEdit_nombre_vin.text():
+                return True
+            else:
+                return False
+
     def insertar_trab_vin(self):
         nombre = self.ui.lineEdit_nombre_vin.text()
         sexo = self.comprobar_sex()
@@ -73,7 +81,8 @@ class GestionarDatos(QtWidgets.QWidget):
         rol_pro = self.ui.comboBox_rol.currentText()
         plan_cump = self.ui.spinBox_plan_cump.value()
         plan_real = self.ui.spinBox_plan_real.value()
-
+        if self.comp_trab_vin() is True:
+            raise Exception
         self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro, pro_vin, rol_pro, plan_cump, plan_real)
         self.ui.lineEdit_nombre_vin.clear()
         self.ui.spinBox_edad.clear()

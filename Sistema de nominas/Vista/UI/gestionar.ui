@@ -26,9 +26,7 @@
    <string>Gestiones</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(100, 171, 164);
-
-</string>
+   <string notr="true">background-color: rgb(100, 171, 164);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -51,7 +49,7 @@ QDateEdit{
 border:1px solid #167;}</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
@@ -115,7 +113,7 @@ border:1px solid #167;}</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(236, 236, 236);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -275,7 +273,7 @@ border-radius:5px;</string>
           <item>
            <widget class="QFrame" name="frame_3">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(236, 236, 236);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -733,7 +731,8 @@ border-radius:5px;</string>
        <item>
         <widget class="QFrame" name="frame_4">
          <property name="styleSheet">
-          <string notr="true">border-radius:5px;</string>
+          <string notr="true">border-radius:5px;
+</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -772,7 +771,7 @@ border-radius:5px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(236, 236, 236);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -930,7 +929,7 @@ border-radius:5px;</string>
           <item>
            <widget class="QFrame" name="frame_7">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(236, 236, 236);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -1334,7 +1333,7 @@ border-radius:5px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(236, 236, 236);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -1508,7 +1507,7 @@ border-radius:5px;</string>
           <item>
            <widget class="QFrame" name="frame_15">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(236, 236, 236);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
