@@ -82,15 +82,17 @@ class GestionarDatos(QtWidgets.QWidget):
         plan_cump = self.ui.spinBox_plan_cump.value()
         plan_real = self.ui.spinBox_plan_real.value()
         if self.comp_trab_vin() is True:
-            raise Exception
-        self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro, pro_vin, rol_pro, plan_cump, plan_real)
-        self.ui.lineEdit_nombre_vin.clear()
-        self.ui.spinBox_edad.clear()
-        self.ui.dateEdit_fecha_naci.clear()
-        self.ui.comboBox_niv_pro.setCurrentIndex(0)
-        self.ui.comboBox_rol.setCurrentIndex(0)
-        self.ui.spinBox_plan_cump.clear()
-        self.ui.spinBox_plan_real.clear()
+            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
+        else:
+            self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
+                                          pro_vin, rol_pro, plan_cump, plan_real)
+            self.ui.lineEdit_nombre_vin.clear()
+            self.ui.spinBox_edad.clear()
+            self.ui.dateEdit_fecha_naci.clear()
+            self.ui.comboBox_niv_pro.setCurrentIndex(0)
+            self.ui.comboBox_rol.setCurrentIndex(0)
+            self.ui.spinBox_plan_cump.clear()
+            self.ui.spinBox_plan_real.clear()
 
     def extraer_id(self):
         row = self.ui.tableWidget_vin.currentRow()
