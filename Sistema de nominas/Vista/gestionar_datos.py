@@ -12,6 +12,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.datos_total = RegistroDatos()
 
 #                VINCULADOS
+        self.mostrar_trab_vin()
         self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
         self.ui.pushButton_eliminar_vin.clicked.connect(self.borrar_vin)
         self.ui.pushButton_actualizar_vin.clicked.connect(self.actualizar_vin)
@@ -128,6 +129,7 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.comboBox_rol.setCurrentIndex(0)
             self.ui.spinBox_plan_cump.clear()
             self.ui.spinBox_plan_real.clear()
+            self.mostrar_trab_vin()
 
     def extraer_id(self):
         row = self.ui.tableWidget_vin.currentRow()
@@ -154,6 +156,7 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.comboBox_rol.setCurrentIndex(0)
             self.ui.spinBox_plan_cump.clear()
             self.ui.spinBox_plan_real.clear()
+            self.mostrar_trab_vin()
         else:
             raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'No se ha podido actualizar'))
 
