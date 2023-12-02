@@ -11,10 +11,10 @@ class RegistroDatos:
     def insertar_vin(self, nombre, sexo, edad, fech_naci, nivel_pro, proy_vin, rol_en_pro, plan_cump, plan_real):
         cursor = self.conn.cursor()
         try:
-            sql = """insert into trabajadores_vin(nombre,sexo,edad,
-             fech_naci, nivel_pro, proy_vin, rol_en_pro, plan_cump,plan_real)
-            values('{}','{}','{}','{}','{}','{}','{}','{}','{}')""".format(nombre, sexo, edad, fech_naci, nivel_pro,
-                                                                           proy_vin, rol_en_pro, plan_cump, plan_real)
+            sql = """insert into trabajadores_vin(nombre, edad, sexo, fecha_naci, nivel_pro,
+             proy_vin, rol_proyecto, plan_cump, plan_real)
+            values('{}',{},'{}','{}','{}','{}','{}',{},{})""".format(nombre, edad, sexo, fech_naci, nivel_pro,
+                                                                     proy_vin, rol_en_pro, plan_cump, plan_real)
             cursor.execute(sql)
         except MySQLdb.Error:
             self.conn.rollback()

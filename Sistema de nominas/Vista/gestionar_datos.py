@@ -12,6 +12,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.datos_total = RegistroDatos()
 
 #                VINCULADOS
+        self.datos_total.insertar_vin('reynier', 'M', 20, '2003-1-7', 'profesional', None, 'director', 100, 50)
         self.mostrar_trab_vin()
         self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
         self.ui.pushButton_eliminar_vin.clicked.connect(self.borrar_vin)
@@ -48,16 +49,16 @@ class GestionarDatos(QtWidgets.QWidget):
         else:
             a = 40
 
-        if self.ui.spinBox_plan_real.text() > 100:
+        if self.ui.spinBox_plan_real.value() > 100:
             b = 25.0
-        elif (self.ui.spinBox_plan_real.text() <= 100) and (self.ui.spinBox_plan_real.text() >= 95):
+        elif (self.ui.spinBox_plan_real.value() <= 100) and (self.ui.spinBox_plan_real.value() >= 95):
             b = 21.5
-        elif (self.ui.spinBox_plan_real.text() <= 94) and (self.ui.spinBox_plan_real.text() >= 80):
+        elif (self.ui.spinBox_plan_real.value() <= 94) and (self.ui.spinBox_plan_real.value() >= 80):
             b = 18.5
         else:
             b = 15.0
 
-        salario = int(self.ui.spinBox_plan_real.text() * b + a)
+        salario = int(self.ui.spinBox_plan_real.value() * b + a)
         return salario
 
     def mostrar_trab_vin(self):
@@ -66,17 +67,17 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.tableWidget_vin.setRowCount(i)
         table_row = 0
         for row in datos:
-            self.ui.tableWidget_vin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row[0]))
+            self.ui.tableWidget_vin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
             self.ui.tableWidget_vin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
             self.ui.tableWidget_vin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
-            self.ui.tableWidget_vin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(row[3]))
-            self.ui.tableWidget_vin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(row[4]))
+            self.ui.tableWidget_vin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_vin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
             self.ui.tableWidget_vin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(row[5]))
             self.ui.tableWidget_vin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(row[6]))
             self.ui.tableWidget_vin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(row[7]))
-            self.ui.tableWidget_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(row[8]))
-            self.ui.tableWidget_vin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(row[9]))
-            self.ui.tableWidget_vin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(self.calcular_salario))
+            self.ui.tableWidget_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
+            self.ui.tableWidget_vin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(str(row[9])))
+            self.ui.tableWidget_vin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(str(self.calcular_salario_vin())))
             table_row += 1
 
     def comprobar_sex(self):
@@ -109,7 +110,7 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def insertar_trab_vin(self):
         nombre = self.ui.lineEdit_nombre_vin.text()
-        sexo = self.comprobar_sex()
+        sexo = self.comprobar_sex
         edad = self.ui.spinBox_edad.value()
         fecha_naci = self.ui.dateEdit_fecha_naci.text()
         nivel_pro = self.ui.comboBox_niv_pro.currentText()
@@ -118,9 +119,9 @@ class GestionarDatos(QtWidgets.QWidget):
         plan_cump = self.ui.spinBox_plan_cump.value()
         plan_real = self.ui.spinBox_plan_real.value()
         if self.comp_trab_vin is True:
-            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
+            raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
         else:
-            self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
+            self.datos_total.insertar_vin(nombre, edad, sexo, fecha_naci, nivel_pro,
                                           pro_vin, rol_pro, plan_cump, plan_real)
             self.ui.lineEdit_nombre_vin.clear()
             self.ui.spinBox_edad.clear()
