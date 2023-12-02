@@ -11,7 +11,7 @@ class GestionarDatos(QtWidgets.QWidget):
 
         self.datos_total = RegistroDatos()
 
-    def calcular_salario(self):
+    def calcular_salario_vin(self):
         if self.ui.comboBox_niv_pro.textActivated == "profesional":
             a = 80
         elif self.ui.comboBox_niv_pro.textActivated == "tecnico medio":
