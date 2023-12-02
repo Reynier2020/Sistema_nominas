@@ -12,11 +12,12 @@ class RegistroDatos:
         cursor = self.conn.cursor()
         try:
             sql = """insert into trabajadores_vin(nombre, edad, sexo, fecha_naci, nivel_pro,
-             proy_vin, rol_proyecto, plan_cump, plan_real)
-            values('{}',{},'{}','{}','{}','{}','{}',{},{})""".format(nombre, edad, sexo, fech_naci, nivel_pro,
-                                                                     proy_vin, rol_en_pro, plan_cump, plan_real)
+                proy_vin, rol_proyecto, plan_cump, plan_real)
+            values('{}',{},'{}','{}','{}',{},'{}',{},{})""".format(nombre, edad, sexo, fech_naci, nivel_pro,
+                                                               proy_vin, rol_en_pro, plan_cump, plan_real)
             cursor.execute(sql)
-        except MySQLdb.Error:
+        except Exception:
+            print(MySQLdb.MySQLError())
             self.conn.rollback()
         self.conn.commit()
         cursor.close()
@@ -73,7 +74,7 @@ class RegistroDatos:
     def buscar_pro(self):
         cursor = self.conn.cursor()
         try:
-            sql = """select nombre from proyectos"""
+            sql = """select id, nombre from proyectos"""
             cursor.execute(sql)
         except MySQLdb.Error:
             self.conn.rollback()

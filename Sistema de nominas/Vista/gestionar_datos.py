@@ -12,12 +12,13 @@ class GestionarDatos(QtWidgets.QWidget):
         self.datos_total = RegistroDatos()
 
 #                VINCULADOS
-        self.datos_total.insertar_vin('reynier', 'M', 20, '2003-1-7', 'profesional', None, 'director', 100, 50)
+    #   self.datos_total.insertar_vin('reynier', 'M', 20, '2003-1-7', 'profesional', 1, 'director', 100, 50)
         self.mostrar_trab_vin()
         self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
         self.ui.pushButton_eliminar_vin.clicked.connect(self.borrar_vin)
         self.ui.pushButton_actualizar_vin.clicked.connect(self.actualizar_vin)
         self.ui.tableWidget_vin.itemClicked.connect(self.rellenar_form_vin)
+        self.ui.pushButton_act_proy_list.clicked.connect(self.act_list_proy_vin)
 
     def rellenar_form_vin(self):
         fila = self.ui.tableWidget_vin.currentRow()
@@ -42,23 +43,23 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.spinBox_plan_real = plan_real
 
     def calcular_salario_vin(self):
-        if self.ui.comboBox_niv_pro.textActivated == "profesional":
+        if self.ui.comboBox_niv_pro.currentText() == "profesional":
             a = 80
-        elif self.ui.comboBox_niv_pro.textActivated == "tecnico medio":
+        elif self.ui.comboBox_niv_pro.currentText() == "tecnico medio":
             a = 60
         else:
             a = 40
 
-        if self.ui.spinBox_plan_real.value() > 100:
-            b = 25.0
-        elif (self.ui.spinBox_plan_real.value() <= 100) and (self.ui.spinBox_plan_real.value() >= 95):
-            b = 21.5
-        elif (self.ui.spinBox_plan_real.value() <= 94) and (self.ui.spinBox_plan_real.value() >= 80):
-            b = 18.5
+        if int(self.ui.spinBox_plan_real.value()) > 100:
+            b = self.ui.spinBox_plan_real.value() * 25.0
+        elif (int(self.ui.spinBox_plan_real.value()) <= 100) and (int(self.ui.spinBox_plan_real.value()) >= 95):
+            b = self.ui.spinBox_plan_real.value() * 21.5
+        elif (int(self.ui.spinBox_plan_real.value()) <= 94) and (int(self.ui.spinBox_plan_real.value()) >= 80):
+            b = self.ui.spinBox_plan_real.value() * 18.5
         else:
-            b = 15.0
+            b = self.ui.spinBox_plan_real.value() * 15.0
 
-        salario = int(self.ui.spinBox_plan_real.value() * b + a)
+        salario = (int(self.ui.spinBox_plan_real.value()) * b + a)
         return salario
 
     def mostrar_trab_vin(self):
@@ -98,7 +99,13 @@ class GestionarDatos(QtWidgets.QWidget):
     def act_list_proy_vin(self):
         datos = self.datos_total.buscar_pro()
         for row in datos:
-            self.ui.comboBox_pro_vin.addItem(str(row[0]))
+            self.ui.comboBox_pro_vin.addItem(str(row[1]))
+
+    def devolver_id_proy(self):
+        datos = self.datos_total.buscar_pro()
+        for row in datos:
+            if self.ui.comboBox_pro_vin.currentText() == str(row[1]):
+                return row[0]
 
     def comp_trab_vin(self):
         datos = self.datos_total.buscar_trab_vin()
@@ -114,7 +121,7 @@ class GestionarDatos(QtWidgets.QWidget):
         edad = self.ui.spinBox_edad.value()
         fecha_naci = self.ui.dateEdit_fecha_naci.text()
         nivel_pro = self.ui.comboBox_niv_pro.currentText()
-        pro_vin = self.ui.comboBox_pro_vin.currentText()
+        pro_vin = self.devolver_id_proy
         rol_pro = self.ui.comboBox_rol.currentText()
         plan_cump = self.ui.spinBox_plan_cump.value()
         plan_real = self.ui.spinBox_plan_real.value()
@@ -159,7 +166,7 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.spinBox_plan_real.clear()
             self.mostrar_trab_vin()
         else:
-            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'No se ha podido actualizar'))
+            raise (QtWidgets.QMessageBox.critical(self, 'Error', 'No se ha podido actualizar'))
 
     def borrar_vin(self):
         row = self.ui.tableWidget_vin.currentRow()
