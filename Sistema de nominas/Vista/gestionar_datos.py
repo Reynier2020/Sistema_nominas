@@ -1,6 +1,6 @@
 from conexion_db_gestion import *
 from Vista.UI.gestionar import *
-import time
+import sys
 
 
 class GestionarDatos(QtWidgets.QWidget):
@@ -12,6 +12,10 @@ class GestionarDatos(QtWidgets.QWidget):
         self.datos_total = RegistroDatos()
 
 #                VINCULADOS
+        self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
+        self.ui.pushButton_eliminar_vin.clicked.connect(self.borrar_vin)
+        self.ui.pushButton_actualizar_vin.clicked.connect(self.actualizar_vin)
+        self.ui.tableWidget_vin.itemClicked.connect(self.rellenar_form_vin)
 
     def rellenar_form_vin(self):
         fila = self.ui.tableWidget_vin.currentRow()
@@ -151,4 +155,19 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.spinBox_plan_cump.clear()
             self.ui.spinBox_plan_real.clear()
         else:
-            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error','No se ha podido actualizar'))
+            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'No se ha podido actualizar'))
+
+    def borrar_vin(self):
+        row = self.ui.tableWidget_vin.currentRow()
+        a = self.datos_total.eliminar_vin(row[0])
+        if a == 1:
+            self.ui.tableWidget_vin.takeItem(row)
+        else:
+            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Error al borrar'))
+
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    sas = GestionarDatos()
+    sas.show()
+    sys.exit(app.exec())
