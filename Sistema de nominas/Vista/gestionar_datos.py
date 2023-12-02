@@ -11,6 +11,30 @@ class GestionarDatos(QtWidgets.QWidget):
 
         self.datos_total = RegistroDatos()
 
+#                VINCULADOS
+
+    def rellenar_form_vin(self):
+        fila = self.ui.tableWidget_vin.currentRow()
+        if fila != -1:
+            nombre = self.ui.tableWidget_vin.item(fila, 1)
+            edad = self.ui.tableWidget_vin.item(fila, 3)
+            fech_na = self.ui.tableWidget_vin.item(fila, 4)
+            niv_pro = self.ui.tableWidget_vin.item(fila, 5)
+            proy_vin = self.ui.tableWidget_vin.item(fila, 6)
+            rol_proy = self.ui.tableWidget_vin.item(fila, 7)
+            plan_cump = self.ui.tableWidget_vin.item(fila, 8)
+            plan_real = self.ui.tableWidget_vin.item(fila, 9)
+
+            self.ui.lineEdit_nombre_vin = nombre
+            self.ui.spinBox_edad = edad
+            self.retornar_sexo()
+            self.ui.dateEdit_fecha_naci = fech_na
+            self.ui.comboBox_niv_pro = niv_pro
+            self.ui.comboBox_pro_vin = proy_vin
+            self.ui.comboBox_rol = rol_proy
+            self.ui.spinBox_plan_cump = plan_cump
+            self.ui.spinBox_plan_real = plan_real
+
     def calcular_salario_vin(self):
         if self.ui.comboBox_niv_pro.textActivated == "profesional":
             a = 80
@@ -47,7 +71,7 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.tableWidget_vin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(row[7]))
             self.ui.tableWidget_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(row[8]))
             self.ui.tableWidget_vin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(row[9]))
-            self.ui.tableWidget_vin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(self.calcular_salario()))
+            self.ui.tableWidget_vin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(self.calcular_salario))
             table_row += 1
 
     def comprobar_sex(self):
@@ -58,15 +82,22 @@ class GestionarDatos(QtWidgets.QWidget):
 
         return sexo
 
+    def retornar_sexo(self):
+        ind = self.ui.tableWidget_vin.currentRow()
+        if self.ui.tableWidget_vin.item(ind, 2) == 'M':
+            self.ui.radioButton_masculino.setChecked()
+        else:
+            self.ui.radioButton_Femenino.setChecked()
+
     def act_list_proy_vin(self):
         datos = self.datos_total.buscar_pro()
         for row in datos:
-            self.ui.comboBox_pro_vin.addItem(row[0])
+            self.ui.comboBox_pro_vin.addItem(str(row[0]))
 
     def comp_trab_vin(self):
         datos = self.datos_total.buscar_trab_vin()
         for row in datos:
-            if row[1] == self.ui.lineEdit_nombre_vin.text():
+            if str(row[1]).upper() == self.ui.lineEdit_nombre_vin.text().upper():
                 return True
             else:
                 return False
@@ -81,7 +112,7 @@ class GestionarDatos(QtWidgets.QWidget):
         rol_pro = self.ui.comboBox_rol.currentText()
         plan_cump = self.ui.spinBox_plan_cump.value()
         plan_real = self.ui.spinBox_plan_real.value()
-        if self.comp_trab_vin() is True:
+        if self.comp_trab_vin is True:
             raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
         else:
             self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
@@ -96,4 +127,28 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def extraer_id(self):
         row = self.ui.tableWidget_vin.currentRow()
-        return row[0]
+        return str(row[0])
+
+    def actualizar_vin(self):
+        nombre = self.ui.lineEdit_nombre_vin.text()
+        sexo = self.comprobar_sex()
+        edad = self.ui.spinBox_edad.value()
+        fecha_naci = self.ui.dateEdit_fecha_naci.text()
+        nivel_pro = self.ui.comboBox_niv_pro.currentText()
+        pro_vin = self.ui.comboBox_pro_vin.currentText()
+        rol_pro = self.ui.comboBox_rol.currentText()
+        plan_cump = self.ui.spinBox_plan_cump.value()
+        plan_real = self.ui.spinBox_plan_real.value()
+
+        act = self.datos_total.act_trab_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
+                                            pro_vin, rol_pro, plan_cump, plan_real, self.extraer_id)
+        if act == 1:
+            self.ui.lineEdit_nombre_vin.clear()
+            self.ui.spinBox_edad.clear()
+            self.ui.dateEdit_fecha_naci.clear()
+            self.ui.comboBox_niv_pro.setCurrentIndex(0)
+            self.ui.comboBox_rol.setCurrentIndex(0)
+            self.ui.spinBox_plan_cump.clear()
+            self.ui.spinBox_plan_real.clear()
+        else:
+            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error','No se ha podido actualizar'))

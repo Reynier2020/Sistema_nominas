@@ -41,7 +41,7 @@ class TrabajadorNoVin(Trabajador):
     def dept(self, value):
         self.__dept = value
 
-    def calcular_salario(self):
+    def calcular_salario_no_vin(self):
         if self.nivel_pro == "profesional":
             a = 80
         elif self.nivel_pro == "tecnico medio":
