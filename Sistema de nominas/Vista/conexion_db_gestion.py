@@ -14,10 +14,9 @@ class RegistroDatos:
             sql = """insert into trabajadores_vin(nombre, edad, sexo, fecha_naci, nivel_pro,
                 proy_vin, rol_proyecto, plan_cump, plan_real)
             values('{}',{},'{}','{}','{}',{},'{}',{},{})""".format(nombre, edad, sexo, fech_naci, nivel_pro,
-                                                               proy_vin, rol_en_pro, plan_cump, plan_real)
+                                                                   proy_vin, rol_en_pro, plan_cump, plan_real)
             cursor.execute(sql)
-        except Exception:
-            print(MySQLdb.MySQLError())
+        except MySQLdb.Error:
             self.conn.rollback()
         self.conn.commit()
         cursor.close()
