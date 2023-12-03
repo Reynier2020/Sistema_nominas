@@ -113,6 +113,8 @@ class GestionarDatos(QtWidgets.QWidget):
         for row in datos:
             if self.ui.comboBox_pro_vin.currentText() == str(row[1]):
                 return int(row[0])
+            else:
+                return 'null'
 
     def comp_trab_vin(self):
         datos = self.datos_total.buscar_trab_vin()
