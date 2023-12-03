@@ -12,13 +12,18 @@ class GestionarDatos(QtWidgets.QWidget):
         self.datos_total = RegistroDatos()
 
 #                VINCULADOS
-     #   self.datos_total.insertar_vin('reynier', 'M', 20, '2003-1-7', 'profesional', 1, 'director', 100, 50)
+        self.validar_formulario()
         self.mostrar_trab_vin()
         self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
         self.ui.pushButton_eliminar_vin.clicked.connect(self.borrar_vin)
         self.ui.pushButton_actualizar_vin.clicked.connect(self.actualizar_vin)
         self.ui.tableWidget_vin.itemClicked.connect(self.rellenar_form_vin)
         self.ui.pushButton_act_proy_list.clicked.connect(self.act_list_proy_vin)
+
+    def validar_formulario(self):
+        expre = QtCore.QRegExp('^[^0-9 ]*$')
+        valid = QtGui.QRegExpValidator(expre)
+        self.ui.lineEdit_nombre_vin.setValidator(valid)
 
     def rellenar_form_vin(self):
         fila = self.ui.tableWidget_vin.currentRow()
