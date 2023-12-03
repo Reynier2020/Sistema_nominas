@@ -98,6 +98,8 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def act_list_proy_vin(self):
         datos = self.datos_total.buscar_pro()
+        self.ui.comboBox_pro_vin.clear()
+        self.ui.comboBox_pro_vin.addItem('')
         for row in datos:
             self.ui.comboBox_pro_vin.addItem(str(row[1]))
 
