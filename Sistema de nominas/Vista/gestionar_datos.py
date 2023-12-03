@@ -120,10 +120,8 @@ class GestionarDatos(QtWidgets.QWidget):
         datos = self.datos_total.buscar_trab_vin()
         a = 0
         for row in datos:
-            if str(row[1]).upper() == str(self.ui.lineEdit_nombre_vin.text()).upper():
+            if str(row[1]).upper() == self.ui.lineEdit_nombre_vin.text().upper():
                 a = 1
-            else:
-                a = 0
         return a
 
     def insertar_trab_vin(self):
@@ -138,7 +136,7 @@ class GestionarDatos(QtWidgets.QWidget):
             plan_cump = self.ui.spinBox_plan_cump.value()
             plan_real = self.ui.spinBox_plan_real.value()
             if self.comp_trab_vin() == 1:
-                raise(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
             else:
                 self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
                                               pro_vin, rol_pro, plan_cump, plan_real)
