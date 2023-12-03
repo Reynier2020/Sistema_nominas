@@ -109,11 +109,13 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def comp_trab_vin(self):
         datos = self.datos_total.buscar_trab_vin()
+        a = 0
         for row in datos:
-            if str(row[1]).upper() == self.ui.lineEdit_nombre_vin.text().upper():
-                return True
+            if str(row[1]).upper() == str(self.ui.lineEdit_nombre_vin.text()).upper():
+                a = 1
             else:
-                return False
+                a = 0
+        return a
 
     def insertar_trab_vin(self):
         try:
@@ -121,16 +123,16 @@ class GestionarDatos(QtWidgets.QWidget):
             edad = self.ui.spinBox_edad.value()
             sexo = self.comprobar_sex()
             fecha_naci = self.ui.dateEdit_fecha_naci.text()
-            # nivel_pro = self.ui.comboBox_niv_pro.currentText()
-            # pro_vin = self.devolver_id_proy()
-            # rol_pro = self.ui.comboBox_rol.currentText()
-            # plan_cump = self.ui.spinBox_plan_cump.value()
-            # plan_real = self.ui.spinBox_plan_real.value()
-            """if self.comp_trab_vin is True:
-                raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
-            else:"""
-            self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, 'profesional',
-                                          1, 'gerente', 78, 67)
+            nivel_pro = self.ui.comboBox_niv_pro.currentText()
+            pro_vin = self.devolver_id_proy()
+            rol_pro = self.ui.comboBox_rol.currentText()
+            plan_cump = self.ui.spinBox_plan_cump.value()
+            plan_real = self.ui.spinBox_plan_real.value()
+            if self.comp_trab_vin() == 1:
+                raise(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
+            else:
+                self.datos_total.insertar_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
+                                              pro_vin, rol_pro, plan_cump, plan_real)
             # self.ui.lineEdit_nombre_vin.clear()
             # self.ui.spinBox_edad.clear()
             # self.ui.dateEdit_fecha_naci.clear()
@@ -138,7 +140,7 @@ class GestionarDatos(QtWidgets.QWidget):
             # self.ui.comboBox_rol.setCurrentIndex(0)
             # self.ui.spinBox_plan_cump.clear()
             # self.ui.spinBox_plan_real.clear()
-            self.mostrar_trab_vin()
+                self.mostrar_trab_vin()
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
