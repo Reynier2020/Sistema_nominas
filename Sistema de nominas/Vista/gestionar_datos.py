@@ -21,7 +21,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.pushButton_act_proy_list.clicked.connect(self.act_list_proy_vin)
 
     def validar_formulario(self):
-        expre = QtCore.QRegExp('^[^0-9 ]*$')
+        expre = QtCore.QRegExp('^[^0-9]*$')
         valid = QtGui.QRegExpValidator(expre)
         self.ui.lineEdit_nombre_vin.setValidator(valid)
 
