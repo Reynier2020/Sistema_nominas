@@ -120,7 +120,7 @@ class GestionarDatos(QtWidgets.QWidget):
             nombre = self.ui.lineEdit_nombre_vin.text()
             edad = self.ui.spinBox_edad.value()
             sexo = self.comprobar_sex()
-            fecha_naci = self.ui.dateEdit_fecha_naci.date()
+            fecha_naci = self.ui.dateEdit_fecha_naci.text()
             # nivel_pro = self.ui.comboBox_niv_pro.currentText()
             # pro_vin = self.devolver_id_proy()
             # rol_pro = self.ui.comboBox_rol.currentText()

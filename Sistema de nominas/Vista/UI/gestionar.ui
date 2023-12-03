@@ -274,6 +274,9 @@ border-radius:5px;</string>
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(255, 255, 255);</string>
                   </property>
+                  <property name="displayFormat">
+                   <string>yyyy-MM-dd</string>
+                  </property>
                   <property name="calendarPopup">
                    <bool>true</bool>
                   </property>

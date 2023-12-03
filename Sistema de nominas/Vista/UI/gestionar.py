@@ -812,6 +812,7 @@ class Ui_gestionar_ui(object):
         self.radioButton_masculino.setText(_translate("gestionar_ui", "Masculino"))
         self.label_edad.setText(_translate("gestionar_ui", "                              Edad:"))
         self.label_fecha_naci.setText(_translate("gestionar_ui", "     Fecha de nacimiento:"))
+        self.dateEdit_fecha_naci.setDisplayFormat(_translate("gestionar_ui", "yyyy-MM-dd"))
         self.label_nivel_pro.setText(_translate("gestionar_ui", "Nivel profesional:"))
         self.comboBox_niv_pro.setItemText(0, _translate("gestionar_ui", "profesional"))
         self.comboBox_niv_pro.setItemText(1, _translate("gestionar_ui", "tecnico medio"))
