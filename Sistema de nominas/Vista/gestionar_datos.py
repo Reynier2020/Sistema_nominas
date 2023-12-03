@@ -118,8 +118,8 @@ class GestionarDatos(QtWidgets.QWidget):
     def insertar_trab_vin(self):
         try:
             nombre = self.ui.lineEdit_nombre_vin.text()
-            sexo = self.comprobar_sex()
             edad = self.ui.spinBox_edad.value()
+            sexo = self.comprobar_sex()
             fecha_naci = self.ui.dateEdit_fecha_naci.text()
             nivel_pro = self.ui.comboBox_niv_pro.currentText()
             pro_vin = self.devolver_id_proy()
@@ -129,8 +129,8 @@ class GestionarDatos(QtWidgets.QWidget):
             """if self.comp_trab_vin is True:
                 raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
             else:"""
-            self.datos_total.insertar_vin(str(nombre), int(edad), str(sexo), str(fecha_naci), str(nivel_pro),
-                                          int(pro_vin), str(rol_pro), int(plan_cump), int(plan_real))
+            self.datos_total.insertar_vin(nombre, edad, sexo, fecha_naci, nivel_pro,
+                                          pro_vin, rol_pro, plan_cump, plan_real)
             # self.ui.lineEdit_nombre_vin.clear()
             # self.ui.spinBox_edad.clear()
             # self.ui.dateEdit_fecha_naci.clear()
