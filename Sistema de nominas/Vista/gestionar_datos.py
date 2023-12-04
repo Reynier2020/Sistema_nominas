@@ -25,6 +25,9 @@ class GestionarDatos(QtWidgets.QWidget):
         expre = QtCore.QRegExp('^[^0-9][^#@+-&%_$^!]*$')
         valid = QtGui.QRegExpValidator(expre)
         self.ui.lineEdit_nombre_vin.setValidator(valid)
+        self.ui.lineEdit_nombre_n_vin.setValidator(valid)
+        self.ui.lineEdit_nombre_pory.setValidator(valid)
+        self.ui.lineEdit_cliente.setValidator(valid)
 
     def rellenar_form_vin(self):
         fila = self.ui.tableWidget_vin.currentRow()
@@ -195,6 +198,27 @@ class GestionarDatos(QtWidgets.QWidget):
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
+
+#       TRABAJADORES_NO_VIN
+#       PROYECTOS
+
+    def mostrar_proyecto(self):
+        datos = self.datos_total.buscar_pro()
+        i = len(datos)
+        self.ui.tableWidget_vin.setRowCount(i)
+        table_row = 0
+        for row in datos:
+            self.ui.tableWidget_vin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
+            self.ui.tableWidget_vin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
+            self.ui.tableWidget_vin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
+            self.ui.tableWidget_vin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_vin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+            self.ui.tableWidget_vin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(row[5]))
+            self.ui.tableWidget_vin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(row[6]))
+            self.ui.tableWidget_vin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(row[7]))
+            self.ui.tableWidget_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
+            self.ui.tableWidget_vin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(str(row[9])))
+            table_row += 1
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
