@@ -47,26 +47,6 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.spinBox_plan_cump = plan_cump
             self.ui.spinBox_plan_real = plan_real
 
-    def calcular_salario_vin(self):
-        if self.ui.comboBox_niv_pro.currentText() == "profesional":
-            a = 80
-        elif self.ui.comboBox_niv_pro.currentText() == "tecnico medio":
-            a = 60
-        else:
-            a = 40
-
-        if int(self.ui.spinBox_plan_real.value()) > 100:
-            b = self.ui.spinBox_plan_real.value() * 25.0
-        elif (int(self.ui.spinBox_plan_real.value()) <= 100) and (int(self.ui.spinBox_plan_real.value()) >= 95):
-            b = self.ui.spinBox_plan_real.value() * 21.5
-        elif (int(self.ui.spinBox_plan_real.value()) <= 94) and (int(self.ui.spinBox_plan_real.value()) >= 80):
-            b = self.ui.spinBox_plan_real.value() * 18.5
-        else:
-            b = self.ui.spinBox_plan_real.value() * 15.0
-
-        salario = (int(self.ui.spinBox_plan_real.value()) * b + a)
-        return salario
-
     def mostrar_trab_vin(self):
         datos = self.datos_total.buscar_trab_vin()
         i = len(datos)
@@ -83,7 +63,24 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.tableWidget_vin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(row[7]))
             self.ui.tableWidget_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
             self.ui.tableWidget_vin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(str(row[9])))
-            self.ui.tableWidget_vin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(str(self.calcular_salario_vin())))
+            if row[5] == "profesional":
+                a = 80
+            elif row[5] == "tecnico medio":
+                a = 60
+            else:
+                a = 40
+
+            if int(row[9]) > 100:
+                b = int(row[9]) * 25.0
+            elif 100 >= int(row[9]) >= 95:
+                b = int(row[9]) * 21.5
+            elif 94 >= int(row[9]) >= 80:
+                b = int(row[9]) * 18.5
+            else:
+                b = int(row[9]) * 15.0
+
+            salario = (int(row[9]) * b + a)
+            self.ui.tableWidget_vin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(str(salario)))
             table_row += 1
 
     def comprobar_sex(self):
