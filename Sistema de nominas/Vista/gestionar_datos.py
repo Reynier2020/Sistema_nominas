@@ -1,5 +1,3 @@
-import datetime
-
 from conexion_db_gestion import *
 from Vista.UI.gestionar import *
 import sys
@@ -152,34 +150,38 @@ class GestionarDatos(QtWidgets.QWidget):
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
-    def extraer_id(self):
-        row = self.ui.tableWidget_vin.currentRow()
-        return str(row[0])
-
     def actualizar_vin(self):
-        nombre = self.ui.lineEdit_nombre_vin.text()
-        sexo = self.comprobar_sex()
-        edad = self.ui.spinBox_edad.value()
-        fecha_naci = self.ui.dateEdit_fecha_naci.text()
-        nivel_pro = self.ui.comboBox_niv_pro.currentText()
-        pro_vin = self.ui.comboBox_pro_vin.currentText()
-        rol_pro = self.ui.comboBox_rol.currentText()
-        plan_cump = self.ui.spinBox_plan_cump.value()
-        plan_real = self.ui.spinBox_plan_real.value()
-
-        act = self.datos_total.act_trab_vin(nombre, sexo, edad, fecha_naci, nivel_pro,
-                                            pro_vin, rol_pro, plan_cump, plan_real, self.extraer_id)
-        if act == 1:
-            self.ui.lineEdit_nombre_vin.clear()
-            self.ui.spinBox_edad.clear()
-            self.ui.dateEdit_fecha_naci.clear()
-            self.ui.comboBox_niv_pro.setCurrentIndex(0)
-            self.ui.comboBox_rol.setCurrentIndex(0)
-            self.ui.spinBox_plan_cump.clear()
-            self.ui.spinBox_plan_real.clear()
-            self.mostrar_trab_vin()
-        else:
-            raise (QtWidgets.QMessageBox.critical(self, 'Error', 'No se ha podido actualizar'))
+        try:
+            ind = self.ui.tableWidget_vin.currentRow()
+            if ind == -1:
+                raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Debe seleccionar una fila'))
+            ide = self.ui.tableWidget_vin.item(ind, 0).text()
+            ide_n = int(ide)
+            nombre = self.ui.lineEdit_nombre_vin.text()
+            edad = self.ui.spinBox_edad.value()
+            sexo = self.comprobar_sex()
+            fecha_naci = self.ui.dateEdit_fecha_naci.text()
+            nivel_pro = self.ui.comboBox_niv_pro.currentText()
+            pro_vin = self.devolver_id_proy()
+            rol_pro = self.ui.comboBox_rol.currentText()
+            plan_cump = self.ui.spinBox_plan_cump.value()
+            plan_real = self.ui.spinBox_plan_real.value()
+            if self.comp_trab_vin() == 1:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
+            else:
+                act = self.datos_total.act_trab_vin(nombre, edad, sexo, fecha_naci, nivel_pro, pro_vin, rol_pro,
+                                                    plan_cump, plan_real, ide_n)
+                if act == 1:
+                    self.ui.lineEdit_nombre_vin.clear()
+                    self.ui.spinBox_edad.clear()
+                    self.ui.dateEdit_fecha_naci.clear()
+                    self.ui.comboBox_niv_pro.setCurrentIndex(0)
+                    self.ui.comboBox_rol.setCurrentIndex(0)
+                    self.ui.spinBox_plan_cump.clear()
+                    self.ui.spinBox_plan_real.clear()
+                    self.mostrar_trab_vin()
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     def borrar_vin(self):
         row = self.ui.tableWidget_vin.currentRow()
@@ -187,7 +189,6 @@ class GestionarDatos(QtWidgets.QWidget):
             if row != -1:
                 ide = self.ui.tableWidget_vin.item(row, 0).text()
                 a = self.datos_total.eliminar_vin(int(ide))
-                row = -1
                 if a == 1:
                     self.mostrar_trab_vin()
             else:

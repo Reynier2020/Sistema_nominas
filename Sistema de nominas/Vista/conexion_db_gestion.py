@@ -55,13 +55,13 @@ class RegistroDatos:
         cursor.close()
         return a
 
-    def act_trab_vin(self,  nombre, sexo, edad, fech_naci, nivel_pro, proy_vin, rol_en_pro, plan_cump, plan_real, ide):
+    def act_trab_vin(self,  nombre, edad, sexo, fech_naci, nivel_pro, proy_vin, rol_en_pro, plan_cump, plan_real, ide):
         curs = self.conn.cursor()
         try:
-            sql = """update trabajadores_vin set nombre = '{}', sexo = '{}', edad = '{}',
-            fech_naci = '{}', nivel_pro = '{}', proy_vin = '{}', rol_en_pro '{}', plan_cump = '{}', plan_real = '{}'
-            where id = '{}' """.format(nombre, sexo, edad, fech_naci, nivel_pro, proy_vin,
-                                       rol_en_pro, plan_cump, plan_real, ide)
+            sql = """update trabajadores_vin set nombre = '{}', edad = {}, sexo = '{}', fecha_naci = '{}',
+            nivel_pro = '{}', proy_vin = {}, rol_proyecto = '{}', plan_cump = {}, plan_real = {} 
+            where id = {} """.format(nombre, edad, sexo, fech_naci, nivel_pro, proy_vin,
+                                     rol_en_pro, plan_cump, plan_real, ide)
             curs.execute(sql)
         except MySQLdb.Error:
             self.conn.rollback()
