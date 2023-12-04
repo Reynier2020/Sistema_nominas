@@ -154,7 +154,7 @@ class GestionarDatos(QtWidgets.QWidget):
         try:
             ind = self.ui.tableWidget_vin.currentRow()
             if ind == -1:
-                raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Debe seleccionar una fila'))
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
             ide = self.ui.tableWidget_vin.item(ind, 0).text()
             ide_n = int(ide)
             nombre = self.ui.lineEdit_nombre_vin.text()
