@@ -70,6 +70,7 @@ class RegistroDatos:
         curs.close()
         return a
 
+#   PROYECTOS
     def buscar_pro(self):
         cursor = self.conn.cursor()
         try:
@@ -80,3 +81,15 @@ class RegistroDatos:
         list_pro = cursor.fetchall()
         cursor.close()
         return list_pro
+
+    def insertar_proy(self, nombre, cliente, costo, fecha_inicio, fecha_culminacion, porcentaje_cump):
+        cursor = self.conn.cursor()
+        try:
+            sql = """insert into proyectos(nombre, cliente, costo, fecha_inicio, fecha_culminacion, porcentaje_cump)
+                    values('{}', '{}', {}, '{}', '{}', {})""".format(nombre, cliente, costo, fecha_inicio,
+                                                                     fecha_culminacion, porcentaje_cump)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        self.conn.commit()
+        cursor.close()
