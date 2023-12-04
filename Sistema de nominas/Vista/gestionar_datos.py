@@ -173,12 +173,11 @@ class GestionarDatos(QtWidgets.QWidget):
                                                     plan_cump, plan_real, ide_n)
                 if act == 1:
                     self.ui.lineEdit_nombre_vin.clear()
-                    self.ui.spinBox_edad.clear()
-                    self.ui.dateEdit_fecha_naci.clear()
+                    self.ui.spinBox_edad.setValue(0)
                     self.ui.comboBox_niv_pro.setCurrentIndex(0)
                     self.ui.comboBox_rol.setCurrentIndex(0)
-                    self.ui.spinBox_plan_cump.clear()
-                    self.ui.spinBox_plan_real.clear()
+                    self.ui.spinBox_plan_cump.setValue(0)
+                    self.ui.spinBox_plan_real.setValue(0)
                     self.mostrar_trab_vin()
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
