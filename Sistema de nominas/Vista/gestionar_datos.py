@@ -1,3 +1,5 @@
+import datetime
+
 from conexion_db_gestion import *
 from Vista.UI.gestionar import *
 import sys
@@ -14,6 +16,7 @@ class GestionarDatos(QtWidgets.QWidget):
 #                VINCULADOS
         self.validar_formulario()
         self.mostrar_trab_vin()
+        self.act_list_proy_vin()
         self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
         self.ui.pushButton_eliminar_vin.clicked.connect(self.borrar_vin)
         self.ui.pushButton_actualizar_vin.clicked.connect(self.actualizar_vin)
@@ -25,27 +28,27 @@ class GestionarDatos(QtWidgets.QWidget):
         valid = QtGui.QRegExpValidator(expre)
         self.ui.lineEdit_nombre_vin.setValidator(valid)
 
-    """ def rellenar_form_vin(self):
+    def rellenar_form_vin(self):
         fila = self.ui.tableWidget_vin.currentRow()
         if fila != -1:
-            nombre = self.ui.tableWidget_vin.item(fila, 1)
-            edad = self.ui.tableWidget_vin.item(fila, 3)
-            fech_na = self.ui.tableWidget_vin.item(fila, 4)
-            niv_pro = self.ui.tableWidget_vin.item(fila, 5)
-            proy_vin = self.ui.tableWidget_vin.item(fila, 6)
-            rol_proy = self.ui.tableWidget_vin.item(fila, 7)
-            plan_cump = self.ui.tableWidget_vin.item(fila, 8)
-            plan_real = self.ui.tableWidget_vin.item(fila, 9)
+            nombre = self.ui.tableWidget_vin.item(fila, 1).text()
+            edad = self.ui.tableWidget_vin.item(fila, 3).text()
+            fech_na = self.ui.tableWidget_vin.item(fila, 4).text()
+            niv_pro = self.ui.tableWidget_vin.item(fila, 5).text()
+            proy_vin = self.ui.tableWidget_vin.item(fila, 6).text()
+            rol_proy = self.ui.tableWidget_vin.item(fila, 7).text()
+            plan_cump = self.ui.tableWidget_vin.item(fila, 8).text()
+            plan_real = self.ui.tableWidget_vin.item(fila, 9).text()
 
-            self.ui.lineEdit_nombre_vin = str(nombre)
-            self.ui.spinBox_edad = edad
+            self.ui.lineEdit_nombre_vin = nombre
+            self.ui.spinBox_edad.setValue(int(edad))
             self.retornar_sexo()
-            self.ui.dateEdit_fecha_naci = fech_na
-            self.ui.comboBox_niv_pro = niv_pro
-            self.ui.comboBox_pro_vin = proy_vin
-            self.ui.comboBox_rol = rol_proy
-            self.ui.spinBox_plan_cump = plan_cump
-            self.ui.spinBox_plan_real = plan_real  """
+            self.ui.dateEdit_fecha_naci.setDate()
+            self.ui.comboBox_niv_pro.setCurrentText(niv_pro)
+            self.ui.comboBox_pro_vin.setCurrentText(proy_vin)
+            self.ui.comboBox_rol.setCurrentText(rol_proy)
+            self.ui.spinBox_plan_cump.setValue(int(plan_cump))
+            self.ui.spinBox_plan_real.setValue(int(plan_real))
 
     def mostrar_trab_vin(self):
         datos = self.datos_total.buscar_trab_vin()
@@ -93,10 +96,12 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def retornar_sexo(self):
         ind = self.ui.tableWidget_vin.currentRow()
-        if self.ui.tableWidget_vin.item(ind, 2) == 'M':
-            self.ui.radioButton_masculino.setChecked()
+        if self.ui.tableWidget_vin.item(ind, 2).text() == 'M':
+            self.ui.radioButton_masculino.setChecked(True)
+            self.ui.radioButton_Femenino.setChecked(False)
         else:
-            self.ui.radioButton_Femenino.setChecked()
+            self.ui.radioButton_Femenino.setChecked(True)
+            self.ui.radioButton_masculino.setChecked(False)
 
     def act_list_proy_vin(self):
         datos = self.datos_total.buscar_pro()
@@ -179,13 +184,16 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def borrar_vin(self):
         row = self.ui.tableWidget_vin.currentRow()
-        if row != -1:
-            ide = self.ui.tableWidget_vin.item(row, 0)
-            a = self.datos_total.eliminar_vin(int(ide))
-            if a == 1:
-                self.mostrar_trab_vin()
-        else:
-            raise Exception(QtWidgets.QMessageBox.critical(self, 'Error', 'Error al borrar'))
+        try:
+            if row != -1:
+                ide = self.ui.tableWidget_vin.item(row, 0).text()
+                a = self.datos_total.eliminar_vin(int(ide))
+                if a == 1:
+                    self.mostrar_trab_vin()
+            else:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
 
 if __name__ == "__main__":
