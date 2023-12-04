@@ -93,3 +93,31 @@ class RegistroDatos:
             self.conn.rollback()
         self.conn.commit()
         cursor.close()
+
+    def eliminar_proy(self, ide):
+        cursor = self.conn.cursor()
+        try:
+            sql = """delete from proyectos where id = {}""".format(ide)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        a = cursor.rowcount
+        self.conn.commit()
+        cursor.close()
+        return a
+
+    def actualizar_proy(self, nombre, cliente, costo, fecha_inicio, fecha_culminacion, porcentaje_cump, ide):
+        cursor = self.conn.cursor()
+        try:
+            sql = """update proyectos set nombre = '{}', cliente = '{}',costo = {},fecha_inicio = '{}',
+            fecha_culminacion = '{}', porcentaje_cump = {} where id = {}""".format(nombre, cliente,
+                                                                                   costo, fecha_inicio,
+                                                                                   fecha_culminacion, porcentaje_cump,
+                                                                                   ide)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        a = cursor.rowcount
+        self.conn.commit()
+        cursor.close()
+        return a
