@@ -207,6 +207,9 @@ class GestionarDatos(QtWidgets.QWidget):
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     #       TRABAJADORES_NO_VIN
+
+
+
     #       PROYECTOS
 
     def llenar_form_proy(self):

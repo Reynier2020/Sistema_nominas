@@ -70,7 +70,33 @@ class RegistroDatos:
         curs.close()
         return a
 
+#   TRABAJADORES_NO_VIN
+    def buscar_no_vin(self):
+        cur = self.conn.cursor()
+        try:
+            sql = """select * from trabajadores_no_vin"""
+            cur.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        registro = cur.fetchall()
+        return registro
+
+    def insetrar_no_vin(self, nombre, edad, sexo, fecha_naci, nivel_pro,
+                        responsabilidad, llegadas_tarde, horas_trabajadas):
+        cursor = self.conn.cursor()
+        try:
+            sql = """insert into trabajadores_no_vin(nombre,edad,sexo,fecha_naci,nivel_pro,responsabilidad,
+            llegadas_tarde,horas_trabajadas)
+            values('{}',{},'{}','{}','{}','{}',{},{});""".format(nombre, edad, sexo, fecha_naci, nivel_pro,
+                                                                 responsabilidad, llegadas_tarde, horas_trabajadas)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        self.conn.commit()
+        cursor.close()
+
 #   PROYECTOS
+
     def buscar_pro(self):
         cursor = self.conn.cursor()
         try:
