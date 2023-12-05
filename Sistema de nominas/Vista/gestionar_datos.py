@@ -467,6 +467,12 @@ class GestionarDatos(QtWidgets.QWidget):
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
+    def iniciar(self):
+        app = QtWidgets.QApplication(sys.argv)
+        sas = GestionarDatos()
+        sas.show()
+        app.exec()
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
