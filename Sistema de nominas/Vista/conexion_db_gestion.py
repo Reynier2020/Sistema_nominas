@@ -74,7 +74,7 @@ class RegistroDatos:
     def buscar_pro(self):
         cursor = self.conn.cursor()
         try:
-            sql = """select id, nombre from proyectos"""
+            sql = """select * from proyectos"""
             cursor.execute(sql)
         except MySQLdb.Error:
             self.conn.rollback()
