@@ -30,7 +30,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.pushButton_actualizar_proy.clicked.connect(self.actualizar_proy)
 
     def validar_formulario(self):
-        expre = QtCore.QRegExp('^[^0-9][^#@+-&%_$^!]*$')
+        expre = QtCore.QRegExp('^[^0-9]*$')
         valid = QtGui.QRegExpValidator(expre)
         self.ui.lineEdit_nombre_vin.setValidator(valid)
         self.ui.lineEdit_nombre_n_vin.setValidator(valid)
