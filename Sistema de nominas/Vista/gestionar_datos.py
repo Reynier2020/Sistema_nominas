@@ -307,7 +307,7 @@ class GestionarDatos(QtWidgets.QWidget):
             if self.comprobar_no_vin() == 1:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
             else:
-                self.datos_total.insetrar_no_vin(nombre, edad, sexo, fecha_naci, nivel_pro,responsabilidad,
+                self.datos_total.insetrar_no_vin(nombre, edad, sexo, fecha_naci, nivel_pro, responsabilidad,
                                                  llegadas_tarde, horas_trabajadas)
                 self.ui.lineEdit_nombre_n_vin.clear()
                 self.ui.spinBox_edad_no_vin.setValue(0)
@@ -466,12 +466,6 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.mostrar_proyecto()
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
-
-    def iniciar(self):
-        app = QtWidgets.QApplication(sys.argv)
-        sas = GestionarDatos()
-        sas.show()
-        app.exec()
 
 
 if __name__ == "__main__":
