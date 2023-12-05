@@ -22,6 +22,12 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.pushButton_actualizar_vin.clicked.connect(self.actualizar_vin)
         self.ui.tableWidget_vin.itemClicked.connect(self.rellenar_form_vin)
         self.ui.pushButton_act_proy_list.clicked.connect(self.act_list_proy_vin)
+    #   NO_VINCULADOS
+        self.mostrar_trab_no_vin()
+        self.ui.pushButton_insertar_n_vin.clicked.connect(self.insertar_no_vin)
+        self.ui.tableWidget_no_vin.itemClicked.connect(self.llenar_form_no_vin)
+        self.ui.pushButton_actualizar_n_vin.clicked.connect(self.actualizar_no_vin)
+        self.ui.pushButton_eliminar_n_vin.clicked.connect(self.eliminar_no_vin)
     #   PROYECTOS
         self.mostrar_proyecto()
         self.ui.pushButton_insertar_proy.clicked.connect(self.inertar_proy)
@@ -215,14 +221,28 @@ class GestionarDatos(QtWidgets.QWidget):
         for row in datos:
             self.ui.tableWidget_no_vin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
             self.ui.tableWidget_no_vin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
-            self.ui.tableWidget_no_vin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
-            self.ui.tableWidget_no_vin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_no_vin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_no_vin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[2])))
             self.ui.tableWidget_no_vin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
             self.ui.tableWidget_no_vin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(row[5]))
             self.ui.tableWidget_no_vin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(row[6]))
             self.ui.tableWidget_no_vin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(str(row[7])))
             self.ui.tableWidget_no_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
+            if row[5] == "profesional":
+                a = 80
+            elif row[5] == "tecnico medio":
+                a = 60
+            else:
+                a = 40
 
+            if row[6] == "jefe de departamento":
+                b = 120
+            else:
+                b = 200
+
+            salario = int(((int(row[8]) * 12.5 + b) - (5 * int(row[7]))) + a)
+            self.ui.tableWidget_no_vin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(str(salario)))
+            table_row += 1
 
     def comprobar_no_vin(self):
         datos = self.datos_total.buscar_no_vin()
@@ -243,7 +263,7 @@ class GestionarDatos(QtWidgets.QWidget):
 
     def llenar_form_no_vin(self):
         try:
-            fila = self.ui.tableWidget_proy.currentRow()
+            fila = self.ui.tableWidget_no_vin.currentRow()
             if fila != -1:
                 nombre = self.ui.tableWidget_no_vin.item(fila, 1).text()
                 edad = self.ui.tableWidget_no_vin.item(fila, 3).text()
@@ -259,8 +279,8 @@ class GestionarDatos(QtWidgets.QWidget):
                 # self.ui.dateEdit_fecha_naci = fech_na
                 self.ui.comboBox_niv_pro_no_vin.setCurrentText(niv_pro)
                 self.ui.comboBox_resp.setCurrentText(resp)
-                self.ui.spinBox_tarde.setValue(lleg_tarde)
-                self.ui.spinBox_horas_tra.setValue(horas_trab)
+                self.ui.spinBox_tarde.setValue(int(lleg_tarde))
+                self.ui.spinBox_horas_tra.setValue(int(horas_trab))
 
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
@@ -295,6 +315,48 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.spinBox_tarde.setValue(0)
                 self.ui.spinBox_horas_tra.setValue(0)
                 self.mostrar_trab_no_vin()
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
+
+    def actualizar_no_vin(self):
+        try:
+            ind = self.ui.tableWidget_no_vin.currentRow()
+            if ind == -1:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
+            ide = self.ui.tableWidget_no_vin.item(ind, 0).text()
+            ide_n = int(ide)
+            nombre = self.ui.lineEdit_nombre_n_vin.text()
+            edad = self.ui.spinBox_edad_no_vin.value()
+            sexo = self.comprobar_sexo_no_vin()
+            fecha_naci = self.ui.dateEdit_fecha_naci_no_vin.text()
+            nivel_pro = self.ui.comboBox_niv_pro_no_vin.currentText()
+            responsabilidad = self.ui.comboBox_resp.currentText()
+            llegadas_tarde = self.ui.spinBox_tarde.value()
+            horas_trabajadas = self.ui.spinBox_horas_tra.value()
+            act = self.datos_total.actualizar_no_vin(nombre, edad, sexo, fecha_naci, nivel_pro,
+                                                     responsabilidad, llegadas_tarde, horas_trabajadas, ide_n)
+            if act == 1:
+                self.ui.lineEdit_nombre_n_vin.clear()
+                self.ui.spinBox_edad_no_vin.setValue(0)
+                self.ui.comboBox_niv_pro_no_vin.setCurrentIndex(0)
+                self.ui.comboBox_resp.setCurrentIndex(0)
+                self.ui.spinBox_tarde.setValue(0)
+                self.ui.spinBox_horas_tra.setValue(0)
+                self.mostrar_trab_no_vin()
+
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
+
+    def eliminar_no_vin(self):
+        row = self.ui.tableWidget_no_vin.currentRow()
+        try:
+            if row != -1:
+                ide = self.ui.tableWidget_no_vin.item(row, 0).text()
+                a = self.datos_total.eliminar_no_vin((int(ide)))
+                if a == 1:
+                    self.mostrar_trab_no_vin()
+            else:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 

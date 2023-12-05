@@ -49,7 +49,7 @@ QDateEdit{
 border:1px solid #167;}</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
@@ -986,17 +986,17 @@ border-radius:5px;</string>
                   </property>
                   <item>
                    <property name="text">
-                    <string>Profesional</string>
+                    <string>profesional</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>tecnico Medio</string>
+                    <string>tecnico medio</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Obrero Calificado</string>
+                    <string>obrero calificado</string>
                    </property>
                   </item>
                  </widget>
