@@ -95,6 +95,22 @@ class RegistroDatos:
         self.conn.commit()
         cursor.close()
 
+    def actualizar_no_vin(self, nombre, edad, sexo, fecha_naci, nivel_pro,
+                        responsabilidad, llegadas_tarde, horas_trabajadas, ide):
+        cursor = self.conn.cursor()
+        try:
+            sql = """update trabajadores_no_vin set nombre = '{}', edad = {}, sexo = '{}', fecha_naci = '{}',
+            nivel_pro = '{}',responsabilidad = '{}',llegadas_tarde = {},
+            horas_trabajadas = {} where id = {}""".format(nombre, edad, sexo, fecha_naci, nivel_pro,
+                                                          responsabilidad, llegadas_tarde, horas_trabajadas, ide)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        a = cursor.rowcount
+        self.conn.commit()
+        cursor.close()
+        return a
+
 #   PROYECTOS
 
     def buscar_pro(self):
