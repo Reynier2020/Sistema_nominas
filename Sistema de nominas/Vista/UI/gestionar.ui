@@ -49,7 +49,7 @@ QDateEdit{
 border:1px solid #167;}</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
@@ -1836,23 +1836,6 @@ border-radius:5px;</string>
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_cancelar">
-        <property name="minimumSize">
-         <size>
-          <width>75</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:5px;</string>
-        </property>
-        <property name="text">
-         <string>Cancelar</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
@@ -1896,7 +1879,6 @@ border-radius:5px;</string>
   <tabstop>pushButton_eliminar_proy</tabstop>
   <tabstop>tableWidget_proy</tabstop>
   <tabstop>pushButton_aceptar</tabstop>
-  <tabstop>pushButton_cancelar</tabstop>
  </tabstops>
  <resources/>
  <connections/>

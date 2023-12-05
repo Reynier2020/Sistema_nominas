@@ -12,6 +12,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.setupUi(self)
 
         self.datos_total = RegistroDatos()
+        self.ui.pushButton_aceptar.clicked.connect(quit)
 
         #                VINCULADOS
         self.validar_formulario()
@@ -59,7 +60,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.lineEdit_nombre_vin.setText(nombre)
                 self.ui.spinBox_edad.setValue(int(edad))
                 self.retornar_sexo()
-                # self.ui.dateEdit_fecha_naci = fech_na
+                # self.ui.dateEdit_fecha_naci.setDate(fech_na)
                 self.ui.comboBox_niv_pro.setCurrentText(niv_pro)
                 self.ui.comboBox_pro_vin.setCurrentText(proy_vin)
                 self.ui.comboBox_rol.setCurrentText(rol_proy)

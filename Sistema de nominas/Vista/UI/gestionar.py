@@ -755,16 +755,10 @@ class Ui_gestionar_ui(object):
 "border-radius:5px;")
         self.pushButton_aceptar.setObjectName("pushButton_aceptar")
         self.horizontalLayout_8.addWidget(self.pushButton_aceptar)
-        self.pushButton_cancelar = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_cancelar.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_cancelar.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:5px;")
-        self.pushButton_cancelar.setObjectName("pushButton_cancelar")
-        self.horizontalLayout_8.addWidget(self.pushButton_cancelar)
         self.verticalLayout.addWidget(self.frame_5)
 
         self.retranslateUi(gestionar_ui)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(gestionar_ui)
         gestionar_ui.setTabOrder(self.lineEdit_nombre_vin, self.radioButton_Femenino)
         gestionar_ui.setTabOrder(self.radioButton_Femenino, self.radioButton_masculino)
@@ -802,7 +796,6 @@ class Ui_gestionar_ui(object):
         gestionar_ui.setTabOrder(self.pushButton_actualizar_proy, self.pushButton_eliminar_proy)
         gestionar_ui.setTabOrder(self.pushButton_eliminar_proy, self.tableWidget_proy)
         gestionar_ui.setTabOrder(self.tableWidget_proy, self.pushButton_aceptar)
-        gestionar_ui.setTabOrder(self.pushButton_aceptar, self.pushButton_cancelar)
 
     def retranslateUi(self, gestionar_ui):
         _translate = QtCore.QCoreApplication.translate
@@ -921,4 +914,3 @@ class Ui_gestionar_ui(object):
         item.setText(_translate("gestionar_ui", "% Culminacion"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_proyectos), _translate("gestionar_ui", "Gestion de Proyectos"))
         self.pushButton_aceptar.setText(_translate("gestionar_ui", "Aceptar"))
-        self.pushButton_cancelar.setText(_translate("gestionar_ui", "Cancelar"))
