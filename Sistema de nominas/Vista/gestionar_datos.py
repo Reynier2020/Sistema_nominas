@@ -40,7 +40,7 @@ class GestionarDatos(QtWidgets.QWidget):
             if fila != -1:
                 nombre = self.ui.tableWidget_vin.item(fila, 1).text()
                 edad = self.ui.tableWidget_vin.item(fila, 3).text()
-                fech_na = self.ui.tableWidget_vin.item(fila, 4).text()
+                # fech_na = self.ui.tableWidget_vin.item(fila, 4).text()
                 niv_pro = self.ui.tableWidget_vin.item(fila, 5).text()
                 proy_vin = self.ui.tableWidget_vin.item(fila, 6).text()
                 rol_proy = self.ui.tableWidget_vin.item(fila, 7).text()
@@ -50,7 +50,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.lineEdit_nombre_vin.setText(nombre)
                 self.ui.spinBox_edad.setValue(int(edad))
                 self.retornar_sexo()
-                self.ui.dateEdit_fecha_naci = fech_na
+                # self.ui.dateEdit_fecha_naci = fech_na
                 self.ui.comboBox_niv_pro.setCurrentText(niv_pro)
                 self.ui.comboBox_pro_vin.setCurrentText(proy_vin)
                 self.ui.comboBox_rol.setCurrentText(rol_proy)
