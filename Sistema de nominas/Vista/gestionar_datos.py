@@ -268,7 +268,7 @@ class GestionarDatos(QtWidgets.QWidget):
             if fila != -1:
                 nombre = self.ui.tableWidget_no_vin.item(fila, 1).text()
                 edad = self.ui.tableWidget_no_vin.item(fila, 3).text()
-                # fech_na = self.ui.tableWidget_no_vin.item(fila, 4).text()
+                fech_na = self.ui.tableWidget_no_vin.item(fila, 4).text().split('-')
                 niv_pro = self.ui.tableWidget_no_vin.item(fila, 5).text()
                 resp = self.ui.tableWidget_no_vin.item(fila, 6).text()
                 lleg_tarde = self.ui.tableWidget_no_vin.item(fila, 7).text()
@@ -277,7 +277,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.ui.lineEdit_nombre_n_vin.setText(nombre)
                 self.ui.spinBox_edad_no_vin.setValue(int(edad))
                 self.retornar_sexo_no_vin()
-                # self.ui.dateEdit_fecha_naci = fech_na
+                self.ui.dateEdit_fecha_naci.setDate(datetime.date(int(fech_na[0]), int(fech_na[1]), int(fech_na[2])))
                 self.ui.comboBox_niv_pro_no_vin.setCurrentText(niv_pro)
                 self.ui.comboBox_resp.setCurrentText(resp)
                 self.ui.spinBox_tarde.setValue(int(lleg_tarde))
@@ -370,15 +370,16 @@ class GestionarDatos(QtWidgets.QWidget):
                 nombre = self.ui.tableWidget_proy.item(fila, 1).text()
                 cliente = self.ui.tableWidget_proy.item(fila, 2).text()
                 costo = self.ui.tableWidget_proy.item(fila, 3).text()
-                # fech_ini = self.ui.tableWidget_proy.item(fila, 4).text()
-                # fech_culm = self.ui.tableWidget_proy.item(fila, 5).text()
+                fech_ini = self.ui.tableWidget_proy.item(fila, 4).text().split('-')
+                fech_culm = self.ui.tableWidget_proy.item(fila, 5).text().split('-')
                 por_culm = self.ui.tableWidget_proy.item(fila, 6).text()
 
                 self.ui.lineEdit_nombre_pory.setText(nombre)
                 self.ui.lineEdit_cliente.setText(cliente)
                 self.ui.doubleSpinBox_costo.setValue(float(costo))
-                # self.ui.dateEdit_fecha_ini = fech_ini
-                # self.ui.dateEdit_fecha_culm = fech_culm
+                self.ui.dateEdit_fecha_ini.setDate(datetime.date(int(fech_ini[0]), int(fech_ini[1]), int(fech_ini[2])))
+                self.ui.dateEdit_fecha_culm.setDate(datetime.date(int(fech_culm[0]),
+                                                                  int(fech_culm[1]), int(fech_culm[2])))
                 self.ui.doubleSpinBox_porci_culm.setValue(float(por_culm))
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
