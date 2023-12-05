@@ -25,6 +25,9 @@ class GestionarDatos(QtWidgets.QWidget):
     #   PROYECTOS
         self.mostrar_proyecto()
         self.ui.pushButton_insertar_proy.clicked.connect(self.inertar_proy)
+        self.ui.pushButton_eliminar_proy.clicked.connect(self.eliminar_proy)
+        self.ui.tableWidget_proy.itemClicked.connect(self.llenar_form_proy)
+        self.ui.pushButton_actualizar_proy.clicked.connect(self.actualizar_proy)
 
     def validar_formulario(self):
         expre = QtCore.QRegExp('^[^0-9][^#@+-&%_$^!]*$')
@@ -177,19 +180,16 @@ class GestionarDatos(QtWidgets.QWidget):
             rol_pro = self.ui.comboBox_rol.currentText()
             plan_cump = self.ui.spinBox_plan_cump.value()
             plan_real = self.ui.spinBox_plan_real.value()
-            if self.comp_trab_vin() == 1:
-                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
-            else:
-                act = self.datos_total.act_trab_vin(nombre, edad, sexo, fecha_naci, nivel_pro, pro_vin, rol_pro,
-                                                    plan_cump, plan_real, ide_n)
-                if act == 1:
-                    self.ui.lineEdit_nombre_vin.clear()
-                    self.ui.spinBox_edad.setValue(0)
-                    self.ui.comboBox_niv_pro.setCurrentIndex(0)
-                    self.ui.comboBox_rol.setCurrentIndex(0)
-                    self.ui.spinBox_plan_cump.setValue(0)
-                    self.ui.spinBox_plan_real.setValue(0)
-                    self.mostrar_trab_vin()
+            act = self.datos_total.act_trab_vin(nombre, edad, sexo, fecha_naci, nivel_pro, pro_vin, rol_pro,
+                                                plan_cump, plan_real, ide_n)
+            if act == 1:
+                self.ui.lineEdit_nombre_vin.clear()
+                self.ui.spinBox_edad.setValue(0)
+                self.ui.comboBox_niv_pro.setCurrentIndex(0)
+                self.ui.comboBox_rol.setCurrentIndex(0)
+                self.ui.spinBox_plan_cump.setValue(0)
+                self.ui.spinBox_plan_real.setValue(0)
+                self.mostrar_trab_vin()
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
@@ -208,6 +208,26 @@ class GestionarDatos(QtWidgets.QWidget):
 
     #       TRABAJADORES_NO_VIN
     #       PROYECTOS
+
+    def llenar_form_proy(self):
+        try:
+            fila = self.ui.tableWidget_proy.currentRow()
+            if fila != -1:
+                nombre = self.ui.tableWidget_proy.item(fila, 1).text()
+                cliente = self.ui.tableWidget_proy.item(fila, 2).text()
+                costo = self.ui.tableWidget_proy.item(fila, 3).text()
+                # fech_ini = self.ui.tableWidget_proy.item(fila, 4).text()
+                # fech_culm = self.ui.tableWidget_proy.item(fila, 5).text()
+                por_culm = self.ui.tableWidget_proy.item(fila, 6).text()
+
+                self.ui.lineEdit_nombre_pory.setText(nombre)
+                self.ui.lineEdit_cliente.setText(cliente)
+                self.ui.doubleSpinBox_costo.setValue(float(costo))
+                # self.ui.dateEdit_fecha_ini = fech_ini
+                # self.ui.dateEdit_fecha_culm = fech_culm
+                self.ui.doubleSpinBox_porci_culm.setValue(float(por_culm))
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     def mostrar_proyecto(self):
         datos = self.datos_total.buscar_pro()
@@ -240,7 +260,7 @@ class GestionarDatos(QtWidgets.QWidget):
             fech_ini = self.ui.dateEdit_fecha_ini.text()
             fech_culm = self.ui.dateEdit_fecha_culm.text()
             por_culm = self.ui.doubleSpinBox_porci_culm.value()
-            if self.comp_trab_vin() == 1:
+            if self.comp_proy() == 1:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un proyecto con ese nombre'))
             else:
                 self.datos_total.insertar_proy(nombre, cliente, costo, fech_ini, fech_culm, por_culm)
@@ -251,7 +271,45 @@ class GestionarDatos(QtWidgets.QWidget):
             self.ui.dateEdit_fecha_culm.setDate(datetime.date(2000, 1, 1))
             self.ui.doubleSpinBox_porci_culm.setValue(0)
             self.mostrar_proyecto()
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
+    def eliminar_proy(self):
+        row = self.ui.tableWidget_proy.currentRow()
+        try:
+            if row != -1:
+                ide = self.ui.tableWidget_proy.item(row, 0).text()
+                a = self.datos_total.eliminar_proy(int(ide))
+                if a == 1:
+                    self.mostrar_proyecto()
+            else:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
+
+    def actualizar_proy(self):
+        try:
+            ind = self.ui.tableWidget_proy.currentRow()
+            if ind == -1:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
+            ide = self.ui.tableWidget_proy.item(ind, 0).text()
+            ide_n = int(ide)
+            nombre = self.ui.lineEdit_nombre_pory.text()
+            cliente = self.ui.lineEdit_cliente.text()
+            costo = self.ui.doubleSpinBox_costo.value()
+            fech_ini = self.ui.dateEdit_fecha_ini.text()
+            fech_culm = self.ui.dateEdit_fecha_culm.text()
+            por_culm = self.ui.doubleSpinBox_porci_culm.value()
+
+            act = self.datos_total.actualizar_proy(nombre, cliente, costo, fech_ini, fech_culm, por_culm, ide_n)
+            if act == 1:
+                self.ui.lineEdit_nombre_pory.clear()
+                self.ui.lineEdit_cliente.clear()
+                self.ui.doubleSpinBox_costo.setValue(0)
+                self.ui.dateEdit_fecha_ini.setDate(datetime.date(2000, 1, 1))
+                self.ui.dateEdit_fecha_culm.setDate(datetime.date(2000, 1, 1))
+                self.ui.doubleSpinBox_porci_culm.setValue(0)
+                self.mostrar_proyecto()
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
