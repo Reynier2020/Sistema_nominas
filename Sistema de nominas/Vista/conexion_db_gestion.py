@@ -81,6 +81,18 @@ class RegistroDatos:
         registro = cur.fetchall()
         return registro
 
+    def eliminar_no_vin(self, ide):
+        cursor = self.conn.cursor()
+        try:
+            sql = """delete from trabajadores_no_vin where id = {}""".format(ide)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        a = cursor.rowcount
+        self.conn.commit()
+        cursor.close()
+        return a
+
     def insetrar_no_vin(self, nombre, edad, sexo, fecha_naci, nivel_pro,
                         responsabilidad, llegadas_tarde, horas_trabajadas):
         cursor = self.conn.cursor()
@@ -96,7 +108,7 @@ class RegistroDatos:
         cursor.close()
 
     def actualizar_no_vin(self, nombre, edad, sexo, fecha_naci, nivel_pro,
-                        responsabilidad, llegadas_tarde, horas_trabajadas, ide):
+                          responsabilidad, llegadas_tarde, horas_trabajadas, ide):
         cursor = self.conn.cursor()
         try:
             sql = """update trabajadores_no_vin set nombre = '{}', edad = {}, sexo = '{}', fecha_naci = '{}',
@@ -111,7 +123,28 @@ class RegistroDatos:
         cursor.close()
         return a
 
+    def busca_al_trab_no_vin(self, nombre_no_vin):
+        curso = self.conn.cursor()
+        try:
+            sql = """select * from trabajadores_no_vin where nombre = '{}'""".format(nombre_no_vin)
+            curso.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        resultado = curso.fetchall()
+        return resultado
+
 #   PROYECTOS
+
+    def busca_el_pro(self, nomb_pro):
+        cursor = self.conn.cursor()
+        try:
+            sql = """select * from proyectos where nombre = '{}'""".format(nomb_pro)
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        list_pro = cursor.fetchall()
+        cursor.close()
+        return list_pro
 
     def buscar_pro(self):
         cursor = self.conn.cursor()

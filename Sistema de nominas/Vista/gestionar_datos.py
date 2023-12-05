@@ -207,8 +207,96 @@ class GestionarDatos(QtWidgets.QWidget):
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     #       TRABAJADORES_NO_VIN
+    def mostrar_trab_no_vin(self):
+        datos = self.datos_total.buscar_no_vin()
+        i = len(datos)
+        self.ui.tableWidget_no_vin.setRowCount(i)
+        table_row = 0
+        for row in datos:
+            self.ui.tableWidget_no_vin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
+            self.ui.tableWidget_no_vin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
+            self.ui.tableWidget_no_vin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
+            self.ui.tableWidget_no_vin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_no_vin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+            self.ui.tableWidget_no_vin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(row[5]))
+            self.ui.tableWidget_no_vin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(row[6]))
+            self.ui.tableWidget_no_vin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(str(row[7])))
+            self.ui.tableWidget_no_vin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
 
 
+    def comprobar_no_vin(self):
+        datos = self.datos_total.buscar_no_vin()
+        a = 0
+        for row in datos:
+            if str(row[1]).upper() == self.ui.lineEdit_nombre_n_vin.text().upper():
+                a = 1
+        return a
+
+    def retornar_sexo_no_vin(self):
+        ind = self.ui.tableWidget_no_vin.currentRow()
+        if self.ui.tableWidget_no_vin.item(ind, 2).text() == 'M':
+            self.ui.radioButton_masculino_2.setChecked(True)
+            self.ui.radioButton_Femenino_2.setChecked(False)
+        else:
+            self.ui.radioButton_Femenino_2.setChecked(True)
+            self.ui.radioButton_masculino_2.setChecked(False)
+
+    def llenar_form_no_vin(self):
+        try:
+            fila = self.ui.tableWidget_proy.currentRow()
+            if fila != -1:
+                nombre = self.ui.tableWidget_no_vin.item(fila, 1).text()
+                edad = self.ui.tableWidget_no_vin.item(fila, 3).text()
+                # fech_na = self.ui.tableWidget_no_vin.item(fila, 4).text()
+                niv_pro = self.ui.tableWidget_no_vin.item(fila, 5).text()
+                resp = self.ui.tableWidget_no_vin.item(fila, 6).text()
+                lleg_tarde = self.ui.tableWidget_no_vin.item(fila, 7).text()
+                horas_trab = self.ui.tableWidget_no_vin.item(fila, 8).text()
+
+                self.ui.lineEdit_nombre_n_vin.setText(nombre)
+                self.ui.spinBox_edad_no_vin.setValue(int(edad))
+                self.retornar_sexo_no_vin()
+                # self.ui.dateEdit_fecha_naci = fech_na
+                self.ui.comboBox_niv_pro_no_vin.setCurrentText(niv_pro)
+                self.ui.comboBox_resp.setCurrentText(resp)
+                self.ui.spinBox_tarde.setValue(lleg_tarde)
+                self.ui.spinBox_horas_tra.setValue(horas_trab)
+
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
+
+    def comprobar_sexo_no_vin(self):
+        if self.ui.radioButton_Femenino_2.isChecked():
+            sexo = 'F'
+        else:
+            sexo = 'M'
+
+        return sexo
+
+    def insertar_no_vin(self):
+        try:
+            nombre = self.ui.lineEdit_nombre_n_vin.text()
+            edad = self.ui.spinBox_edad_no_vin.value()
+            sexo = self.comprobar_sexo_no_vin()
+            fecha_naci = self.ui.dateEdit_fecha_naci_no_vin.text()
+            nivel_pro = self.ui.comboBox_niv_pro_no_vin.currentText()
+            responsabilidad = self.ui.comboBox_resp.currentText()
+            llegadas_tarde = self.ui.spinBox_tarde.value()
+            horas_trabajadas = self.ui.spinBox_horas_tra.value()
+            if self.comprobar_no_vin() == 1:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Ya existe un trabajador con ese nombre'))
+            else:
+                self.datos_total.insetrar_no_vin(nombre, edad, sexo, fecha_naci, nivel_pro,responsabilidad,
+                                                 llegadas_tarde, horas_trabajadas)
+                self.ui.lineEdit_nombre_n_vin.clear()
+                self.ui.spinBox_edad_no_vin.setValue(0)
+                self.ui.comboBox_niv_pro_no_vin.setCurrentIndex(0)
+                self.ui.comboBox_resp.setCurrentIndex(0)
+                self.ui.spinBox_tarde.setValue(0)
+                self.ui.spinBox_horas_tra.setValue(0)
+                self.mostrar_trab_no_vin()
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     #       PROYECTOS
 
