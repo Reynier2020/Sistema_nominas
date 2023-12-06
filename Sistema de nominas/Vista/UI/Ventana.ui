@@ -141,40 +141,6 @@ background-color: rgb(100, 171, 164);
             </property>
            </spacer>
           </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_refres">
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>25</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>25</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:5px;
-border:1px solid #167;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../iconos/refresh.ico</normaloff>../iconos/refresh.ico</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>30</width>
-              <height>23</height>
-             </size>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -302,7 +268,7 @@ border:1px solid #167;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_buscar_vin">
+                   <widget class="QPushButton" name="pushButton_refrsh_vin">
                     <property name="minimumSize">
                      <size>
                       <width>35</width>
@@ -328,7 +294,7 @@ border:1px solid #167;
                     </property>
                     <property name="icon">
                      <iconset>
-                      <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
+                      <normaloff>iconos/refresh.ico</normaloff>iconos/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -485,7 +451,7 @@ border:1px solid #167;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_buscar_no">
+                   <widget class="QPushButton" name="pushButton_refresh_no">
                     <property name="minimumSize">
                      <size>
                       <width>35</width>
@@ -511,7 +477,7 @@ border:1px solid #167;
                     </property>
                     <property name="icon">
                      <iconset>
-                      <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
+                      <normaloff>iconos/refresh.ico</normaloff>iconos/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -662,7 +628,7 @@ border:1px solid #167;</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_buscar_proy">
+                   <widget class="QPushButton" name="pushButton_refresh_proy">
                     <property name="minimumSize">
                      <size>
                       <width>35</width>
@@ -688,7 +654,7 @@ border:1px solid #167;
                     </property>
                     <property name="icon">
                      <iconset>
-                      <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
+                      <normaloff>iconos/refresh.ico</normaloff>iconos/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>

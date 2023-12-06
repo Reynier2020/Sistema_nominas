@@ -16,7 +16,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_proyecto_prin()
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
-        self.ui.pushButton_buscar_vin.clicked.connect(self.buscar_al_vin)
+        self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
 
     def validar_formulario(self):
         expre = QtCore.QRegExp('^[^0-9 ]*$')
