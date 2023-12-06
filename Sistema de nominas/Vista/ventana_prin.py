@@ -17,6 +17,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
+        self.ui.pushButton_dep_no_vin.clicked.connect(self.despedir_no_vin)
         self.ui.pushButton_desp_vin.clicked.connect(self.despedir_vin)
         self.ui.lineEdit_no_vin.textChanged.connect(self.buscar_al_no)
         self.ui.lineEdit_proy.textChanged.connect(self.buscar_el_proy)
