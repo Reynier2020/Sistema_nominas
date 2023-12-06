@@ -53,72 +53,6 @@ border:1px solid #167;}
      <number>0</number>
     </property>
     <item>
-     <widget class="QFrame" name="frame">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:5px;
-background-color: rgb(77, 132, 127);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <widget class="QFrame" name="frame_8">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string>Recordatorio:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTextEdit" name="textEdit_record">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
      <widget class="QFrame" name="frame_2">
       <property name="autoFillBackground">
        <bool>false</bool>
@@ -135,138 +69,6 @@ background-color: rgb(100, 171, 164);
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QFrame" name="frame_3">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>38</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>38</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="spacing">
-           <number>5</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>4</number>
-          </property>
-          <item>
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="contextMenuPolicy">
-             <enum>Qt::DefaultContextMenu</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="cursorPosition">
-             <number>0</number>
-            </property>
-            <property name="dragEnabled">
-             <bool>false</bool>
-            </property>
-            <property name="readOnly">
-             <bool>false</bool>
-            </property>
-            <property name="placeholderText">
-             <string> Buscar:</string>
-            </property>
-            <property name="clearButtonEnabled">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_buscar">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>38</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;
-</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>25</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="checkable">
-             <bool>false</bool>
-            </property>
-            <property name="checked">
-             <bool>false</bool>
-            </property>
-            <property name="autoDefault">
-             <bool>false</bool>
-            </property>
-            <property name="default">
-             <bool>false</bool>
-            </property>
-            <property name="flat">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
        <item>
         <widget class="QFrame" name="frame_9">
          <property name="minimumSize">
@@ -432,7 +234,7 @@ border:1px solid #167;</string>
              <enum>QTabWidget::Rounded</enum>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <property name="elideMode">
              <enum>Qt::ElideNone</enum>
@@ -453,76 +255,182 @@ border:1px solid #167;</string>
              <attribute name="title">
               <string>Trabajadores Vinculados</string>
              </attribute>
-             <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
-               <widget class="QTableWidget" name="tableWidget_vin">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_busar_vin">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="contextMenuPolicy">
+                     <enum>Qt::DefaultContextMenu</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="cursorPosition">
+                     <number>0</number>
+                    </property>
+                    <property name="dragEnabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="placeholderText">
+                     <string> Buscar:</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_buscar_vin">
+                    <property name="minimumSize">
+                     <size>
+                      <width>35</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>38</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;
+</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>false</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>false</bool>
+                    </property>
+                    <property name="default">
+                     <bool>false</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="tableWidget_vin_prin">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>9999999</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:5px;</string>
-                </property>
-                <column>
-                 <property name="text">
-                  <string>Nombre</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Sexo</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Edad</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Fecha de nacimiento</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Nivel profesional</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Proyecto vinculado</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Rol desempeñado</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Plan asig</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Plan real</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Salario</string>
-                 </property>
-                </column>
-               </widget>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Nombre</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Sexo</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Edad</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Fecha de nacimiento</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Nivel profesional</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Proyecto vinculado</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Rol desempeñado</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Plan asig</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Plan real</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Salario</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </widget>
@@ -530,65 +438,176 @@ border-radius:5px;</string>
              <attribute name="title">
               <string>Trabajadores no Vinculados</string>
              </attribute>
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <widget class="QTableWidget" name="tableWidget_no_vin">
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_no_vin">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="contextMenuPolicy">
+                     <enum>Qt::DefaultContextMenu</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="cursorPosition">
+                     <number>0</number>
+                    </property>
+                    <property name="dragEnabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="placeholderText">
+                     <string> Buscar:</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_buscar_no">
+                    <property name="minimumSize">
+                     <size>
+                      <width>35</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>38</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;
+</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>false</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>false</bool>
+                    </property>
+                    <property name="default">
+                     <bool>false</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="tableWidget_no_vin_prin">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:5px;</string>
-                </property>
-                <column>
-                 <property name="text">
-                  <string>Nombre</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Sexo</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Edad</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Fecha de nacimiento</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Nivel profesional</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Responsabilidad</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Llegadas tarde</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Horas trabajadas</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Salario</string>
-                 </property>
-                </column>
-               </widget>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>ID</string>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>8</pointsize>
+                    </font>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Nombre</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Sexo</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Edad</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Fecha de nacimiento</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Nivel profesional</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Responsabilidad</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Llegadas tarde</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Horas trabajadas</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Salario</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </widget>
@@ -596,50 +615,156 @@ border-radius:5px;</string>
              <attribute name="title">
               <string>Proyectos</string>
              </attribute>
-             <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
-               <widget class="QTableWidget" name="tableWidget_proy">
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_proy">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="contextMenuPolicy">
+                     <enum>Qt::DefaultContextMenu</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="cursorPosition">
+                     <number>0</number>
+                    </property>
+                    <property name="dragEnabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="placeholderText">
+                     <string> Buscar:</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_buscar_proy">
+                    <property name="minimumSize">
+                     <size>
+                      <width>35</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>38</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;
+</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../iconos/busqueda.ico</normaloff>../iconos/busqueda.ico</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>false</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>false</bool>
+                    </property>
+                    <property name="default">
+                     <bool>false</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="tableWidget_proy_prin">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:5px;</string>
-                </property>
-                <column>
-                 <property name="text">
-                  <string>Nombre</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Cliente</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Costo</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Fecha de inicio</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>Fecha de culminacion</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
-                  <string>% Culminacion</string>
-                 </property>
-                </column>
-               </widget>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Nombre</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Cliente</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Costo</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Fecha de inicio</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Fecha de culminacion</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>% Culminacion</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </widget>

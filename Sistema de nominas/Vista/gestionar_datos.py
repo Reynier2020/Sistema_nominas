@@ -1,5 +1,4 @@
 import datetime
-
 from conexion_db_gestion import *
 from Vista.UI.gestionar import *
 import sys
