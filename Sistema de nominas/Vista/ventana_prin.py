@@ -18,6 +18,10 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.ui.actionSalir.triggered.connect(quit)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
         self.ui.lineEdit_no_vin.textChanged.connect(self.buscar_al_no)
+        self.ui.lineEdit_proy.textChanged.connect(self.buscar_el_proy)
+        self.ui.pushButton_refrsh_vin.clicked.connect(self.mostrar_trab_vin_prin)
+        self.ui.pushButton_refresh_no.clicked.connect(self.mostrar_trab_no_vin_prin)
+        self.ui.pushButton_refresh_proy.clicked.connect(self.mostrar_proyecto_prin)
 
 
     def validar_formulario(self):
