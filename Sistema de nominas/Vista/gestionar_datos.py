@@ -27,13 +27,20 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.tableWidget_vin.itemClicked.connect(self.rellenar_form_vin)
         self.ui.pushButton_act_proy_list.clicked.connect(self.act_list_proy_vin)
     #   NO_VINCULADOS
+        self.ui.pushButton_insertar_n_vin.setDisabled(True)
+        self.ui.pushButton_actualizar_n_vin.setDisabled(True)
+        self.ui.lineEdit_nombre_n_vin.textChanged.connect(self.validar_controles_no_vin)
         self.mostrar_trab_no_vin()
         self.ui.pushButton_insertar_n_vin.clicked.connect(self.insertar_no_vin)
         self.ui.tableWidget_no_vin.itemClicked.connect(self.llenar_form_no_vin)
         self.ui.pushButton_actualizar_n_vin.clicked.connect(self.actualizar_no_vin)
         self.ui.pushButton_eliminar_n_vin.clicked.connect(self.eliminar_no_vin)
     #   PROYECTOS
+        self.ui.pushButton_insertar_proy.setDisabled(True)
+        self.ui.pushButton_actualizar_proy.setDisabled(True)
         self.mostrar_proyecto()
+        self.ui.lineEdit_nombre_pory.textChanged.connect(self.validar_controles_proy)
+        self.ui.lineEdit_cliente.textChanged.connect(self.validar_controles_proy)
         self.ui.pushButton_insertar_proy.clicked.connect(self.inertar_proy)
         self.ui.pushButton_eliminar_proy.clicked.connect(self.eliminar_proy)
         self.ui.tableWidget_proy.itemClicked.connect(self.llenar_form_proy)
@@ -225,6 +232,14 @@ class GestionarDatos(QtWidgets.QWidget):
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     #       TRABAJADORES_NO_VIN
+    def validar_controles_no_vin(self):
+        if len(self.ui.lineEdit_nombre_n_vin.text()) == 0:
+            self.ui.pushButton_insertar_n_vin.setDisabled(True)
+            self.ui.pushButton_actualizar_n_vin.setDisabled(True)
+        else:
+            self.ui.pushButton_insertar_n_vin.setDisabled(False)
+            self.ui.pushButton_actualizar_n_vin.setDisabled(False)
+
     def mostrar_trab_no_vin(self):
         datos = self.datos_total.buscar_no_vin()
         i = len(datos)
@@ -373,6 +388,14 @@ class GestionarDatos(QtWidgets.QWidget):
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     #       PROYECTOS
+
+    def validar_controles_proy(self):
+        if len(self.ui.lineEdit_nombre_pory.text()) == 0 or len(self.ui.lineEdit_cliente.text()) == 0:
+            self.ui.pushButton_insertar_proy.setDisabled(True)
+            self.ui.pushButton_actualizar_proy.setDisabled(True)
+        else:
+            self.ui.pushButton_insertar_proy.setDisabled(False)
+            self.ui.pushButton_actualizar_proy.setDisabled(False)
 
     def llenar_form_proy(self):
         try:
