@@ -24,7 +24,7 @@ class RegistroDatos:
     def busca_al_trab_vin(self, nombre_vin):
         curso = self.conn.cursor()
         try:
-            sql = """select * from trabajadores_vin where nombre = {}""".format(nombre_vin)
+            sql = """select * from trabajadores_vin where nombre = '{}'""".format(nombre_vin)
             curso.execute(sql)
         except MySQLdb.Error:
             self.conn.rollback()

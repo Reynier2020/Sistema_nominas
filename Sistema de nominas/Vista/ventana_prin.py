@@ -14,7 +14,9 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_trab_vin_prin()
         self.mostrar_trab_no_vin_prin()
         self.mostrar_proyecto_prin()
+        # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
+        self.ui.pushButton_buscar_vin.clicked.connect(self.buscar_al_vin)
 
     def validar_formulario(self):
         expre = QtCore.QRegExp('^[^0-9 ]*$')
@@ -103,6 +105,43 @@ class VentanaPrin(QtWidgets.QMainWindow):
             self.ui.tableWidget_proy_prin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
             self.ui.tableWidget_proy_prin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(str(row[5])))
             self.ui.tableWidget_proy_prin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(str(row[6])))
+            table_row += 1
+
+    def buscar_al_vin(self):
+        nombre = self.ui.lineEdit_busar_vin.text()
+        datos = self.datos_totales.busca_al_trab_vin(nombre)
+        i = len(datos)
+        self.ui.tableWidget_vin_prin.setRowCount(i)
+        table_row = 0
+        for row in datos:
+            self.ui.tableWidget_vin_prin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(row[5]))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(row[6]))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(row[7]))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
+            self.ui.tableWidget_vin_prin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(str(row[9])))
+            if row[5] == "profesional":
+                a = 80
+            elif row[5] == "tecnico medio":
+                a = 60
+            else:
+                a = 40
+
+            if int(row[9]) > 100:
+                b = int(row[9]) * 25.0
+            elif 100 >= int(row[9]) >= 95:
+                b = int(row[9]) * 21.5
+            elif 94 >= int(row[9]) >= 80:
+                b = int(row[9]) * 18.5
+            else:
+                b = int(row[9]) * 15.0
+
+            salario = (int(row[9]) * b + a)
+            self.ui.tableWidget_vin_prin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(str(salario)))
             table_row += 1
 
 
