@@ -17,6 +17,8 @@ class VentanaPrin(QtWidgets.QMainWindow):
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
+        self.ui.lineEdit_no_vin.textChanged.connect(self.buscar_al_no)
+
 
     def validar_formulario(self):
         expre = QtCore.QRegExp('^[^0-9 ]*$')
@@ -142,6 +144,54 @@ class VentanaPrin(QtWidgets.QMainWindow):
 
             salario = (int(row[9]) * b + a)
             self.ui.tableWidget_vin_prin.setItem(table_row, 10, QtWidgets.QTableWidgetItem(str(salario)))
+            table_row += 1
+
+    def buscar_al_no(self):
+        nombre = self.ui.lineEdit_no_vin.text()
+        datos = self.datos_totales.busca_al_trab_no_vin(nombre)
+        i = len(datos)
+        self.ui.tableWidget_no_vin_prin.setRowCount(i)
+        table_row = 0
+        for row in datos:
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[2])))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(row[5]))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(row[6]))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 7, QtWidgets.QTableWidgetItem(str(row[7])))
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 8, QtWidgets.QTableWidgetItem(str(row[8])))
+            if row[5] == "profesional":
+                a = 80
+            elif row[5] == "tecnico medio":
+                a = 60
+            else:
+                a = 40
+
+            if row[6] == "jefe de departamento":
+                b = 120
+            else:
+                b = 200
+
+            salario = int(((int(row[8]) * 12.5 + b) - (5 * int(row[7]))) + a)
+            self.ui.tableWidget_no_vin_prin.setItem(table_row, 9, QtWidgets.QTableWidgetItem(str(salario)))
+            table_row += 1
+
+    def buscar_el_proy(self):
+        nombre = self.ui.lineEdit_proy.text()
+        datos = self.datos_totales.busca_el_pro(nombre)
+        i = len(datos)
+        self.ui.tableWidget_proy_prin.setRowCount(i)
+        table_row = 0
+        for row in datos:
+            self.ui.tableWidget_proy_prin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(str(row[5])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(str(row[6])))
             table_row += 1
 
 
