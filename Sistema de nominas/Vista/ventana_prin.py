@@ -1,5 +1,5 @@
 from Vista.UI.ventana import *
-from conexion_db_gestion import *
+from conexion_db_gestion import RegistroDatos
 import sys
 
 
@@ -17,12 +17,12 @@ class VentanaPrin(QtWidgets.QMainWindow):
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
+        self.ui.pushButton_desp_vin.clicked.connect(self.despedir_vin)
         self.ui.lineEdit_no_vin.textChanged.connect(self.buscar_al_no)
         self.ui.lineEdit_proy.textChanged.connect(self.buscar_el_proy)
         self.ui.pushButton_refrsh_vin.clicked.connect(self.mostrar_trab_vin_prin)
         self.ui.pushButton_refresh_no.clicked.connect(self.mostrar_trab_no_vin_prin)
         self.ui.pushButton_refresh_proy.clicked.connect(self.mostrar_proyecto_prin)
-
 
     def validar_formulario(self):
         expre = QtCore.QRegExp('^[^0-9 ]*$')
@@ -198,9 +198,42 @@ class VentanaPrin(QtWidgets.QMainWindow):
             self.ui.tableWidget_proy_prin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(str(row[6])))
             table_row += 1
 
+    def despedir_vin(self):
+        try:
+            fila = self.ui.tableWidget_vin_prin.currentRow()
+            nombre = self.ui.tableWidget_vin_prin.item(fila, 1).text()
+            sexo = self.ui.tableWidget_vin_prin.item(fila, 2).text()
+            edad = self.ui.tableWidget_vin_prin.item(fila, 3).text()
+            fech_na = self.ui.tableWidget_vin_prin.item(fila, 4).text()
+            niv_pro = self.ui.tableWidget_vin_prin.item(fila, 5).text()
+            proy_vin = self.ui.tableWidget_vin_prin.item(fila, 6).text()
+            rol_proy = self.ui.tableWidget_vin_prin.item(fila, 7).text()
+            plan_cump = self.ui.tableWidget_vin_prin.item(fila, 8).text()
+            plan_real = self.ui.tableWidget_vin_prin.item(fila, 9).text()
+            salario = self.ui.tableWidget_vin_prin.item(fila, 10).text()
+            if fila != -1:
+                ide = self.ui.tableWidget_vin_prin.item(fila, 0).text()
+                a = self.datos_totales.eliminar_vin(int(ide))
+                if a == 1:
+                    self.mostrar_trab_vin_prin()
+                    self.ui.lineEdit_busar_vin.setFocus()
+                    return (QtWidgets.QMessageBox.information(self, '!!!DESPEDIDO!!!', 'Se ha despedido a: nombre: {}\n'
+                                                              'sexo: {}\nedad: {}\nfecha_nacimiento: {}\n'
+                                                              'nivel_pro: {}\nproy_vin: {}\nrol: {}\n'
+                                                              'plan_asig: {}\nplan_real: {}\n'
+                                                              'salario: {}'.format(nombre, sexo, edad,
+                                                                                   fech_na, niv_pro, proy_vin,
+                                                                                   rol_proy, plan_cump,
+                                                                                   plan_real, salario)))
 
-if __name__ == "__main__":
+            else:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona a alguien antes de despedirlo'))
+        except Exception as error:
+            return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
+
+
+if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    sas = VentanaPrin()
-    sas.show()
+    ven = VentanaPrin()
+    ven.show()
     sys.exit(app.exec())

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindo_principal(object):
     def setupUi(self, MainWindo_principal):
         MainWindo_principal.setObjectName("MainWindo_principal")
-        MainWindo_principal.resize(672, 480)
+        MainWindo_principal.resize(639, 480)
         MainWindo_principal.setMinimumSize(QtCore.QSize(404, 350))
         MainWindo_principal.setMouseTracking(True)
         icon = QtGui.QIcon()
@@ -111,6 +111,14 @@ class Ui_MainWindo_principal(object):
         self.lineEdit_busar_vin.setClearButtonEnabled(True)
         self.lineEdit_busar_vin.setObjectName("lineEdit_busar_vin")
         self.horizontalLayout_6.addWidget(self.lineEdit_busar_vin)
+        self.pushButton_desp_vin = QtWidgets.QPushButton(self.tab_vinculados)
+        self.pushButton_desp_vin.setMinimumSize(QtCore.QSize(35, 22))
+        self.pushButton_desp_vin.setMaximumSize(QtCore.QSize(50, 22))
+        self.pushButton_desp_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border:1px solid #167;")
+        self.pushButton_desp_vin.setText("")
+        self.pushButton_desp_vin.setObjectName("pushButton_desp_vin")
+        self.horizontalLayout_6.addWidget(self.pushButton_desp_vin)
         self.pushButton_refrsh_vin = QtWidgets.QPushButton(self.tab_vinculados)
         self.pushButton_refrsh_vin.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_refrsh_vin.setMaximumSize(QtCore.QSize(38, 22))
@@ -185,6 +193,14 @@ class Ui_MainWindo_principal(object):
         self.lineEdit_no_vin.setClearButtonEnabled(True)
         self.lineEdit_no_vin.setObjectName("lineEdit_no_vin")
         self.horizontalLayout_2.addWidget(self.lineEdit_no_vin)
+        self.pushButton_dep_no_vin = QtWidgets.QPushButton(self.tab_no_vinculado)
+        self.pushButton_dep_no_vin.setMinimumSize(QtCore.QSize(35, 22))
+        self.pushButton_dep_no_vin.setMaximumSize(QtCore.QSize(50, 22))
+        self.pushButton_dep_no_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border:1px solid #167;")
+        self.pushButton_dep_no_vin.setText("")
+        self.pushButton_dep_no_vin.setObjectName("pushButton_dep_no_vin")
+        self.horizontalLayout_2.addWidget(self.pushButton_dep_no_vin)
         self.pushButton_refresh_no = QtWidgets.QPushButton(self.tab_no_vinculado)
         self.pushButton_refresh_no.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_refresh_no.setMaximumSize(QtCore.QSize(38, 22))
@@ -304,7 +320,7 @@ class Ui_MainWindo_principal(object):
         self.horizontalLayout.addWidget(self.frame_2)
         MainWindo_principal.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindo_principal)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 672, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 639, 21))
         self.menubar.setObjectName("menubar")
         self.menuArchivo = QtWidgets.QMenu(self.menubar)
         self.menuArchivo.setObjectName("menuArchivo")
@@ -383,14 +399,14 @@ class Ui_MainWindo_principal(object):
         self.menubar.addAction(self.menuAyuda.menuAction())
 
         self.retranslateUi(MainWindo_principal)
-        self.tabWidget_principal.setCurrentIndex(0)
+        self.tabWidget_principal.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindo_principal)
 
     def retranslateUi(self, MainWindo_principal):
         _translate = QtCore.QCoreApplication.translate
         MainWindo_principal.setWindowTitle(_translate("MainWindo_principal", "Sistema de Nóminas"))
         self.label_2.setText(_translate("MainWindo_principal", "NOMINAS"))
-        self.lineEdit_busar_vin.setPlaceholderText(_translate("MainWindo_principal", " Buscar:"))
+        self.lineEdit_busar_vin.setPlaceholderText(_translate("MainWindo_principal", " Buscar para despedir:"))
         item = self.tableWidget_vin_prin.horizontalHeaderItem(0)
         item.setText(_translate("MainWindo_principal", "ID"))
         item = self.tableWidget_vin_prin.horizontalHeaderItem(1)
@@ -414,7 +430,7 @@ class Ui_MainWindo_principal(object):
         item = self.tableWidget_vin_prin.horizontalHeaderItem(10)
         item.setText(_translate("MainWindo_principal", "Salario"))
         self.tabWidget_principal.setTabText(self.tabWidget_principal.indexOf(self.tab_vinculados), _translate("MainWindo_principal", "Trabajadores Vinculados"))
-        self.lineEdit_no_vin.setPlaceholderText(_translate("MainWindo_principal", " Buscar:"))
+        self.lineEdit_no_vin.setPlaceholderText(_translate("MainWindo_principal", " Buscar para despedir:"))
         item = self.tableWidget_no_vin_prin.horizontalHeaderItem(0)
         item.setText(_translate("MainWindo_principal", "ID"))
         item = self.tableWidget_no_vin_prin.horizontalHeaderItem(1)

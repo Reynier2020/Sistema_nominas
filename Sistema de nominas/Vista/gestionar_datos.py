@@ -1,7 +1,7 @@
 import datetime
 from conexion_db_gestion import *
 from Vista.UI.gestionar import *
-import sys
+# import sys
 
 
 class GestionarDatos(QtWidgets.QWidget):
@@ -225,6 +225,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 a = self.datos_total.eliminar_vin(int(ide))
                 if a == 1:
                     self.mostrar_trab_vin()
+                    self.ui.lineEdit_nombre_vin.setFocus()
             else:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
         except Exception as error:
@@ -500,10 +501,3 @@ class GestionarDatos(QtWidgets.QWidget):
                 self.mostrar_proyecto()
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
-
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    sas = GestionarDatos()
-    sas.show()
-    sys.exit(app.exec())

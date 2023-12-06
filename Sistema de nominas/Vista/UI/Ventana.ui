@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>672</width>
+    <width>639</width>
     <height>480</height>
    </rect>
   </property>
@@ -200,7 +200,7 @@ background-color: rgb(100, 171, 164);
              <enum>QTabWidget::Rounded</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <property name="elideMode">
              <enum>Qt::ElideNone</enum>
@@ -260,10 +260,33 @@ border:1px solid #167;</string>
                      <bool>false</bool>
                     </property>
                     <property name="placeholderText">
-                     <string> Buscar:</string>
+                     <string> Buscar para despedir:</string>
                     </property>
                     <property name="clearButtonEnabled">
                      <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_desp_vin">
+                    <property name="minimumSize">
+                     <size>
+                      <width>35</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -443,10 +466,33 @@ border:1px solid #167;</string>
                      <bool>false</bool>
                     </property>
                     <property name="placeholderText">
-                     <string> Buscar:</string>
+                     <string> Buscar para despedir:</string>
                     </property>
                     <property name="clearButtonEnabled">
                      <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_dep_no_vin">
+                    <property name="minimumSize">
+                     <size>
+                      <width>35</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -749,7 +795,7 @@ border-radius:5px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>672</width>
+     <width>639</width>
      <height>21</height>
     </rect>
    </property>
