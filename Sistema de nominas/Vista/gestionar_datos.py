@@ -15,8 +15,10 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.pushButton_aceptar.clicked.connect(quit)
 
         #                VINCULADOS
+        self.ui.pushButton_insertar_vin.setDisabled(True)
+        self.ui.pushButton_actualizar_vin.setDisabled(True)
         self.validar_formulario()
-        self.validar_controles()
+        self.ui.lineEdit_nombre_vin.textChanged.connect(self.validar_controles_vin)
         self.mostrar_trab_vin()
         self.act_list_proy_vin()
         self.ui.pushButton_insertar_vin.clicked.connect(self.insertar_trab_vin)
@@ -38,20 +40,20 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.pushButton_actualizar_proy.clicked.connect(self.actualizar_proy)
 
     def validar_formulario(self):
-        expre = QtCore.QRegExp('^[^0-9]*$')
+        expre = QtCore.QRegExp('^[^0-9 ]*$')
         valid = QtGui.QRegExpValidator(expre)
         self.ui.lineEdit_nombre_vin.setValidator(valid)
         self.ui.lineEdit_nombre_n_vin.setValidator(valid)
         self.ui.lineEdit_nombre_pory.setValidator(valid)
         self.ui.lineEdit_cliente.setValidator(valid)
 
-    def validar_controles(self):
+    def validar_controles_vin(self):
         if len(self.ui.lineEdit_nombre_vin.text()) == 0:
             self.ui.pushButton_insertar_vin.setDisabled(True)
+            self.ui.pushButton_actualizar_vin.setDisabled(True)
         else:
             self.ui.pushButton_insertar_vin.setDisabled(False)
-        if len(self.ui.lineEdit_nombre_n_vin.text()) == 0:
-            self.ui.pushButton_insertar_n_vin.setDisabled(True)
+            self.ui.pushButton_actualizar_vin.setDisabled(False)
 
     def rellenar_form_vin(self):
         try:
