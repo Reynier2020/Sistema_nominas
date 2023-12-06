@@ -200,19 +200,20 @@ class VentanaPrin(QtWidgets.QMainWindow):
             table_row += 1
 
     def despedir_vin(self):
+        fila = self.ui.tableWidget_vin_prin.currentRow()
         try:
-            fila = self.ui.tableWidget_vin_prin.currentRow()
-            nombre = self.ui.tableWidget_vin_prin.item(fila, 1).text()
-            sexo = self.ui.tableWidget_vin_prin.item(fila, 2).text()
-            edad = self.ui.tableWidget_vin_prin.item(fila, 3).text()
-            fech_na = self.ui.tableWidget_vin_prin.item(fila, 4).text()
-            niv_pro = self.ui.tableWidget_vin_prin.item(fila, 5).text()
-            proy_vin = self.ui.tableWidget_vin_prin.item(fila, 6).text()
-            rol_proy = self.ui.tableWidget_vin_prin.item(fila, 7).text()
-            plan_cump = self.ui.tableWidget_vin_prin.item(fila, 8).text()
-            plan_real = self.ui.tableWidget_vin_prin.item(fila, 9).text()
-            salario = self.ui.tableWidget_vin_prin.item(fila, 10).text()
             if fila != -1:
+                nombre = self.ui.tableWidget_vin_prin.item(fila, 1).text()
+                sexo = self.ui.tableWidget_vin_prin.item(fila, 2).text()
+                edad = self.ui.tableWidget_vin_prin.item(fila, 3).text()
+                fech_na = self.ui.tableWidget_vin_prin.item(fila, 4).text()
+                niv_pro = self.ui.tableWidget_vin_prin.item(fila, 5).text()
+                proy_vin = self.ui.tableWidget_vin_prin.item(fila, 6).text()
+                rol_proy = self.ui.tableWidget_vin_prin.item(fila, 7).text()
+                plan_cump = self.ui.tableWidget_vin_prin.item(fila, 8).text()
+                plan_real = self.ui.tableWidget_vin_prin.item(fila, 9).text()
+                salario = self.ui.tableWidget_vin_prin.item(fila, 10).text()
+
                 ide = self.ui.tableWidget_vin_prin.item(fila, 0).text()
                 a = self.datos_totales.eliminar_vin(int(ide))
                 if a == 1:
@@ -233,18 +234,19 @@ class VentanaPrin(QtWidgets.QMainWindow):
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     def despedir_no_vin(self):
+        fila = self.ui.tableWidget_no_vin_prin.currentRow()
         try:
-            fila = self.ui.tableWidget_no_vin_prin.currentRow()
-            nombre = self.ui.tableWidget_no_vin_prin.item(fila, 1).text()
-            sexo = self.ui.tableWidget_no_vin_prin.item(fila, 2).text()
-            edad = self.ui.tableWidget_no_vin_prin.item(fila, 3).text()
-            fech_na = self.ui.tableWidget_no_vin_prin.item(fila, 4).text()
-            niv_pro = self.ui.tableWidget_no_vin_prin.item(fila, 5).text()
-            resp = self.ui.tableWidget_no_vin_prin.item(fila, 6).text()
-            lleg_tarde = self.ui.tableWidget_no_vin_prin.item(fila, 7).text()
-            horas_trab = self.ui.tableWidget_no_vin_prin.item(fila, 8).text()
-            salario = self.ui.tableWidget_no_vin_prin.item(fila, 9).text()
             if fila != -1:
+                nombre = self.ui.tableWidget_no_vin_prin.item(fila, 1).text()
+                sexo = self.ui.tableWidget_no_vin_prin.item(fila, 2).text()
+                edad = self.ui.tableWidget_no_vin_prin.item(fila, 3).text()
+                fech_na = self.ui.tableWidget_no_vin_prin.item(fila, 4).text()
+                niv_pro = self.ui.tableWidget_no_vin_prin.item(fila, 5).text()
+                resp = self.ui.tableWidget_no_vin_prin.item(fila, 6).text()
+                lleg_tarde = self.ui.tableWidget_no_vin_prin.item(fila, 7).text()
+                horas_trab = self.ui.tableWidget_no_vin_prin.item(fila, 8).text()
+                salario = self.ui.tableWidget_no_vin_prin.item(fila, 9).text()
+
                 ide = self.ui.tableWidget_no_vin_prin.item(fila, 0).text()
                 a = self.datos_totales.eliminar_no_vin(int(ide))
                 if a == 1:
