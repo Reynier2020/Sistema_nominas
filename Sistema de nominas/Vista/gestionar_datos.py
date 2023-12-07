@@ -1,17 +1,16 @@
 import datetime
-from conexion_db_gestion import *
+from Vista.conexion_db_gestion import *
 from Vista.UI.gestionar import *
 
 
 class GestionarDatos(QtWidgets.QWidget):
-    def __init__(self, presentador):
+    def __init__(self, present):
         QtWidgets.QWidget.__init__(self)
         self.ui = Ui_gestionar_ui()
         self.ui.setupUi(self)
-
+        self.present = present
         self.datos_total = RegistroDatos()
-        self.presentador = presentador
-        self.ui.pushButton_aceptar.clicked.connect(quit)
+        # self.ui.pushButton_aceptar.clicked.connect(quit)
 
         #                VINCULADOS
         self.ui.pushButton_insertar_vin.setDisabled(True)
@@ -502,6 +501,3 @@ class GestionarDatos(QtWidgets.QWidget):
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
-    def show_gestionar(self):
-        ven = GestionarDatos(self.presentador)
-        ven.show()
