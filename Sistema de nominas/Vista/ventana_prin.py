@@ -17,6 +17,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_proyecto_prin()
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
+        self.ui.actionTotal_de_salarios_a_pagar.triggered.connect(self.total_salarios)
         self.ui.actionAcerca_de.triggered.connect(self.init_gestionar)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
         self.ui.pushButton_dep_no_vin.clicked.connect(self.despedir_no_vin)
@@ -270,6 +271,32 @@ class VentanaPrin(QtWidgets.QMainWindow):
     def init_gestionar(self):
         apli = GestionarDatos(self)
         apli.show_gestionar()
+
+    def sumatoria_salarios_vin(self):
+        table_row = 0
+        datos = self.datos_totales.buscar_trab_vin()
+        datos_sal = self.ui.tableWidget_vin_prin.item(table_row, 10).text()
+        salario_total_vin = 0
+        for row in datos:
+            salario_total_vin += float(datos_sal)
+            table_row += 1
+        return salario_total_vin
+
+    def sumatoria_salarios_no_vin(self):
+        table_row = 0
+        datos = self.datos_totales.buscar_no_vin()
+        datos_sal = self.ui.tableWidget_no_vin_prin.item(table_row, 9).text()
+        salario_total_no = 0
+        for row in datos:
+            salario_total_no += float(datos_sal)
+        return salario_total_no
+
+    def total_salarios(self):
+        total_vin = self.sumatoria_salarios_vin()
+        total_no_vin = self.sumatoria_salarios_no_vin()
+        total_salarios = float(total_vin) + float(total_no_vin)
+        msg = QtWidgets.QMessageBox.information(self, "Salarios", "Total de salarios: {}".format(total_salarios))
+        return msg
 
 
 if __name__ == '__main__':
