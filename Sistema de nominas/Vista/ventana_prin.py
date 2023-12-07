@@ -1,6 +1,7 @@
 from Vista.UI.ventana import *
 from conexion_db_gestion import RegistroDatos
 import sys
+from gestionar_datos import GestionarDatos
 
 
 class VentanaPrin(QtWidgets.QMainWindow):
@@ -16,6 +17,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_proyecto_prin()
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
+        self.ui.menuGestion.triggered.connect(self.init_gestionar)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
         self.ui.pushButton_dep_no_vin.clicked.connect(self.despedir_no_vin)
         self.ui.pushButton_desp_vin.clicked.connect(self.despedir_vin)
@@ -264,6 +266,10 @@ class VentanaPrin(QtWidgets.QMainWindow):
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona a alguien antes de despedirlo'))
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
+
+    def init_gestionar(self):
+        apli = GestionarDatos(self)
+        apli.show_gestionar()
 
 
 if __name__ == '__main__':
