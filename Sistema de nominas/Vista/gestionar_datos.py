@@ -1,7 +1,6 @@
 import datetime
 from conexion_db_gestion import *
 from Vista.UI.gestionar import *
-import sys
 
 
 class GestionarDatos(QtWidgets.QWidget):
@@ -504,7 +503,5 @@ class GestionarDatos(QtWidgets.QWidget):
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
 
     def show_gestionar(self):
-        app = QtWidgets.QApplication(sys.argv)
         ven = GestionarDatos(self.presentador)
         ven.show()
-        sys.exit(app.exec())

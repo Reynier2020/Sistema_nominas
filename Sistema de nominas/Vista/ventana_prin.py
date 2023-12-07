@@ -17,7 +17,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_proyecto_prin()
         # CONEXIONES
         self.ui.actionSalir.triggered.connect(quit)
-        self.ui.menuGestion.triggered.connect(self.init_gestionar)
+        self.ui.actionAcerca_de.triggered.connect(self.init_gestionar)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
         self.ui.pushButton_dep_no_vin.clicked.connect(self.despedir_no_vin)
         self.ui.pushButton_desp_vin.clicked.connect(self.despedir_vin)
