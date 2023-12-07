@@ -6,7 +6,7 @@ b)	Implemente la funcionalidad necesaria para determinar el salario de un trabaj
 •	Para los trabajadores no vinculados se determina entre la cantidad de horas trabajadas por $12.5 más la bonificación del cargo que es $120 para los jefes de departamento y $200 para el director de la empresa restándole $5 por cada llegada tarde.  
 •	Para los trabajadores vinculados se determina por el porciento de cumplimiento de su tarea del mes por el coeficiente de eficiencia que es 21.5 si el por ciento de cumplimiento de su tarea del mes está entre 95 y 100, es 18.5 si el porciento está entre 80 y 94, 15 para un porciento menor de 80, y 25 para un porciento mayor de 100.  
 c)	Implemente la funcionalidad necesaria para determinar el listado de proyectos que tiene la empresa ordenado en orden descendente por el valor añadido que es el costo por el porciento de terminación.  
-d)	Implemente la funcionalidad necesaria para despedir un trabajador del sistema devolviendo todos sus datos y determinando su salario acumulado en el mes actual.  
-e)	Implemente la funcionalidad necesaria para determinar qué porciento de los trabajadores vinculados cumplen con más de un porciento dado su labor mensual.  
+d)------Implemente la funcionalidad necesaria para despedir un trabajador del sistema devolviendo todos sus datos y determinando su salario acumulado en el mes actual.  
+e)	Implemente la funcionalidad necesaria para determinar qué porciento de los trabajadores vinculados cumplen con más de un porciento dado, su labor mensual.  
 f)	Implemente la funcionalidad necesaria para listar a final de mes la nómina de la empresa con los datos de cada trabajador y el salario a cobrar, además de la sumatoria total de todos los salarios.  
 g)	Pruebe que las operaciones implementadas en el modelo funcionan correctamente según los datos de prueba que usted le entró al programa. 

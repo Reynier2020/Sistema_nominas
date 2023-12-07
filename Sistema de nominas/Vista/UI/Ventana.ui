@@ -200,7 +200,7 @@ background-color: rgb(100, 171, 164);
              <enum>QTabWidget::Rounded</enum>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>3</number>
             </property>
             <property name="elideMode">
              <enum>Qt::ElideNone</enum>
@@ -780,6 +780,11 @@ border-radius:5px;</string>
               </item>
              </layout>
             </widget>
+            <widget class="QWidget" name="tab_implem">
+             <attribute name="title">
+              <string>Implementaciones</string>
+             </attribute>
+            </widget>
            </widget>
           </item>
          </layout>
@@ -816,8 +821,6 @@ border-radius:5px;</string>
     <property name="title">
      <string>Funcionalidades</string>
     </property>
-    <addaction name="actionDespedir_Trabajador"/>
-    <addaction name="separator"/>
     <addaction name="actionPorciento_de_cumplimiento"/>
     <addaction name="separator"/>
     <addaction name="actionTotal_de_salarios_a_pagar"/>

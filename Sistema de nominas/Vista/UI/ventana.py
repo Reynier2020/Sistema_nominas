@@ -315,6 +315,9 @@ class Ui_MainWindo_principal(object):
         self.verticalLayout_5.addWidget(self.tableWidget_proy_prin)
         self.verticalLayout_2.addLayout(self.verticalLayout_5)
         self.tabWidget_principal.addTab(self.tab_proyectos, "")
+        self.tab_implem = QtWidgets.QWidget()
+        self.tab_implem.setObjectName("tab_implem")
+        self.tabWidget_principal.addTab(self.tab_implem, "")
         self.horizontalLayout_3.addWidget(self.tabWidget_principal)
         self.verticalLayout.addWidget(self.frame_4)
         self.horizontalLayout.addWidget(self.frame_2)
@@ -385,8 +388,6 @@ class Ui_MainWindo_principal(object):
         self.menuArchivo.addAction(self.actionCargar_Nomina)
         self.menuArchivo.addSeparator()
         self.menuArchivo.addAction(self.actionSalir)
-        self.menuFuncionalidades.addAction(self.actionDespedir_Trabajador)
-        self.menuFuncionalidades.addSeparator()
         self.menuFuncionalidades.addAction(self.actionPorciento_de_cumplimiento)
         self.menuFuncionalidades.addSeparator()
         self.menuFuncionalidades.addAction(self.actionTotal_de_salarios_a_pagar)
@@ -399,7 +400,7 @@ class Ui_MainWindo_principal(object):
         self.menubar.addAction(self.menuAyuda.menuAction())
 
         self.retranslateUi(MainWindo_principal)
-        self.tabWidget_principal.setCurrentIndex(1)
+        self.tabWidget_principal.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindo_principal)
 
     def retranslateUi(self, MainWindo_principal):
@@ -468,6 +469,7 @@ class Ui_MainWindo_principal(object):
         item = self.tableWidget_proy_prin.horizontalHeaderItem(6)
         item.setText(_translate("MainWindo_principal", "% Culminacion"))
         self.tabWidget_principal.setTabText(self.tabWidget_principal.indexOf(self.tab_proyectos), _translate("MainWindo_principal", "Proyectos"))
+        self.tabWidget_principal.setTabText(self.tabWidget_principal.indexOf(self.tab_implem), _translate("MainWindo_principal", "Implementaciones"))
         self.menuArchivo.setTitle(_translate("MainWindo_principal", "Archivo"))
         self.menuGestion.setTitle(_translate("MainWindo_principal", "Gestión"))
         self.menuFuncionalidades.setTitle(_translate("MainWindo_principal", "Funcionalidades"))
