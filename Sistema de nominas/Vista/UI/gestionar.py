@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from Vista.iconos import iconos_rc
 
 class Ui_gestionar_ui(object):
     def setupUi(self, gestionar_ui):
@@ -17,6 +17,9 @@ class Ui_gestionar_ui(object):
         gestionar_ui.resize(600, 600)
         gestionar_ui.setMinimumSize(QtCore.QSize(600, 600))
         gestionar_ui.setMaximumSize(QtCore.QSize(600, 600))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/ventana_prin/sist.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        gestionar_ui.setWindowIcon(icon)
         gestionar_ui.setStyleSheet("background-color: rgb(100, 171, 164);")
         self.verticalLayout = QtWidgets.QVBoxLayout(gestionar_ui)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -173,9 +176,9 @@ class Ui_gestionar_ui(object):
         self.pushButton_act_proy_list = QtWidgets.QPushButton(self.frame_rol)
         self.pushButton_act_proy_list.setMinimumSize(QtCore.QSize(25, 0))
         self.pushButton_act_proy_list.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../iconos/refresh.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_act_proy_list.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../iconos/refresh.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_act_proy_list.setIcon(icon1)
         self.pushButton_act_proy_list.setObjectName("pushButton_act_proy_list")
         self.horizontalLayout_9.addWidget(self.pushButton_act_proy_list)
         self.comboBox_pro_vin = QtWidgets.QComboBox(self.frame_rol)
@@ -307,7 +310,7 @@ class Ui_gestionar_ui(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_vin.setHorizontalHeaderItem(10, item)
         self.verticalLayout_6.addWidget(self.tableWidget_vin)
-        self.tabWidget.addTab(self.tab_vinculados, "")
+        self.tabWidget.addTab(self.tab_vinculados, icon, "")
         self.tab_no_vinculados = QtWidgets.QWidget()
         self.tab_no_vinculados.setObjectName("tab_no_vinculados")
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.tab_no_vinculados)
@@ -539,7 +542,9 @@ class Ui_gestionar_ui(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_no_vin.setHorizontalHeaderItem(9, item)
         self.verticalLayout_11.addWidget(self.tableWidget_no_vin)
-        self.tabWidget.addTab(self.tab_no_vinculados, "")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/ventana_prin/no_vin.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tabWidget.addTab(self.tab_no_vinculados, icon2, "")
         self.tab_proyectos = QtWidgets.QWidget()
         self.tab_proyectos.setObjectName("tab_proyectos")
         self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.tab_proyectos)
@@ -734,7 +739,9 @@ class Ui_gestionar_ui(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_proy.setHorizontalHeaderItem(6, item)
         self.verticalLayout_16.addWidget(self.tableWidget_proy)
-        self.tabWidget.addTab(self.tab_proyectos, "")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/ventana_prin/proy.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tabWidget.addTab(self.tab_proyectos, icon3, "")
         self.verticalLayout.addWidget(self.tabWidget)
         self.frame_5 = QtWidgets.QFrame(gestionar_ui)
         self.frame_5.setMinimumSize(QtCore.QSize(0, 50))
@@ -758,7 +765,7 @@ class Ui_gestionar_ui(object):
         self.verticalLayout.addWidget(self.frame_5)
 
         self.retranslateUi(gestionar_ui)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(gestionar_ui)
         gestionar_ui.setTabOrder(self.lineEdit_nombre_vin, self.radioButton_Femenino)
         gestionar_ui.setTabOrder(self.radioButton_Femenino, self.radioButton_masculino)
@@ -914,3 +921,4 @@ class Ui_gestionar_ui(object):
         item.setText(_translate("gestionar_ui", "% Culminacion"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_proyectos), _translate("gestionar_ui", "Gestion de Proyectos"))
         self.pushButton_aceptar.setText(_translate("gestionar_ui", "Aceptar"))
+

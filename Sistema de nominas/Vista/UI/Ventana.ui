@@ -22,10 +22,6 @@
   <property name="windowTitle">
    <string>Sistema de Nóminas</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>archivos/menu_icon.ico</normaloff>archivos/menu_icon.ico</iconset>
-  </property>
   <property name="styleSheet">
    <string notr="true">QLineEdit{
 border:1px solid #167;}
@@ -200,7 +196,7 @@ background-color: rgb(100, 171, 164);
              <enum>QTabWidget::Rounded</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <property name="elideMode">
              <enum>Qt::ElideNone</enum>
@@ -277,7 +273,7 @@ border:1px solid #167;</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>38</width>
                       <height>22</height>
                      </size>
                     </property>
@@ -287,6 +283,16 @@ border:1px solid #167;</string>
                     </property>
                     <property name="text">
                      <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/eliminar.ico</normaloff>:/ventana_prin/eliminar.ico</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>20</height>
+                     </size>
                     </property>
                    </widget>
                   </item>
@@ -316,8 +322,8 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
-                      <normaloff>iconos/refresh.ico</normaloff>iconos/refresh.ico</iconset>
+                     <iconset resource="../iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/refresh.ico</normaloff>:/ventana_prin/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -494,6 +500,16 @@ border:1px solid #167;</string>
                     <property name="text">
                      <string/>
                     </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../iconos/eliminar.ico</normaloff>../iconos/eliminar.ico</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>20</height>
+                     </size>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -522,8 +538,8 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
-                      <normaloff>iconos/refresh.ico</normaloff>iconos/refresh.ico</iconset>
+                     <iconset resource="../iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/refresh.ico</normaloff>:/ventana_prin/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -674,6 +690,46 @@ border:1px solid #167;</string>
                    </widget>
                   </item>
                   <item>
+                   <widget class="QPushButton" name="pushButton_ordenar_pro">
+                    <property name="minimumSize">
+                     <size>
+                      <width>35</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>22</height>
+                     </size>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid #167;
+</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/ordenar.ico</normaloff>:/ventana_prin/ordenar.ico</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPushButton" name="pushButton_refresh_proy">
                     <property name="minimumSize">
                      <size>
@@ -699,8 +755,8 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
-                      <normaloff>iconos/refresh.ico</normaloff>iconos/refresh.ico</iconset>
+                     <iconset resource="../iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/refresh.ico</normaloff>:/ventana_prin/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -967,6 +1023,8 @@ border-radius:5px;</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../iconos/iconos.qrc"/>
+ </resources>
  <connections/>
 </ui>

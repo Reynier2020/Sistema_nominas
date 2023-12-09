@@ -15,6 +15,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_trab_no_vin_prin()
         self.mostrar_proyecto_prin()
         # CONEXIONES
+        self.ui.pushButton_ordenar_pro.clicked.connect(self.mostrar_proy_ordenado)
         self.ui.actionDescripcion.triggered.connect(self.descripsion)
         self.ui.actionAcerca_de.triggered.connect(self.ayuda)
         self.ui.actionSalir.triggered.connect(quit)
@@ -106,6 +107,21 @@ class VentanaPrin(QtWidgets.QMainWindow):
 
     def mostrar_proyecto_prin(self):
         datos = self.datos_totales.buscar_pro()
+        i = len(datos)
+        self.ui.tableWidget_proy_prin.setRowCount(i)
+        table_row = 0
+        for row in datos:
+            self.ui.tableWidget_proy_prin.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(row[3])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 4, QtWidgets.QTableWidgetItem(str(row[4])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 5, QtWidgets.QTableWidgetItem(str(row[5])))
+            self.ui.tableWidget_proy_prin.setItem(table_row, 6, QtWidgets.QTableWidgetItem(str(row[6])))
+            table_row += 1
+
+    def mostrar_proy_ordenado(self):
+        datos = self.datos_totales.ordenar_proy()
         i = len(datos)
         self.ui.tableWidget_proy_prin.setRowCount(i)
         table_row = 0

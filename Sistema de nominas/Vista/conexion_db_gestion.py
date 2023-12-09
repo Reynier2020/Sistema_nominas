@@ -157,6 +157,17 @@ class RegistroDatos:
         cursor.close()
         return list_pro
 
+    def ordenar_proy(self):
+        cursor = self.conn.cursor()
+        try:
+            sql = """select * from proyectos order by costo * porcentaje_cump desc"""
+            cursor.execute(sql)
+        except MySQLdb.Error:
+            self.conn.rollback()
+        list_pro = cursor.fetchall()
+        cursor.close()
+        return list_pro
+
     def insertar_proy(self, nombre, cliente, costo, fecha_inicio, fecha_culminacion, porcentaje_cump):
         cursor = self.conn.cursor()
         try:

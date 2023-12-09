@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Gestiones</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../iconos/iconos.qrc">
+    <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(100, 171, 164);</string>
   </property>
@@ -49,12 +53,16 @@ QDateEdit{
 border:1px solid #167;}</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
        <string notr="true"/>
       </property>
+      <attribute name="icon">
+       <iconset resource="../iconos/iconos.qrc">
+        <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
+      </attribute>
       <attribute name="title">
        <string>Gestion de vinculados</string>
       </attribute>
@@ -725,6 +733,10 @@ border-radius:5px;</string>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_no_vinculados">
+      <attribute name="icon">
+       <iconset resource="../iconos/iconos.qrc">
+        <normaloff>:/ventana_prin/no_vin.ico</normaloff>:/ventana_prin/no_vin.ico</iconset>
+      </attribute>
       <attribute name="title">
        <string>Gestion de no vincuados</string>
       </attribute>
@@ -1294,6 +1306,10 @@ border-radius:5px;</string>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_proyectos">
+      <attribute name="icon">
+       <iconset resource="../iconos/iconos.qrc">
+        <normaloff>:/ventana_prin/proy.ico</normaloff>:/ventana_prin/proy.ico</iconset>
+      </attribute>
       <attribute name="title">
        <string>Gestion de Proyectos</string>
       </attribute>
@@ -1880,6 +1896,8 @@ border-radius:5px;</string>
   <tabstop>tableWidget_proy</tabstop>
   <tabstop>pushButton_aceptar</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../iconos/iconos.qrc"/>
+ </resources>
  <connections/>
 </ui>

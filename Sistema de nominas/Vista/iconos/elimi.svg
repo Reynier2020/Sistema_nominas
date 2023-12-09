@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="162px" height="149px" viewBox="0 0 162 149" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <g id="Group" transform="translate(5 5)">
+    <path d="M0 69.5C0 31.1162 34.0264 0 76 0C117.974 0 152 31.1162 152 69.5C152 107.884 117.974 139 76 139C34.0264 139 0 107.884 0 69.5Z" id="Ellipse" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" />
+    <path d="M0 0L77 82" transform="matrix(-1 0 0 1 115 29)" id="Line-Copy" fill="none" stroke="#000000" stroke-width="9" stroke-linecap="round" />
+    <path d="M0 0L77 82" transform="translate(38 29)" id="Line" fill="none" stroke="#000000" stroke-width="9" stroke-linecap="round" />
+  </g>
+</svg>
