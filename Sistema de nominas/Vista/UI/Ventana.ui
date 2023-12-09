@@ -289,8 +289,8 @@ border:1px solid #167;</string>
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
-                      <normaloff>../iconos/eliminar.ico</normaloff>../iconos/eliminar.ico</iconset>
+                     <iconset resource="iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/busqueda.ico</normaloff>:/ventana_prin/busqueda.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -326,7 +326,7 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset resource="../iconos/iconos.qrc">
+                     <iconset resource="iconos/iconos.qrc">
                       <normaloff>:/ventana_prin/refresh.ico</normaloff>:/ventana_prin/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
@@ -505,8 +505,8 @@ border:1px solid #167;</string>
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
-                      <normaloff>../iconos/eliminar.ico</normaloff>../iconos/eliminar.ico</iconset>
+                     <iconset resource="iconos/iconos.qrc">
+                      <normaloff>:/ventana_prin/eliminar.ico</normaloff>:/ventana_prin/eliminar.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -542,7 +542,7 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset resource="../iconos/iconos.qrc">
+                     <iconset resource="iconos/iconos.qrc">
                       <normaloff>:/ventana_prin/refresh.ico</normaloff>:/ventana_prin/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
@@ -644,6 +644,10 @@ border-radius:5px;</string>
              </layout>
             </widget>
             <widget class="QWidget" name="tab_proyectos">
+             <attribute name="icon">
+              <iconset resource="iconos/iconos.qrc">
+               <normaloff>:/ventana_prin/proy.png</normaloff>:/ventana_prin/proy.png</iconset>
+             </attribute>
              <attribute name="title">
               <string>Proyectos</string>
              </attribute>
@@ -719,7 +723,7 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset resource="../iconos/iconos.qrc">
+                     <iconset resource="iconos/iconos.qrc">
                       <normaloff>:/ventana_prin/ordenar.ico</normaloff>:/ventana_prin/ordenar.ico</iconset>
                     </property>
                     <property name="iconSize">
@@ -759,7 +763,7 @@ border:1px solid #167;
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset resource="../iconos/iconos.qrc">
+                     <iconset resource="iconos/iconos.qrc">
                       <normaloff>:/ventana_prin/refresh.ico</normaloff>:/ventana_prin/refresh.ico</iconset>
                     </property>
                     <property name="iconSize">
@@ -1028,7 +1032,7 @@ border-radius:5px;</string>
   </action>
  </widget>
  <resources>
-  <include location="../iconos/iconos.qrc"/>
+  <include location="iconos/iconos.qrc"/>
  </resources>
  <connections/>
 </ui>

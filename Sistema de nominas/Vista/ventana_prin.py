@@ -272,7 +272,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
                 a = self.datos_totales.eliminar_no_vin(int(ide))
                 if a == 1:
                     self.mostrar_trab_no_vin_prin()
-                    self.ui.lineEdit_no_vin.setFocus()
+                    self.ui.tableWidget_no_vin_prin.currentRow(-1)
                     return (QtWidgets.QMessageBox.information(self, '!!!DESPEDIDO!!!', 'Se ha despedido a: nombre: {}\n'
                                                               'sexo: {}\nedad: {}\nfecha_nacimiento: {}\n'
                                                               'nivel_pro: {}\nresponsabilidad: {}\nllegadas_tarde: {}\n'
@@ -313,13 +313,14 @@ class VentanaPrin(QtWidgets.QMainWindow):
         return msg
 
     def ayuda(self):
-        msg = QtWidgets.QMessageBox.information(self, "Creado por:", "Alexai ------\nIdel--------\nReynier-------")
+        msg = QtWidgets.QMessageBox.information(self, "Creado por:", "Alexai ------\nIdel--------\nReynier Miguelez "
+                                                                     "Remedios")
         return msg
 
     def descripsion(self):
         msg = QtWidgets.QMessageBox.information(self, "Sistema de Nominas", "Este programa fue desarrollado"
                                                                             " con el fin\nde administrar las nominas"
-                                                                            "de trabajadores de una empresa\n"
+                                                                            " de trabajadores de una empresa\n"
                                                                             "encargada de gestionar proyectos y los"
                                                                             " trabajadores\nvinculados a estos.")
         return msg

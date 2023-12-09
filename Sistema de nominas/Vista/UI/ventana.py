@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-
 class Ui_MainWindo_principal(object):
     def setupUi(self, MainWindo_principal):
         MainWindo_principal.setObjectName("MainWindo_principal")
@@ -119,7 +118,7 @@ class Ui_MainWindo_principal(object):
 "border:1px solid #167;")
         self.pushButton_desp_vin.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../iconos/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/ventana_prin/busqueda.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_desp_vin.setIcon(icon1)
         self.pushButton_desp_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_desp_vin.setObjectName("pushButton_desp_vin")
@@ -204,7 +203,9 @@ class Ui_MainWindo_principal(object):
         self.pushButton_dep_no_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border:1px solid #167;")
         self.pushButton_dep_no_vin.setText("")
-        self.pushButton_dep_no_vin.setIcon(icon1)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/ventana_prin/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_dep_no_vin.setIcon(icon3)
         self.pushButton_dep_no_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_dep_no_vin.setObjectName("pushButton_dep_no_vin")
         self.horizontalLayout_2.addWidget(self.pushButton_dep_no_vin)
@@ -288,9 +289,9 @@ class Ui_MainWindo_principal(object):
 "border:1px solid #167;\n"
 "")
         self.pushButton_ordenar_pro.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/ventana_prin/ordenar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_ordenar_pro.setIcon(icon3)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/ventana_prin/ordenar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_ordenar_pro.setIcon(icon4)
         self.pushButton_ordenar_pro.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_ordenar_pro.setCheckable(False)
         self.pushButton_ordenar_pro.setObjectName("pushButton_ordenar_pro")
@@ -336,7 +337,9 @@ class Ui_MainWindo_principal(object):
         self.tableWidget_proy_prin.setHorizontalHeaderItem(6, item)
         self.verticalLayout_5.addWidget(self.tableWidget_proy_prin)
         self.verticalLayout_2.addLayout(self.verticalLayout_5)
-        self.tabWidget_principal.addTab(self.tab_proyectos, "")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/ventana_prin/proy.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tabWidget_principal.addTab(self.tab_proyectos, icon5, "")
         self.horizontalLayout_3.addWidget(self.tabWidget_principal)
         self.verticalLayout.addWidget(self.frame_4)
         self.horizontalLayout.addWidget(self.frame_2)
