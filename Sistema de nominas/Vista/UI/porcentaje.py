@@ -26,9 +26,16 @@ class Ui_widget(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(widget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.spinBox = QtWidgets.QSpinBox(widget)
+        self.spinBox.setStyleSheet("border-radius:5px;")
         self.spinBox.setObjectName("spinBox")
         self.verticalLayout.addWidget(self.spinBox)
         self.pushButton_determinar = QtWidgets.QPushButton(widget)
+        self.pushButton_determinar.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_determinar.setObjectName("pushButton_determinar")
         self.verticalLayout.addWidget(self.pushButton_determinar)
 

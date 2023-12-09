@@ -18,7 +18,7 @@ class Ui_MainWindo_principal(object):
         MainWindo_principal.setMinimumSize(QtCore.QSize(404, 350))
         MainWindo_principal.setMouseTracking(True)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../iconos/sist.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/ventana_prin/sist.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindo_principal.setWindowIcon(icon)
         MainWindo_principal.setStyleSheet("QLineEdit{\n"
 "border:1px solid #167;}\n"
@@ -114,11 +114,15 @@ class Ui_MainWindo_principal(object):
         self.pushButton_desp_vin = QtWidgets.QPushButton(self.tab_vinculados)
         self.pushButton_desp_vin.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_desp_vin.setMaximumSize(QtCore.QSize(38, 22))
-        self.pushButton_desp_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;")
+        self.pushButton_desp_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_desp_vin.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/ventana_prin/busqueda.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/ventana_prin/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_desp_vin.setIcon(icon1)
         self.pushButton_desp_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_desp_vin.setObjectName("pushButton_desp_vin")
@@ -127,8 +131,12 @@ class Ui_MainWindo_principal(object):
         self.pushButton_refrsh_vin.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_refrsh_vin.setMaximumSize(QtCore.QSize(38, 22))
         self.pushButton_refrsh_vin.setAutoFillBackground(False)
-        self.pushButton_refrsh_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;\n"
+        self.pushButton_refrsh_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}\n"
 "")
         self.pushButton_refrsh_vin.setText("")
         icon2 = QtGui.QIcon()
@@ -200,12 +208,14 @@ class Ui_MainWindo_principal(object):
         self.pushButton_dep_no_vin = QtWidgets.QPushButton(self.tab_no_vinculado)
         self.pushButton_dep_no_vin.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_dep_no_vin.setMaximumSize(QtCore.QSize(50, 22))
-        self.pushButton_dep_no_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;")
+        self.pushButton_dep_no_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_dep_no_vin.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/ventana_prin/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_dep_no_vin.setIcon(icon3)
+        self.pushButton_dep_no_vin.setIcon(icon1)
         self.pushButton_dep_no_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_dep_no_vin.setObjectName("pushButton_dep_no_vin")
         self.horizontalLayout_2.addWidget(self.pushButton_dep_no_vin)
@@ -213,8 +223,12 @@ class Ui_MainWindo_principal(object):
         self.pushButton_refresh_no.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_refresh_no.setMaximumSize(QtCore.QSize(38, 22))
         self.pushButton_refresh_no.setAutoFillBackground(False)
-        self.pushButton_refresh_no.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;\n"
+        self.pushButton_refresh_no.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}\n"
 "")
         self.pushButton_refresh_no.setText("")
         self.pushButton_refresh_no.setIcon(icon2)
@@ -285,13 +299,16 @@ class Ui_MainWindo_principal(object):
         self.pushButton_ordenar_pro.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_ordenar_pro.setMaximumSize(QtCore.QSize(50, 22))
         self.pushButton_ordenar_pro.setAutoFillBackground(False)
-        self.pushButton_ordenar_pro.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;\n"
-"")
+        self.pushButton_ordenar_pro.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_ordenar_pro.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/ventana_prin/ordenar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_ordenar_pro.setIcon(icon4)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/ventana_prin/ordenar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_ordenar_pro.setIcon(icon3)
         self.pushButton_ordenar_pro.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_ordenar_pro.setCheckable(False)
         self.pushButton_ordenar_pro.setObjectName("pushButton_ordenar_pro")
@@ -300,8 +317,12 @@ class Ui_MainWindo_principal(object):
         self.pushButton_refresh_proy.setMinimumSize(QtCore.QSize(35, 22))
         self.pushButton_refresh_proy.setMaximumSize(QtCore.QSize(38, 22))
         self.pushButton_refresh_proy.setAutoFillBackground(False)
-        self.pushButton_refresh_proy.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;\n"
+        self.pushButton_refresh_proy.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}\n"
 "")
         self.pushButton_refresh_proy.setText("")
         self.pushButton_refresh_proy.setIcon(icon2)
@@ -337,9 +358,7 @@ class Ui_MainWindo_principal(object):
         self.tableWidget_proy_prin.setHorizontalHeaderItem(6, item)
         self.verticalLayout_5.addWidget(self.tableWidget_proy_prin)
         self.verticalLayout_2.addLayout(self.verticalLayout_5)
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/ventana_prin/proy.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabWidget_principal.addTab(self.tab_proyectos, icon5, "")
+        self.tabWidget_principal.addTab(self.tab_proyectos, "")
         self.horizontalLayout_3.addWidget(self.tabWidget_principal)
         self.verticalLayout.addWidget(self.frame_4)
         self.horizontalLayout.addWidget(self.frame_2)
@@ -525,4 +544,4 @@ class Ui_MainWindo_principal(object):
         self.actionTotal_de_salarios_a_pagar.setText(_translate("MainWindo_principal", "Total de salarios a pagar"))
         self.actionAbrir_Gest.setText(_translate("MainWindo_principal", "Abrir"))
         self.actionAbrir_Gest_2.setText(_translate("MainWindo_principal", "Abrir"))
-from Vista.UI.iconos import iconos_rc
+import iconos_rc

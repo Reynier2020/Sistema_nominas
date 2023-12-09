@@ -26,7 +26,7 @@
    <string>Gestiones</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../iconos/iconos.qrc">
+   <iconset resource="iconos/iconos.qrc">
     <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -42,7 +42,8 @@
       <string notr="true">QLineEdit{
 border:1px solid #167;}
 QPushButton{
-border:1px solid #167;}
+border:1px solid #fffff;
+background-color: #fffff;}
 QComboBox{
 border:1px solid #167;}
 QSpinBox{
@@ -50,17 +51,21 @@ border:1px solid #167;}
 QDoubleSpinBox{
 border:1px solid #167;}
 QDateEdit{
-border:1px solid #167;}</string>
+border:1px solid #167;}
+
+QPushButton:hover{
+  background-color: darkblue;}
+</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <attribute name="icon">
-       <iconset resource="../iconos/iconos.qrc">
+       <iconset resource="iconos/iconos.qrc">
         <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
       </attribute>
       <attribute name="title">
@@ -390,6 +395,9 @@ border-radius:5px;</string>
                       <height>0</height>
                      </size>
                     </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
                     <property name="text">
                      <string/>
                     </property>
@@ -609,8 +617,12 @@ border-radius:5px;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:5px;
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}
 </string>
             </property>
             <property name="text">
@@ -627,8 +639,12 @@ border-radius:5px;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:5px;</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Actualizar</string>
@@ -644,8 +660,12 @@ border-radius:5px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:5px;</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Eliminar</string>
@@ -734,7 +754,7 @@ border-radius:5px;</string>
      </widget>
      <widget class="QWidget" name="tab_no_vinculados">
       <attribute name="icon">
-       <iconset resource="../iconos/iconos.qrc">
+       <iconset resource="iconos/iconos.qrc">
         <normaloff>:/ventana_prin/no_vin.ico</normaloff>:/ventana_prin/no_vin.ico</iconset>
       </attribute>
       <attribute name="title">
@@ -1192,7 +1212,12 @@ border-radius:5px;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Insertar</string>
@@ -1208,7 +1233,12 @@ border-radius:5px;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Actualizar</string>
@@ -1224,7 +1254,12 @@ border-radius:5px;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Eliminar</string>
@@ -1307,7 +1342,7 @@ border-radius:5px;</string>
      </widget>
      <widget class="QWidget" name="tab_proyectos">
       <attribute name="icon">
-       <iconset resource="../iconos/iconos.qrc">
+       <iconset>
         <normaloff>:/ventana_prin/proy.ico</normaloff>:/ventana_prin/proy.ico</iconset>
       </attribute>
       <attribute name="title">
@@ -1698,7 +1733,12 @@ border-radius:5px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Insertar</string>
@@ -1714,7 +1754,12 @@ border-radius:5px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Actualizar</string>
@@ -1730,7 +1775,12 @@ border-radius:5px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
             </property>
             <property name="text">
              <string>Eliminar</string>
@@ -1844,8 +1894,13 @@ border:1px solid #167;}
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:5px;</string>
+         <string notr="true">QPushButton{
+border-radius:5px;
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
         </property>
         <property name="text">
          <string>Aceptar</string>
@@ -1897,7 +1952,7 @@ border-radius:5px;</string>
   <tabstop>pushButton_aceptar</tabstop>
  </tabstops>
  <resources>
-  <include location="../iconos/iconos.qrc"/>
+  <include location="iconos/iconos.qrc"/>
  </resources>
  <connections/>
 </ui>

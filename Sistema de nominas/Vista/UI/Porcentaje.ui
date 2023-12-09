@@ -35,10 +35,22 @@ border:1px solid #167;}
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QSpinBox" name="spinBox"/>
+    <widget class="QSpinBox" name="spinBox">
+     <property name="styleSheet">
+      <string notr="true">border-radius:5px;</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton_determinar">
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
+     </property>
      <property name="text">
       <string>Determinar</string>
      </property>

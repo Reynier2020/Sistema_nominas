@@ -23,8 +23,8 @@
    <string>Sistema de Nóminas</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../iconos/sist.ico</normaloff>../iconos/sist.ico</iconset>
+   <iconset resource="iconos/iconos.qrc">
+    <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QLineEdit{
@@ -282,15 +282,19 @@ border:1px solid #167;</string>
                      </size>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;</string>
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
                     </property>
                     <property name="text">
                      <string/>
                     </property>
                     <property name="icon">
                      <iconset resource="iconos/iconos.qrc">
-                      <normaloff>:/ventana_prin/busqueda.ico</normaloff>:/ventana_prin/busqueda.ico</iconset>
+                      <normaloff>:/ventana_prin/eliminar.ico</normaloff>:/ventana_prin/eliminar.ico</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
@@ -318,8 +322,12 @@ border:1px solid #167;</string>
                      <bool>false</bool>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}
 </string>
                     </property>
                     <property name="text">
@@ -498,8 +506,12 @@ border:1px solid #167;</string>
                      </size>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;</string>
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
                     </property>
                     <property name="text">
                      <string/>
@@ -534,8 +546,12 @@ border:1px solid #167;</string>
                      <bool>false</bool>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}
 </string>
                     </property>
                     <property name="text">
@@ -644,10 +660,6 @@ border-radius:5px;</string>
              </layout>
             </widget>
             <widget class="QWidget" name="tab_proyectos">
-             <attribute name="icon">
-              <iconset resource="iconos/iconos.qrc">
-               <normaloff>:/ventana_prin/proy.png</normaloff>:/ventana_prin/proy.png</iconset>
-             </attribute>
              <attribute name="title">
               <string>Proyectos</string>
              </attribute>
@@ -715,9 +727,12 @@ border:1px solid #167;</string>
                      <bool>false</bool>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;
-</string>
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}</string>
                     </property>
                     <property name="text">
                      <string/>
@@ -755,8 +770,12 @@ border:1px solid #167;
                      <bool>false</bool>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgb(255, 255, 255);
-border:1px solid #167;
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color:#167;}
 </string>
                     </property>
                     <property name="text">

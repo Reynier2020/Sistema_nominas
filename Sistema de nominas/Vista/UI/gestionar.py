@@ -28,7 +28,8 @@ class Ui_gestionar_ui(object):
         self.tabWidget.setStyleSheet("QLineEdit{\n"
 "border:1px solid #167;}\n"
 "QPushButton{\n"
-"border:1px solid #167;}\n"
+"border:1px solid #fffff;\n"
+"background-color: #fffff;}\n"
 "QComboBox{\n"
 "border:1px solid #167;}\n"
 "QSpinBox{\n"
@@ -36,7 +37,11 @@ class Ui_gestionar_ui(object):
 "QDoubleSpinBox{\n"
 "border:1px solid #167;}\n"
 "QDateEdit{\n"
-"border:1px solid #167;}")
+"border:1px solid #167;}\n"
+"\n"
+"QPushButton:hover{\n"
+"  background-color: darkblue;}\n"
+"")
         self.tabWidget.setObjectName("tabWidget")
         self.tab_vinculados = QtWidgets.QWidget()
         self.tab_vinculados.setStyleSheet("")
@@ -175,6 +180,7 @@ class Ui_gestionar_ui(object):
         self.horizontalLayout_9.addWidget(self.label)
         self.pushButton_act_proy_list = QtWidgets.QPushButton(self.frame_rol)
         self.pushButton_act_proy_list.setMinimumSize(QtCore.QSize(25, 0))
+        self.pushButton_act_proy_list.setStyleSheet("")
         self.pushButton_act_proy_list.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../iconos/refresh.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -261,21 +267,33 @@ class Ui_gestionar_ui(object):
         self.horizontalLayout_5.addItem(spacerItem)
         self.pushButton_insertar_vin = QtWidgets.QPushButton(self.frame_8)
         self.pushButton_insertar_vin.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_insertar_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:5px;\n"
+        self.pushButton_insertar_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}\n"
 "")
         self.pushButton_insertar_vin.setObjectName("pushButton_insertar_vin")
         self.horizontalLayout_5.addWidget(self.pushButton_insertar_vin)
         self.pushButton_actualizar_vin = QtWidgets.QPushButton(self.frame_8)
         self.pushButton_actualizar_vin.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_actualizar_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:5px;")
+        self.pushButton_actualizar_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_actualizar_vin.setObjectName("pushButton_actualizar_vin")
         self.horizontalLayout_5.addWidget(self.pushButton_actualizar_vin)
         self.pushButton_eliminar_vin = QtWidgets.QPushButton(self.frame_8)
         self.pushButton_eliminar_vin.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_eliminar_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:5px;")
+        self.pushButton_eliminar_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_eliminar_vin.setObjectName("pushButton_eliminar_vin")
         self.horizontalLayout_5.addWidget(self.pushButton_eliminar_vin)
         self.verticalLayout_6.addWidget(self.frame_8)
@@ -497,17 +515,32 @@ class Ui_gestionar_ui(object):
         self.horizontalLayout_21.addItem(spacerItem1)
         self.pushButton_insertar_n_vin = QtWidgets.QPushButton(self.frame_11)
         self.pushButton_insertar_n_vin.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_insertar_n_vin.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_insertar_n_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_insertar_n_vin.setObjectName("pushButton_insertar_n_vin")
         self.horizontalLayout_21.addWidget(self.pushButton_insertar_n_vin)
         self.pushButton_actualizar_n_vin = QtWidgets.QPushButton(self.frame_11)
         self.pushButton_actualizar_n_vin.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_actualizar_n_vin.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_actualizar_n_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_actualizar_n_vin.setObjectName("pushButton_actualizar_n_vin")
         self.horizontalLayout_21.addWidget(self.pushButton_actualizar_n_vin)
         self.pushButton_eliminar_n_vin = QtWidgets.QPushButton(self.frame_11)
         self.pushButton_eliminar_n_vin.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_eliminar_n_vin.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_eliminar_n_vin.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_eliminar_n_vin.setObjectName("pushButton_eliminar_n_vin")
         self.horizontalLayout_21.addWidget(self.pushButton_eliminar_n_vin)
         self.verticalLayout_11.addWidget(self.frame_11)
@@ -703,17 +736,32 @@ class Ui_gestionar_ui(object):
         self.horizontalLayout_31.addItem(spacerItem2)
         self.pushButton_insertar_proy = QtWidgets.QPushButton(self.frame_16)
         self.pushButton_insertar_proy.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_insertar_proy.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_insertar_proy.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_insertar_proy.setObjectName("pushButton_insertar_proy")
         self.horizontalLayout_31.addWidget(self.pushButton_insertar_proy)
         self.pushButton_actualizar_proy = QtWidgets.QPushButton(self.frame_16)
         self.pushButton_actualizar_proy.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_actualizar_proy.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_actualizar_proy.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_actualizar_proy.setObjectName("pushButton_actualizar_proy")
         self.horizontalLayout_31.addWidget(self.pushButton_actualizar_proy)
         self.pushButton_eliminar_proy = QtWidgets.QPushButton(self.frame_16)
         self.pushButton_eliminar_proy.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_eliminar_proy.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_eliminar_proy.setStyleSheet("QPushButton{\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_eliminar_proy.setObjectName("pushButton_eliminar_proy")
         self.horizontalLayout_31.addWidget(self.pushButton_eliminar_proy)
         self.verticalLayout_16.addWidget(self.frame_16)
@@ -758,14 +806,19 @@ class Ui_gestionar_ui(object):
         self.horizontalLayout_8.addItem(spacerItem3)
         self.pushButton_aceptar = QtWidgets.QPushButton(self.frame_5)
         self.pushButton_aceptar.setMinimumSize(QtCore.QSize(75, 23))
-        self.pushButton_aceptar.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-radius:5px;")
+        self.pushButton_aceptar.setStyleSheet("QPushButton{\n"
+"border-radius:5px;\n"
+"border:1px solid #ffffff;\n"
+"background-color: #ffffff;}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-color:#167;}")
         self.pushButton_aceptar.setObjectName("pushButton_aceptar")
         self.horizontalLayout_8.addWidget(self.pushButton_aceptar)
         self.verticalLayout.addWidget(self.frame_5)
 
         self.retranslateUi(gestionar_ui)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(gestionar_ui)
         gestionar_ui.setTabOrder(self.lineEdit_nombre_vin, self.radioButton_Femenino)
         gestionar_ui.setTabOrder(self.radioButton_Femenino, self.radioButton_masculino)
@@ -921,5 +974,4 @@ class Ui_gestionar_ui(object):
         item.setText(_translate("gestionar_ui", "% Culminacion"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_proyectos), _translate("gestionar_ui", "Gestion de Proyectos"))
         self.pushButton_aceptar.setText(_translate("gestionar_ui", "Aceptar"))
-
-from Vista.UI.iconos import iconos_rc
+import iconos_rc
