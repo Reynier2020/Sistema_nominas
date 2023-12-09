@@ -803,15 +803,13 @@ border-radius:5px;</string>
     <property name="title">
      <string>Archivo</string>
     </property>
-    <addaction name="actionCargar_Nomina"/>
-    <addaction name="separator"/>
     <addaction name="actionSalir"/>
    </widget>
    <widget class="QMenu" name="menuGestion">
     <property name="title">
      <string>Gestión</string>
     </property>
-    <addaction name="actionAbrir_Gest"/>
+    <addaction name="actionAbrir_Gest_2"/>
    </widget>
    <widget class="QMenu" name="menuFuncionalidades">
     <property name="title">
@@ -959,6 +957,11 @@ border-radius:5px;</string>
    </property>
   </action>
   <action name="actionAbrir_Gest">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionAbrir_Gest_2">
    <property name="text">
     <string>Abrir</string>
    </property>

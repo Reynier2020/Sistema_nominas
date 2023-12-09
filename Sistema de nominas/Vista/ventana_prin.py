@@ -15,10 +15,11 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_trab_no_vin_prin()
         self.mostrar_proyecto_prin()
         # CONEXIONES
+        self.ui.actionDescripcion.triggered.connect(self.descripsion)
         self.ui.actionAcerca_de.triggered.connect(self.ayuda)
         self.ui.actionSalir.triggered.connect(quit)
         self.ui.actionTotal_de_salarios_a_pagar.triggered.connect(self.total_salarios)
-        self.ui.actionAbrir_Gest.triggered.connect(self.pre.iniciar_gestion)
+        self.ui.actionAbrir_Gest_2.triggered.connect(self.pre.iniciar_gestion)
         self.ui.actionPorciento_de_cumplimiento.triggered.connect(self.pre.iniciar_por)
         self.ui.lineEdit_busar_vin.textChanged.connect(self.buscar_al_vin)
         self.ui.pushButton_dep_no_vin.clicked.connect(self.despedir_no_vin)
@@ -297,4 +298,12 @@ class VentanaPrin(QtWidgets.QMainWindow):
 
     def ayuda(self):
         msg = QtWidgets.QMessageBox.information(self, "Creado por:", "Alexai ------\nIdel--------\nReynier-------")
+        return msg
+
+    def descripsion(self):
+        msg = QtWidgets.QMessageBox.information(self, "Sistema de Nominas", "Este programa fue desarrollado"
+                                                                            " con el fin\nde administrar las nominas"
+                                                                            "de trabajadores de una empresa\n"
+                                                                            "encargada de gestionar proyectos y los"
+                                                                            " trabajadores\nvinculados a estos.")
         return msg
