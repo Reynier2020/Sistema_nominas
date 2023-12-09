@@ -1,6 +1,4 @@
 from Vista.conexion_db_gestion import RegistroDatos
-# from Vista.UI.gestionar import *
-# from PyQt5 import uic
 from Vista.UI.ventana import *
 
 
@@ -10,7 +8,6 @@ class VentanaPrin(QtWidgets.QMainWindow):
         QtWidgets.QMainWindow.__init__(self)
         self.ui = Ui_MainWindo_principal()
         self.ui.setupUi(self)
-        # uic.loadUi('Vista/UI/Ventana.ui', self)
 
         self.datos_totales = RegistroDatos()
         self.validar_formulario()
@@ -18,6 +15,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.mostrar_trab_no_vin_prin()
         self.mostrar_proyecto_prin()
         # CONEXIONES
+        self.ui.actionAcerca_de.triggered.connect(self.ayuda)
         self.ui.actionSalir.triggered.connect(quit)
         self.ui.actionTotal_de_salarios_a_pagar.triggered.connect(self.total_salarios)
         self.ui.actionAbrir_Gest.triggered.connect(self.pre.iniciar_gestion)
@@ -297,4 +295,6 @@ class VentanaPrin(QtWidgets.QMainWindow):
         msg = QtWidgets.QMessageBox.information(self, "Salarios", "Total de salarios: {}".format(total_salarios))
         return msg
 
-
+    def ayuda(self):
+        msg = QtWidgets.QMessageBox.information(self, "Creado por:", "Alexai ------\nIdel--------\nReynier-------")
+        return msg
