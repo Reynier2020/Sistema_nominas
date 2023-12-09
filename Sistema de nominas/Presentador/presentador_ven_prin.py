@@ -1,6 +1,7 @@
 from Presentador.presentador_gestion import PresentadorGest
 from Vista.ventana_prin import *
 import sys
+from Presentador.presentador_porcentaje import PresentadorPor
 
 
 class PresentadorPrin:
@@ -14,3 +15,7 @@ class PresentadorPrin:
     def iniciar_gestion(self):
         gest = PresentadorGest()
         gest.iniciar()
+
+    def iniciar_por(self):
+        por = PresentadorPor()
+        por.iniciar()
