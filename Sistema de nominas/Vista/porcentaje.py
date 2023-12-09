@@ -1,14 +1,13 @@
-import sys
 from UI.porcentaje import *
 from conexion_db_gestion import RegistroDatos
 
 
 class Porcentaje(QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self, present):
         QtWidgets.QWidget.__init__(self)
         self.ui = Ui_widget()
         self.ui.setupUi(self)
-
+        self.pre = present
         self.datos = RegistroDatos()
         self.ui.pushButton_determinar.clicked.connect(self.determinar_por)
 
@@ -26,10 +25,3 @@ class Porcentaje(QtWidgets.QWidget):
         msg = QtWidgets.QMessageBox.information(self, "Porciento", "El porciento de"
                                                                    " trabajadores es de {}".format(por_total))
         return msg
-
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    lan = Porcentaje()
-    lan.show()
-    sys.exit(app.exec())

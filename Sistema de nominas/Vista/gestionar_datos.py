@@ -10,7 +10,7 @@ class GestionarDatos(QtWidgets.QWidget):
         self.ui.setupUi(self)
         self.present = present
         self.datos_total = RegistroDatos()
-        # self.ui.pushButton_aceptar.clicked.connect(quit)
+        self.ui.pushButton_aceptar.clicked.connect(quit)
 
         #                VINCULADOS
         self.ui.pushButton_insertar_vin.setDisabled(True)

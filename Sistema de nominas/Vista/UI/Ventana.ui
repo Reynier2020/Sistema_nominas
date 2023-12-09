@@ -811,7 +811,7 @@ border-radius:5px;</string>
     <property name="title">
      <string>Gestión</string>
     </property>
-    <addaction name="actionAbrir_2"/>
+    <addaction name="actionAbrir_Gest"/>
    </widget>
    <widget class="QMenu" name="menuFuncionalidades">
     <property name="title">
@@ -958,7 +958,7 @@ border-radius:5px;</string>
     <string>Total de salarios a pagar</string>
    </property>
   </action>
-  <action name="actionAbrir_2">
+  <action name="actionAbrir_Gest">
    <property name="text">
     <string>Abrir</string>
    </property>
