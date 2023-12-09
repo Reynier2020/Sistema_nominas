@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Vista.iconos import iconos_rc
+
 
 class Ui_gestionar_ui(object):
     def setupUi(self, gestionar_ui):
@@ -922,3 +922,4 @@ class Ui_gestionar_ui(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_proyectos), _translate("gestionar_ui", "Gestion de Proyectos"))
         self.pushButton_aceptar.setText(_translate("gestionar_ui", "Aceptar"))
 
+from Vista.UI.iconos import iconos_rc

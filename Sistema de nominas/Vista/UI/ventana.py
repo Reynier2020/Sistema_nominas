@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Vista.iconos import iconos_rc
+
+
 
 class Ui_MainWindo_principal(object):
     def setupUi(self, MainWindo_principal):
@@ -17,6 +18,9 @@ class Ui_MainWindo_principal(object):
         MainWindo_principal.resize(639, 480)
         MainWindo_principal.setMinimumSize(QtCore.QSize(404, 350))
         MainWindo_principal.setMouseTracking(True)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../iconos/sist.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindo_principal.setWindowIcon(icon)
         MainWindo_principal.setStyleSheet("QLineEdit{\n"
 "border:1px solid #167;}\n"
 "")
@@ -114,9 +118,9 @@ class Ui_MainWindo_principal(object):
         self.pushButton_desp_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border:1px solid #167;")
         self.pushButton_desp_vin.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/ventana_prin/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_desp_vin.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../iconos/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_desp_vin.setIcon(icon1)
         self.pushButton_desp_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_desp_vin.setObjectName("pushButton_desp_vin")
         self.horizontalLayout_6.addWidget(self.pushButton_desp_vin)
@@ -128,9 +132,9 @@ class Ui_MainWindo_principal(object):
 "border:1px solid #167;\n"
 "")
         self.pushButton_refrsh_vin.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/ventana_prin/refresh.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_refrsh_vin.setIcon(icon1)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/ventana_prin/refresh.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_refrsh_vin.setIcon(icon2)
         self.pushButton_refrsh_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_refrsh_vin.setCheckable(False)
         self.pushButton_refrsh_vin.setChecked(False)
@@ -200,9 +204,7 @@ class Ui_MainWindo_principal(object):
         self.pushButton_dep_no_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border:1px solid #167;")
         self.pushButton_dep_no_vin.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../iconos/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_dep_no_vin.setIcon(icon2)
+        self.pushButton_dep_no_vin.setIcon(icon1)
         self.pushButton_dep_no_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_dep_no_vin.setObjectName("pushButton_dep_no_vin")
         self.horizontalLayout_2.addWidget(self.pushButton_dep_no_vin)
@@ -214,7 +216,7 @@ class Ui_MainWindo_principal(object):
 "border:1px solid #167;\n"
 "")
         self.pushButton_refresh_no.setText("")
-        self.pushButton_refresh_no.setIcon(icon1)
+        self.pushButton_refresh_no.setIcon(icon2)
         self.pushButton_refresh_no.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_refresh_no.setCheckable(False)
         self.pushButton_refresh_no.setChecked(False)
@@ -301,7 +303,7 @@ class Ui_MainWindo_principal(object):
 "border:1px solid #167;\n"
 "")
         self.pushButton_refresh_proy.setText("")
-        self.pushButton_refresh_proy.setIcon(icon1)
+        self.pushButton_refresh_proy.setIcon(icon2)
         self.pushButton_refresh_proy.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_refresh_proy.setCheckable(False)
         self.pushButton_refresh_proy.setChecked(False)
@@ -420,7 +422,7 @@ class Ui_MainWindo_principal(object):
         self.menubar.addAction(self.menuAyuda.menuAction())
 
         self.retranslateUi(MainWindo_principal)
-        self.tabWidget_principal.setCurrentIndex(1)
+        self.tabWidget_principal.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindo_principal)
 
     def retranslateUi(self, MainWindo_principal):
@@ -520,4 +522,4 @@ class Ui_MainWindo_principal(object):
         self.actionTotal_de_salarios_a_pagar.setText(_translate("MainWindo_principal", "Total de salarios a pagar"))
         self.actionAbrir_Gest.setText(_translate("MainWindo_principal", "Abrir"))
         self.actionAbrir_Gest_2.setText(_translate("MainWindo_principal", "Abrir"))
-
+from Vista.UI.iconos import iconos_rc
