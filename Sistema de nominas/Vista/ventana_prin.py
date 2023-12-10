@@ -286,8 +286,8 @@ class VentanaPrin(QtWidgets.QMainWindow):
                                                               'salario: {}'.format(nombre, sexo, edad, fech_na, niv_pro,
                                                                                    resp, lleg_tarde,
                                                                                    horas_trab, salario)))
-                else:
-                    raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona a alguien antes de despedirlo'))
+            else:
+                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona a alguien antes de despedirlo'))
 
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
