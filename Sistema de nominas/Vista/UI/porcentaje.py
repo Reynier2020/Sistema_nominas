@@ -19,23 +19,33 @@ class Ui_widget(object):
         widget.setMaximumSize(QtCore.QSize(150, 111))
         widget.setStyleSheet("QPushButton{\n"
 "border-radius:5px;\n"
-"border:1px solid #167;}\n"
+"border:1px solid  rgb(248, 16, 51);}\n"
 "QSpinBox{\n"
-"border:1px solid #167;}\n"
+"border:1px solid  rgb(248, 16, 51);\n"
+"background-color: rgb(255, 255, 255);}\n"
+"QWidget{\n"
+"background-color: rgb(248, 16, 51);}\n"
+"\n"
+"\n"
+"\n"
+"\n"
 "")
         self.verticalLayout = QtWidgets.QVBoxLayout(widget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.spinBox = QtWidgets.QSpinBox(widget)
-        self.spinBox.setStyleSheet("border-radius:5px;")
+        self.spinBox.setStyleSheet("border-radius:5px;\n"
+"border-color:  rgb(248, 16, 51);\n"
+"background-color: rgb(255, 255, 255);")
         self.spinBox.setObjectName("spinBox")
         self.verticalLayout.addWidget(self.spinBox)
         self.pushButton_determinar = QtWidgets.QPushButton(widget)
+        self.pushButton_determinar.setMinimumSize(QtCore.QSize(0, 20))
         self.pushButton_determinar.setStyleSheet("QPushButton{\n"
 "border:1px solid #ffffff;\n"
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}")
+"border-color: rgb(248, 16, 51);}")
         self.pushButton_determinar.setObjectName("pushButton_determinar")
         self.verticalLayout.addWidget(self.pushButton_determinar)
 

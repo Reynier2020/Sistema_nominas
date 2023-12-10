@@ -16,13 +16,20 @@ class Ui_MainWindo_principal(object):
         MainWindo_principal.setObjectName("MainWindo_principal")
         MainWindo_principal.resize(639, 480)
         MainWindo_principal.setMinimumSize(QtCore.QSize(404, 350))
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
+        MainWindo_principal.setFont(font)
         MainWindo_principal.setMouseTracking(True)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/ventana_prin/sist.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/iconos/thumbs-up.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindo_principal.setWindowIcon(icon)
         MainWindo_principal.setStyleSheet("QLineEdit{\n"
 "border:1px solid #167;}\n"
+"\n"
+"\n"
 "")
+        MainWindo_principal.setIconSize(QtCore.QSize(30, 23))
         self.centralwidget = QtWidgets.QWidget(MainWindo_principal)
         self.centralwidget.setStyleSheet("border-radus:10px;\n"
 "")
@@ -34,7 +41,8 @@ class Ui_MainWindo_principal(object):
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setAutoFillBackground(False)
         self.frame_2.setStyleSheet("border-radius:5px;\n"
-"background-color: rgb(100, 171, 164);\n"
+"background-color: rgb(212, 13, 46);\n"
+"font:12pt \"Tw Cen MT Condensed\";\n"
 "")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -72,10 +80,11 @@ class Ui_MainWindo_principal(object):
         self.tabWidget_principal = QtWidgets.QTabWidget(self.frame_4)
         self.tabWidget_principal.setEnabled(True)
         font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        font.setStrikeOut(False)
         self.tabWidget_principal.setFont(font)
         self.tabWidget_principal.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.tabWidget_principal.setAutoFillBackground(False)
@@ -103,7 +112,7 @@ class Ui_MainWindo_principal(object):
         self.lineEdit_busar_vin.setMaximumSize(QtCore.QSize(16777215, 20))
         self.lineEdit_busar_vin.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.lineEdit_busar_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;")
+"border:1px solid  rgb(248, 16, 51);")
         self.lineEdit_busar_vin.setText("")
         self.lineEdit_busar_vin.setCursorPosition(0)
         self.lineEdit_busar_vin.setDragEnabled(False)
@@ -119,12 +128,12 @@ class Ui_MainWindo_principal(object):
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}")
+"border-color: rgb(248, 16, 51);}")
         self.pushButton_desp_vin.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/ventana_prin/eliminar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/iconos/user-x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_desp_vin.setIcon(icon1)
-        self.pushButton_desp_vin.setIconSize(QtCore.QSize(25, 20))
+        self.pushButton_desp_vin.setIconSize(QtCore.QSize(30, 23))
         self.pushButton_desp_vin.setObjectName("pushButton_desp_vin")
         self.horizontalLayout_6.addWidget(self.pushButton_desp_vin)
         self.pushButton_refrsh_vin = QtWidgets.QPushButton(self.tab_vinculados)
@@ -136,11 +145,11 @@ class Ui_MainWindo_principal(object):
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}\n"
+"border-color: rgb(248, 16, 51);}\n"
 "")
         self.pushButton_refrsh_vin.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/ventana_prin/refresh.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/iconos/refresh-cw.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_refrsh_vin.setIcon(icon2)
         self.pushButton_refrsh_vin.setIconSize(QtCore.QSize(25, 20))
         self.pushButton_refrsh_vin.setCheckable(False)
@@ -197,7 +206,7 @@ class Ui_MainWindo_principal(object):
         self.lineEdit_no_vin.setMaximumSize(QtCore.QSize(16777215, 20))
         self.lineEdit_no_vin.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.lineEdit_no_vin.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;")
+"border:1px solid  rgb(248, 16, 51);")
         self.lineEdit_no_vin.setText("")
         self.lineEdit_no_vin.setCursorPosition(0)
         self.lineEdit_no_vin.setDragEnabled(False)
@@ -213,10 +222,10 @@ class Ui_MainWindo_principal(object):
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}")
+"border-color: rgb(248, 16, 51);}")
         self.pushButton_dep_no_vin.setText("")
         self.pushButton_dep_no_vin.setIcon(icon1)
-        self.pushButton_dep_no_vin.setIconSize(QtCore.QSize(25, 20))
+        self.pushButton_dep_no_vin.setIconSize(QtCore.QSize(30, 23))
         self.pushButton_dep_no_vin.setObjectName("pushButton_dep_no_vin")
         self.horizontalLayout_2.addWidget(self.pushButton_dep_no_vin)
         self.pushButton_refresh_no = QtWidgets.QPushButton(self.tab_no_vinculado)
@@ -228,7 +237,7 @@ class Ui_MainWindo_principal(object):
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}\n"
+"border-color: rgb(248, 16, 51);}\n"
 "")
         self.pushButton_refresh_no.setText("")
         self.pushButton_refresh_no.setIcon(icon2)
@@ -250,7 +259,8 @@ class Ui_MainWindo_principal(object):
         self.tableWidget_no_vin_prin.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
         item.setFont(font)
         self.tableWidget_no_vin_prin.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -287,7 +297,7 @@ class Ui_MainWindo_principal(object):
         self.lineEdit_proy.setMaximumSize(QtCore.QSize(16777215, 20))
         self.lineEdit_proy.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.lineEdit_proy.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border:1px solid #167;")
+"border:1px solid  rgb(248, 16, 51);")
         self.lineEdit_proy.setText("")
         self.lineEdit_proy.setCursorPosition(0)
         self.lineEdit_proy.setDragEnabled(False)
@@ -304,12 +314,12 @@ class Ui_MainWindo_principal(object):
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}")
+"border-color: rgb(248, 16, 51);}")
         self.pushButton_ordenar_pro.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/ventana_prin/ordenar.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/iconos/align-left.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_ordenar_pro.setIcon(icon3)
-        self.pushButton_ordenar_pro.setIconSize(QtCore.QSize(25, 20))
+        self.pushButton_ordenar_pro.setIconSize(QtCore.QSize(30, 25))
         self.pushButton_ordenar_pro.setCheckable(False)
         self.pushButton_ordenar_pro.setObjectName("pushButton_ordenar_pro")
         self.horizontalLayout_5.addWidget(self.pushButton_ordenar_pro)
@@ -322,7 +332,7 @@ class Ui_MainWindo_principal(object):
 "background-color: #ffffff;}\n"
 "\n"
 "QPushButton:hover{\n"
-"border-color:#167;}\n"
+"border-color: rgb(248, 16, 51);}\n"
 "")
         self.pushButton_refresh_proy.setText("")
         self.pushButton_refresh_proy.setIcon(icon2)
@@ -364,15 +374,28 @@ class Ui_MainWindo_principal(object):
         self.horizontalLayout.addWidget(self.frame_2)
         MainWindo_principal.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindo_principal)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 639, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 639, 25))
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
+        self.menubar.setFont(font)
+        self.menubar.setNativeMenuBar(True)
         self.menubar.setObjectName("menubar")
         self.menuArchivo = QtWidgets.QMenu(self.menubar)
         self.menuArchivo.setObjectName("menuArchivo")
         self.menuGestion = QtWidgets.QMenu(self.menubar)
         self.menuGestion.setObjectName("menuGestion")
         self.menuFuncionalidades = QtWidgets.QMenu(self.menubar)
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
+        self.menuFuncionalidades.setFont(font)
         self.menuFuncionalidades.setObjectName("menuFuncionalidades")
         self.menuAyuda = QtWidgets.QMenu(self.menubar)
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
+        self.menuAyuda.setFont(font)
         self.menuAyuda.setObjectName("menuAyuda")
         MainWindo_principal.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindo_principal)
@@ -387,6 +410,10 @@ class Ui_MainWindo_principal(object):
         self.actionSalvar_Datos = QtWidgets.QAction(MainWindo_principal)
         self.actionSalvar_Datos.setObjectName("actionSalvar_Datos")
         self.actionSalir = QtWidgets.QAction(MainWindo_principal)
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
+        self.actionSalir.setFont(font)
         self.actionSalir.setObjectName("actionSalir")
         self.actionA_adir = QtWidgets.QAction(MainWindo_principal)
         self.actionA_adir.setObjectName("actionA_adir")
@@ -429,6 +456,11 @@ class Ui_MainWindo_principal(object):
         self.actionAbrir_Gest = QtWidgets.QAction(MainWindo_principal)
         self.actionAbrir_Gest.setObjectName("actionAbrir_Gest")
         self.actionAbrir_Gest_2 = QtWidgets.QAction(MainWindo_principal)
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT Condensed")
+        font.setPointSize(12)
+        self.actionAbrir_Gest_2.setFont(font)
+        self.actionAbrir_Gest_2.setShortcutVisibleInContextMenu(True)
         self.actionAbrir_Gest_2.setObjectName("actionAbrir_Gest_2")
         self.menuArchivo.addAction(self.actionSalir)
         self.menuGestion.addAction(self.actionAbrir_Gest_2)
@@ -444,7 +476,7 @@ class Ui_MainWindo_principal(object):
         self.menubar.addAction(self.menuAyuda.menuAction())
 
         self.retranslateUi(MainWindo_principal)
-        self.tabWidget_principal.setCurrentIndex(0)
+        self.tabWidget_principal.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindo_principal)
 
     def retranslateUi(self, MainWindo_principal):
@@ -544,4 +576,5 @@ class Ui_MainWindo_principal(object):
         self.actionTotal_de_salarios_a_pagar.setText(_translate("MainWindo_principal", "Total de salarios a pagar"))
         self.actionAbrir_Gest.setText(_translate("MainWindo_principal", "Abrir"))
         self.actionAbrir_Gest_2.setText(_translate("MainWindo_principal", "Abrir"))
-import iconos_rc
+        self.actionAbrir_Gest_2.setShortcut(_translate("MainWindo_principal", "Ctrl+G"))
+from Vista.UI.iconos_qr import iconos_rc

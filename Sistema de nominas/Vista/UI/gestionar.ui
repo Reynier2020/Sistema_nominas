@@ -26,11 +26,12 @@
    <string>Gestiones</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="iconos/iconos.qrc">
-    <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
+   <iconset resource="iconos_qr/iconos.qrc">
+    <normaloff>:/iconos/thumbs-up.svg</normaloff>:/iconos/thumbs-up.svg</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(100, 171, 164);</string>
+   <string notr="true">background-color: rgb(248, 16, 51);
+font: 12pt &quot;Tw Cen MT Condensed&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -40,32 +41,31 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QLineEdit{
-border:1px solid #167;}
+border:1px solid  rgb(248, 16, 51);}
 QPushButton{
 border:1px solid #fffff;
 background-color: #fffff;}
 QComboBox{
-border:1px solid #167;}
+border:1px solid  rgb(248, 16, 51);}
 QSpinBox{
-border:1px solid #167;}
+border:1px solid  rgb(248, 16, 51);}
 QDoubleSpinBox{
-border:1px solid #167;}
+border:1px solid  rgb(248, 16, 51);}
 QDateEdit{
-border:1px solid #167;}
+border:1px solid  rgb(248, 16, 51);}
 
-QPushButton:hover{
-  background-color: darkblue;}
+
 </string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_vinculados">
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <attribute name="icon">
-       <iconset resource="iconos/iconos.qrc">
+       <iconset>
         <normaloff>:/ventana_prin/sist.ico</normaloff>:/ventana_prin/sist.ico</iconset>
       </attribute>
       <attribute name="title">
@@ -396,14 +396,25 @@ border-radius:5px;</string>
                      </size>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true"/>
+                     <string notr="true">QPushButton{
+border:1px solid #ffffff;
+background-color: #ffffff;}
+
+QPushButton:hover{
+border-color: rgb(248, 16, 51);}</string>
                     </property>
                     <property name="text">
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
-                      <normaloff>../iconos/refresh.ico</normaloff>../iconos/refresh.ico</iconset>
+                     <iconset resource="iconos_qr/iconos.qrc">
+                      <normaloff>:/iconos/refresh-cw.svg</normaloff>:/iconos/refresh-cw.svg</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>25</height>
+                     </size>
                     </property>
                    </widget>
                   </item>
@@ -569,7 +580,7 @@ border-radius:5px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(100, 171, 164);
+          <string notr="true">background-color: rgb(248, 16, 51);
 border-radius:5px;
 </string>
          </property>
@@ -613,7 +624,7 @@ border-radius:5px;
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -622,11 +633,21 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}
+border-color: rgb(248, 16, 51);}
 </string>
             </property>
             <property name="text">
-             <string>Insertar</string>
+             <string>ADD</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/plus.svg</normaloff>:/iconos/plus.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -635,7 +656,7 @@ border-color:#167;}
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -644,10 +665,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Actualizar</string>
+             <string>UPDATE</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/edit-3.svg</normaloff>:/iconos/edit-3.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -656,7 +687,7 @@ border-color:#167;}</string>
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -665,10 +696,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Eliminar</string>
+             <string>DELL</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/trash-2.svg</normaloff>:/iconos/trash-2.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -754,7 +795,7 @@ border-radius:5px;</string>
      </widget>
      <widget class="QWidget" name="tab_no_vinculados">
       <attribute name="icon">
-       <iconset resource="iconos/iconos.qrc">
+       <iconset>
         <normaloff>:/ventana_prin/no_vin.ico</normaloff>:/ventana_prin/no_vin.ico</iconset>
       </attribute>
       <attribute name="title">
@@ -1164,7 +1205,7 @@ border-radius:5px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(100, 171, 164);
+          <string notr="true">background-color: rgb(248, 16, 51);
 border-radius:5px;
 </string>
          </property>
@@ -1208,7 +1249,7 @@ border-radius:5px;
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1217,10 +1258,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Insertar</string>
+             <string>ADD</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/plus.svg</normaloff>:/iconos/plus.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -1229,7 +1280,7 @@ border-color:#167;}</string>
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1238,10 +1289,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Actualizar</string>
+             <string>UPDATE</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/edit-3.svg</normaloff>:/iconos/edit-3.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -1250,7 +1311,7 @@ border-color:#167;}</string>
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1259,10 +1320,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Eliminar</string>
+             <string>DELL</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/trash-2.svg</normaloff>:/iconos/trash-2.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -1287,7 +1358,7 @@ border-radius:5px;</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>8</pointsize>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </column>
@@ -1686,7 +1757,7 @@ border-radius:5px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(100, 171, 164);
+          <string notr="true">background-color: rgb(248, 16, 51);
 border-radius:5px;</string>
          </property>
          <property name="frameShape">
@@ -1729,7 +1800,7 @@ border-radius:5px;</string>
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1738,10 +1809,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Insertar</string>
+             <string>ADD</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/plus.svg</normaloff>:/iconos/plus.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -1750,7 +1831,7 @@ border-color:#167;}</string>
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1759,10 +1840,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Actualizar</string>
+             <string>UPDATE</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/edit-3.svg</normaloff>:/iconos/edit-3.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -1771,7 +1862,7 @@ border-color:#167;}</string>
             <property name="minimumSize">
              <size>
               <width>75</width>
-              <height>23</height>
+              <height>30</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1780,10 +1871,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
             </property>
             <property name="text">
-             <string>Eliminar</string>
+             <string>DELL</string>
+            </property>
+            <property name="icon">
+             <iconset resource="iconos_qr/iconos.qrc">
+              <normaloff>:/iconos/trash-2.svg</normaloff>:/iconos/trash-2.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>25</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -1890,7 +1991,7 @@ border:1px solid #167;}
         <property name="minimumSize">
          <size>
           <width>75</width>
-          <height>23</height>
+          <height>30</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -1900,10 +2001,20 @@ border:1px solid #ffffff;
 background-color: #ffffff;}
 
 QPushButton:hover{
-border-color:#167;}</string>
+border-color: rgb(248, 16, 51);}</string>
         </property>
         <property name="text">
-         <string>Aceptar</string>
+         <string>CLOSE</string>
+        </property>
+        <property name="icon">
+         <iconset resource="iconos_qr/iconos.qrc">
+          <normaloff>:/iconos/x.svg</normaloff>:/iconos/x.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>25</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -1952,7 +2063,7 @@ border-color:#167;}</string>
   <tabstop>pushButton_aceptar</tabstop>
  </tabstops>
  <resources>
-  <include location="iconos/iconos.qrc"/>
+  <include location="iconos_qr/iconos.qrc"/>
  </resources>
  <connections/>
 </ui>
