@@ -224,7 +224,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 a = self.datos_total.eliminar_vin(int(ide))
                 if a == 1:
                     self.mostrar_trab_vin()
-                    self.ui.lineEdit_nombre_vin.setFocus()
+                    self.ui.tableWidget_vin.setCurrentCell(-1, -1)
             else:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
         except Exception as error:
@@ -381,6 +381,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 a = self.datos_total.eliminar_no_vin((int(ide)))
                 if a == 1:
                     self.mostrar_trab_no_vin()
+                    self.ui.tableWidget_no_vin.setCurrentCell(-1, -1)
             else:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
         except Exception as error:
@@ -470,6 +471,7 @@ class GestionarDatos(QtWidgets.QWidget):
                 a = self.datos_total.eliminar_proy(int(ide))
                 if a == 1:
                     self.mostrar_proyecto()
+                    self.ui.tableWidget_proy.setCurrentCell(-1, -1)
             else:
                 raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona algo antes de borrar'))
         except Exception as error:
