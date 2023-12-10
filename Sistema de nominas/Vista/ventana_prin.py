@@ -39,6 +39,8 @@ class VentanaPrin(QtWidgets.QMainWindow):
         self.ui.lineEdit_proy.setValidator(valid)
 
     def mostrar_trab_vin_prin(self):
+        while self.ui.tableWidget_vin_prin.rowCount() > 0:
+            self.ui.tableWidget_vin_prin.removeRow(0)
         self.datos_totales.eliminar_vin(-1)
         datos = self.datos_totales.buscar_trab_vin()
         i = len(datos)
@@ -243,7 +245,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
                 a = self.datos_totales.eliminar_vin(int(ide))
                 if a == 1:
                     self.mostrar_trab_vin_prin()
-                    self.ui.lineEdit_busar_vin.setFocus()
+                    self.ui.tableWidget_vin_prin.setCurrentCell(-1, -1)
                     return (QtWidgets.QMessageBox.information(self, '!!!DESPEDIDO!!!', 'Se ha despedido a: nombre: {}\n'
                                                               'sexo: {}\nedad: {}\nfecha_nacimiento: {}\n'
                                                               'nivel_pro: {}\nproy_vin: {}\nrol: {}\n'
@@ -261,29 +263,31 @@ class VentanaPrin(QtWidgets.QMainWindow):
     def despedir_no_vin(self):
         fila = self.ui.tableWidget_no_vin_prin.currentRow()
         try:
-            if fila == -1:
-                raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona a alguien antes de despedirlo'))
-            nombre = self.ui.tableWidget_no_vin_prin.item(fila, 1).text()
-            sexo = self.ui.tableWidget_no_vin_prin.item(fila, 2).text()
-            edad = self.ui.tableWidget_no_vin_prin.item(fila, 3).text()
-            fech_na = self.ui.tableWidget_no_vin_prin.item(fila, 4).text()
-            niv_pro = self.ui.tableWidget_no_vin_prin.item(fila, 5).text()
-            resp = self.ui.tableWidget_no_vin_prin.item(fila, 6).text()
-            lleg_tarde = self.ui.tableWidget_no_vin_prin.item(fila, 7).text()
-            horas_trab = self.ui.tableWidget_no_vin_prin.item(fila, 8).text()
-            salario = self.ui.tableWidget_no_vin_prin.item(fila, 9).text()
+            if fila != -1:
+                nombre = self.ui.tableWidget_no_vin_prin.item(fila, 1).text()
+                sexo = self.ui.tableWidget_no_vin_prin.item(fila, 2).text()
+                edad = self.ui.tableWidget_no_vin_prin.item(fila, 3).text()
+                fech_na = self.ui.tableWidget_no_vin_prin.item(fila, 4).text()
+                niv_pro = self.ui.tableWidget_no_vin_prin.item(fila, 5).text()
+                resp = self.ui.tableWidget_no_vin_prin.item(fila, 6).text()
+                lleg_tarde = self.ui.tableWidget_no_vin_prin.item(fila, 7).text()
+                horas_trab = self.ui.tableWidget_no_vin_prin.item(fila, 8).text()
+                salario = self.ui.tableWidget_no_vin_prin.item(fila, 9).text()
 
-            ide = self.ui.tableWidget_no_vin_prin.item(fila, 0).text()
-            a = self.datos_totales.eliminar_no_vin(int(ide))
-            if a == 1:
-                self.mostrar_trab_no_vin_prin()
-                return (QtWidgets.QMessageBox.information(self, '!!!DESPEDIDO!!!', 'Se ha despedido a: nombre: {}\n'
-                                                          'sexo: {}\nedad: {}\nfecha_nacimiento: {}\n'
-                                                          'nivel_pro: {}\nresponsabilidad: {}\nllegadas_tarde: {}\n'
-                                                          'horas_trab: {}\n'
-                                                          'salario: {}'.format(nombre, sexo, edad, fech_na, niv_pro,
-                                                                               resp, lleg_tarde,
-                                                                               horas_trab, salario)))
+                ide = self.ui.tableWidget_no_vin_prin.item(fila, 0).text()
+                a = self.datos_totales.eliminar_no_vin(int(ide))
+                if a == 1:
+                    self.mostrar_trab_no_vin_prin()
+                    self.ui.tableWidget_no_vin_prin.setCurrentCell(-1, -1)
+                    return (QtWidgets.QMessageBox.information(self, '!!!DESPEDIDO!!!', 'Se ha despedido a: nombre: {}\n'
+                                                              'sexo: {}\nedad: {}\nfecha_nacimiento: {}\n'
+                                                              'nivel_pro: {}\nresponsabilidad: {}\nllegadas_tarde: {}\n'
+                                                              'horas_trab: {}\n'
+                                                              'salario: {}'.format(nombre, sexo, edad, fech_na, niv_pro,
+                                                                                   resp, lleg_tarde,
+                                                                                   horas_trab, salario)))
+                else:
+                    raise (QtWidgets.QMessageBox.critical(self, 'Error', 'Selecciona a alguien antes de despedirlo'))
 
         except Exception as error:
             return QtWidgets.QMessageBox.critical(self, 'Error', error.args[0])
