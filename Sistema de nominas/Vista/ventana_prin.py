@@ -124,6 +124,7 @@ class VentanaPrin(QtWidgets.QMainWindow):
             table_row += 1
 
     def mostrar_proy_ordenado(self):
+        self.datos_totales.eliminar_vin(-1)
         datos = self.datos_totales.ordenar_proy()
         i = len(datos)
         self.ui.tableWidget_proy_prin.setRowCount(i)
