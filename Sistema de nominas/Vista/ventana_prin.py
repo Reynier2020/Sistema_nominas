@@ -319,7 +319,8 @@ class VentanaPrin(QtWidgets.QMainWindow):
         return msg
 
     def ayuda(self):
-        msg = QtWidgets.QMessageBox.information(self, "Creado por:", "Alexai ------\nIdel--------\nReynier Miguelez "
+        msg = QtWidgets.QMessageBox.information(self, "Creado por:", "Alexai Lamas\nIdel Reyes Pacheco\n"
+                                                                     "Reynier Miguelez "
                                                                      "Remedios")
         return msg
 
